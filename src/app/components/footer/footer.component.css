@@ -4,6 +4,7 @@ footer{
 
 .row{
     margin-right: 0;
+    margin-left: 3rem;
 }
 
 .para{
@@ -92,7 +93,76 @@ ul li a:hover{
     h6{
         font-size: 14px;
     }
-    .cols p, p, ul li a{
+}
+
+@media (max-width: 1200px) {
+    .para {
+        width: 80%;
+        font-size: 16px;
+        text-align: justify;
+    }
+    .cols {
+        width: 30%;
+    }
+    .cols-2, .col-2 {
+        width: 100%;
+    }
+    .col-2 iframe{
+        width: 700px;
+    }
+    .col-12 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .para {
+        width: 90%;
+        font-size: 16px;
+        text-align: justify;
+    }
+    .cols, .cols-2 {
+        width: 50%;
+    }
+    .col-2 iframe{
+        width: 650px;
+    }
+    .social a {
+        height: 40px;
+        width: 40px;
+        font-size: 18px;
+    }
+    ul li a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .row{
+        margin-left: 1rem;
+    }
+    .para {
+        width: 85%;
+        font-size: 12px;
+        line-height: 22px;
+        text-align: justify;
+    }
+    .cols, .cols-2, .col-2 {
+        width: 100%;
+    }
+    .col-2 iframe{
+        width: 300px;
+        height: min-content;
+    }
+    .social a {
+        height: 35px;
+        width: 35px;
+        font-size: 16px;
+    }
+    ul li a {
         font-size: 10px;
+    }
+    .copyright {
+        font-size: 12px;
     }
 }

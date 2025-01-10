@@ -1,11 +1,12 @@
 .carousel {
     box-shadow: 0 0 5px #888888;
+    padding-top: 4%;
 }
 
 .carousel-item img {
     opacity: 0.9;
-    width: 100%;  /* Ensures images are responsive */
-    height: auto; /* Maintains the aspect ratio */
+    width: 100%; 
+    height: auto; 
 }
 
 .carousel-caption h4 {
@@ -110,6 +111,7 @@ section .row {
 
 .explore-box button {
     position: absolute;
+    margin-top: 3rem;
     top: 50%;
     left: 35%;
     transform: translate(-50%, -50%);
@@ -192,25 +194,41 @@ section .row {
 }
 
 @media (max-width: 575.98px) {
-    .carousel-caption{
-        height: 100px;
-        margin: 0;
+    .sticky{
+        width: 100%;
     }
-
-    .carousel-caption h6 {
-        font-size: 12px;
-        width: 90%;
+    .carousel {
+        padding-top: 15%;
+    }
+    .carousel-caption{
+        height: 80px;
         margin: 0;
+        padding: 6px 0;
+    }
+    .carousel-caption h4{
+        font-size: 13px;
+        margin-bottom: -9px;
+    }
+    .carousel-caption hr{
+        margin-bottom: 5px;
+    }
+    .carousel-caption h6 {
+        text-align: center;
+        font-size: 11px;
+        margin: 0 auto;
     }
 
     .carousel-caption p{
-        font-size: 10px;
+        padding-top: 3px;
+        font-size: 8px;
     }
     .card {
         margin: 5px auto;
         padding: 10px;
     }
-
+    .cards-box{
+        margin: 0 auto;
+    }
     .home-metrics h2 {
         font-size: 24px;
     }
@@ -220,7 +238,9 @@ section .row {
     }
 
     .explore-box button {
-        left: 50%;
+        margin-top: 0.5rem;
+        left: 35%;
         font-size: 10px;
+        padding: 0px 5px;
     }
 }

@@ -52,6 +52,7 @@ section img:hover {
     font-size: 0.9rem;
     color: #555;
     margin-bottom: 15px;
+    text-align: justify;
 }
 
 .btn {

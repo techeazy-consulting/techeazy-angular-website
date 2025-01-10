@@ -32,7 +32,6 @@ export class CoursesComponent {
     // Fetch class details by ID
     this.authService.getClassDetails(this.id).subscribe(
       (data) => {
-        debugger;
         // Assuming the API returns class details including name, description
         this.classId = data.classId;
         this.className = data.className;
@@ -45,31 +44,11 @@ export class CoursesComponent {
       }
     );
   }
-  // loadClasses() {
-  //   this.route.paramMap.subscribe(params => {
-  //     this.classId = params.get('id') || '';
-  //     if(this.classId) {
-  //       this.loadSubjectsByClass();
-  //     }
-  //   });
-
-  //   this.route.queryParams.subscribe(params => {
-  //     this.className = params['name'] || '';
-  //     this.classDescription = params['description'] || '';
-  //   });
-  // }
 
   loadSubjectsByClass() {
-    debugger;
     this.authService.getSubjectsByClass(this.classId).subscribe (
       (data) => {
         this.subjects = data;
-        // this.subjectId = data.subjectId;
-        // this.loadChaptersByClassAndSubject(this.classId, this.subjectId);
-        // if (this.subjects.length > 0) {
-        //   this.subjectId = this.subjects[1].subjectId; // Default to the first subject
-        //   this.loadChaptersByClassAndSubject(this.classId, this.subjectId);
-        // }
       },
       (error) => {
         console.error('Error Fetching subjects', error);
@@ -78,7 +57,6 @@ export class CoursesComponent {
   }
 
   loadChaptersByClassAndSubject(classId: string, subjectId: string) {
-    debugger;
     console.log(`Fetching chapters for classId: ${classId}, subjectId: ${subjectId}`);
     this.authService.getChaptersByClassAndSubject(classId, subjectId).subscribe(
       (data) => {

@@ -1,1 +1,80 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global imports for fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Global styles for typography */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
+/* Global text styles */
+h1, h2, h3, h4, h5, h6, p, a {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Row adjustment */
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* Global link styles */
+a {
+  text-decoration: none;
+  color: inherit; /* Ensure links inherit text color */
+}
+
+a:hover, a:focus {
+  color: #007bff; /* Blue color on hover for better visibility */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Button Styling */
+button {
+  font-family: "Noto Serif", serif;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background-color: #007bff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Responsive breakpoints for consistency */
+@media (max-width: 1200px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 12px;
+  }
+}

@@ -1,8 +1,11 @@
 .bootcamp-banner img{
     width: 100%;
     height: 10%;
-  }
+}
   
+.bootcamp-banner{
+    padding-top: 4rem;
+}
   .bootcamp-banner .row{
     margin-right: 0;
     margin-top: -13rem;
@@ -12,12 +15,22 @@
     width: fit-content;
     box-shadow: 0 4px 8px #3b3b3b;
     backdrop-filter: blur(5px);
+    padding: 3rem;
   }
   
   input,select{
     background-color: transparent;
   }
   
+  .col-6 .h2{
+    opacity: 0;
+    margin-top: -5rem;
+  }
+
+  .col-6 p{
+    margin-top: 3rem;
+  }
+
   .box{
     border: 1px solid #d5d5d5;
     width: fit-content;
@@ -39,7 +52,7 @@
   transform:translateY(-50%);
   }
   
-  .column{
+.column{
   margin-top:3rem;
   padding-left:3rem;
   &:hover{
@@ -53,8 +66,9 @@
       }
     }
   }
-  }
-  .bootcamp-banner .card{
+}
+
+.bootcamp-banner .card{
   min-height:140px;
   margin: 0;
   padding: 1.7rem 1.2rem;
@@ -82,7 +96,7 @@
       color:rgb(224, 223, 223);
     }
   }
-  }
+}
   
   .ico-card{
     position:absolute;
@@ -106,3 +120,224 @@
     z-index: 0;
   }
   
+  /* Media Queries */
+
+  /* For larger screens (769px to 1200px) */
+@media (max-width: 1200px) {
+  form {
+    width: 70%; /* Form should be narrower on medium screens */
+    padding: 2rem;
+  }
+
+  .box {
+    width: 70%;
+    padding: 20px;
+  }
+
+  .bootcamp-banner .row {
+    margin-top: -8rem;
+  }
+
+  .column{
+    margin-top:1rem;
+    padding-left:1rem;
+    &:hover{
+      padding-left:0;
+      .card .txt{
+        margin-left:0;
+      }
+    }
+  }
+  .bootcamp-banner .card .txt {
+    margin-left: 0rem;
+    z-index: 1;
+  }
+
+  .ico-card i {
+    font-size: 6rem; 
+    right: -70%;
+    top: 50%;
+  }
+
+  .bootcamp-banner .card .txt h1 {
+    font-size: 1.2rem;
+  }
+
+  .bootcamp-banner .card .txt p {
+    font-size: 12px;
+    opacity: 0;
+    margin: 10px;
+  }
+}
+
+/* For medium screens (577px to 768px) */
+@media (max-width: 768px) {
+  .bootcamp-banner {
+    padding-top: 4%; 
+  }
+
+  form {
+    width: 85%; 
+    padding: 1.5rem;
+  }
+
+  .col-6 h2{
+    font-size: 26px;
+  }
+  .box {
+    width: 85%;
+    padding: 15px;
+  }
+
+  .bootcamp-banner .row {
+    margin-top: -6rem;
+  }
+
+  .column{
+    margin-top:1rem;
+    padding-left:1rem;
+    &:hover{
+      padding-left:0;
+      .card .txt{
+        margin-left:0;
+      }
+    }
+  }
+  .bootcamp-banner .card .txt {
+    margin-left: 0rem;
+    z-index: 1;
+  }
+
+  .ico-card i {
+    font-size: 6rem; 
+    right: -70%;
+    top: 50%;
+  }
+
+  .bootcamp-banner .card .txt h1 {
+    font-size: 1.2rem;
+  }
+
+  .bootcamp-banner .card .txt p {
+    font-size: 12px;
+    opacity: 0;
+    margin: 10px;
+  }
+}
+
+/* For small screens (up to 576px) */
+@media (max-width: 576px) {
+  .bootcamp-banner {
+    padding-top: 15%; 
+  }
+
+  .bootcamp-banner .row{
+    margin-top: -3rem;
+  }
+  .banner-boot{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .col-6{
+    width: 100%;
+    margin: 0 auto;
+  }
+  .col-6 .h2{
+    opacity: 1;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  .col-6 h2{
+    opacity: 0;
+  }
+  .col-6 p{
+    margin-top: -4rem;
+  }
+  form {
+    width: 20rem;
+    padding: 15px;
+    margin: 0 auto;
+  }
+
+  .box {
+    width: 100%;
+    padding: 10px;
+  }
+  .bootcamp-banner .card{
+    margin: 0 auto;
+  }
+  .column{
+    margin-top:1rem;
+    padding-left:1rem;
+    &:hover{
+      padding-left:0;
+      .card .txt{
+        margin-left:0;
+      }
+    }
+  }
+  .bootcamp-banner .card .txt {
+    margin-left: 0rem;
+    z-index: 1;
+}
+
+  .ico-card i {
+    font-size: 6rem; 
+    right: -70%;
+    top: 50%;
+  }
+
+  .bootcamp-banner .card .txt h1 {
+    font-size: 1.2rem;
+  }
+
+  .bootcamp-banner .card .txt p {
+    font-size: 12px;
+    opacity: 1;
+    margin: 10px;
+  }
+}
+
+/* For very small screens (up to 350px) */
+@media (max-width: 350px) {
+  .bootcamp-banner .row {
+    margin-top: -3rem;
+  }
+
+  form {
+    width: 100%;
+    padding: 1rem;
+  }
+  .col-6 .h2{
+    opacity: 1;
+    margin-bottom: 2rem;
+  }
+  .col-6 h2{
+    opacity: 0;
+  }
+  .box {
+    width: 100%;
+    padding: 5px 10px;
+  }
+
+  .column {
+    margin-top: 1rem;
+    padding-left: 0;
+  }
+
+  .ico-card i {
+    font-size: 4rem; /* Adjust for small devices */
+    right: -70%;
+    top: 50%;
+  }
+
+  .bootcamp-banner .card .txt h1 {
+    font-size: 1rem;
+  }
+
+  .bootcamp-banner .card .txt p {
+    font-size: 11px;
+    opacity: 0.85;
+  }
+}
