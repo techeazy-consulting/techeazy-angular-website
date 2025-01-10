@@ -1,0 +1,14 @@
+<div class="blog-container">
+    <h1>My Blogs</h1>
+    <!-- <div *ngIf="blogs.length; else noBlogs">
+      <div *ngFor="let blog of blogs" class="blog-card">
+        <h2>{{ blog.title }}</h2>
+        <p>{{ blog.brief }}</p>
+        <a [href]="blog.url" target="_blank">Read More</a>
+      </div>
+    </div> -->
+    <ng-template #noBlogs>
+      <p>No blogs available at the moment.</p>
+    </ng-template>
+</div>
+  

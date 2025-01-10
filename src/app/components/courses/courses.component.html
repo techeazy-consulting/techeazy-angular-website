@@ -1,0 +1,190 @@
+<div class="banner pb-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-6">
+                <h2 class="mt-5 pt-4">Your Path to Success Begins here</h2>
+                <br><br>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+                <form id="book-free-class" action="/submit-form" method="post" class="p-5 rounded">
+                    <h3 class="mb-5 text-center">Book a Free Live Class</h3>
+                    <hr>
+                    <!-- Name Field -->
+                    <div class="mb-3">
+                      <label for="name" class="form-label">Full Name</label>
+                      <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <!-- Email Field -->
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email Address</label>
+                      <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <!-- Phone Number Field -->
+                    <div class="mb-3">
+                      <label for="phone" class="form-label">Phone Number</label>
+                      <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
+                    </div>
+                    
+                    <!-- Course Selection -->
+                    <div class="mb-3">
+                      <label for="course" class="form-label">Select Course</label>
+                      <select id="course" name="course" class="form-select" required>
+                        <option value="" disabled selected>Select a course</option>
+                        <option value="java">Java Full Course</option>
+                        <option value="python">Python Programming</option>
+                        <option value="webdev">Web Development</option>
+                        <option value="datasci">Data Science</option>
+                      </select>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-light text-primary fw-bold w-100">Book Now</button>
+                    </div>
+                  </form>              
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="course-banner container mt-5 p-4 text-center">
+  <h3>{{ className }}</h3>
+  <br>
+  <p>{{ classDescription }}</p>
+</div>
+
+<div class="container py-4 mt-3">
+    <h2 class="text-center mb-5">"Tailored Learning Experience Just for You"</h2>
+    <div class="row text-center">
+      <div class="col-md-4 mb-5">
+        <div class="card rounded-circle shadow p-5">
+            <h6>Missed a class?</h6>
+          <p class="mb-0">Watch the recording later, with teaching assistants available to solve your doubts.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card rounded-circle shadow p-5">
+            <h6>Work / family needs time?</h6>
+          <p class="mb-0">Pause your course and restart a month later with the next batch!</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card rounded-circle shadow p-5">
+            <h6>Jobs & class timings clash?</h6>
+          <p class="mb-0">Decide your ideal class timing together with your classmates.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card rounded-circle shadow p-5">
+            <h6>Want to revise?</h6>
+          <p class="mb-0">Access notes lifelong and recordings up to 6 months post course completion.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card rounded-circle shadow p-5">
+            <h6>Have doubts?</h6>
+          <p class="mb-0">Get them resolved over text/video by our expert teaching assistants!</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card rounded-circle shadow p-5">
+            <h6>Solve Quizzes</h6>
+          <p class="mb-0">Test your knowledge on the topics you learned.</p>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="container bg-aqua p-4">
+    <h2 class="text-center mb-5">Course Highlights</h2>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item" *ngFor="let subject of subjects; let i = index">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"  [attr.data-bs-target]="'#flush-collapse' + i" aria-expanded="false" [attr.aria-controls]="'flush-collapse' + i" (click)="onSubjectClick(subject.subjectId)">
+              {{subject.subjectName}}
+            </button>
+          </h2>
+          <div [id]="'flush-collapse'+i" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">{{subject.subjectDescription}} <br>
+              <div class="chapters">
+                <!-- <ul *ngFor="let chapter of chapters">
+                  <li>{{chapter.chapterName}}</li>
+                </ul> -->
+                <div *ngFor="let chapter of chapters">
+                  <h3>{{ chapter.chapterName }}</h3>
+                  <p>{{ chapter.chapterDescription }}</p>
+                </div>                
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Sub-topic 2
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Sub-topic 3
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          </div>
+        </div> -->
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row g-4">
+        <!-- Know More Column -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow info-cards">
+                <div class="card-body">
+                    <h4 class="card-title">Know More</h4>
+                    <hr>
+                    <p class="card-text">Learn how we are transforming IT training with hands-on projects, industry expert instructors, and flexible learning schedules.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Certified and experienced trainers.</li>
+                        <li class="list-group-item">100% placement assistance.</li>
+                        <li class="list-group-item">Interactive live sessions and recorded classes.</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary mt-3">Explore More</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Other Courses Column -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow info-cards bg-opacity-75">
+                <div class="card-body">
+                    <h4 class="card-title">Other Courses</h4>
+                    <hr>
+                    <p class="card-text">Explore our wide range of courses designed to meet industry demands.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Full Stack Web Development</li>
+                        <li class="list-group-item">Python for Data Science</li>
+                        <li class="list-group-item">Cloud Computing with AWS</li>
+                        <li class="list-group-item">Cybersecurity Essentials</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary mt-2">View All Courses</a>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+
+<div class="quiz-container mt-5 text-center p-5">
+  <h1>Sharpen Your Coding Skills: Take the Quiz</h1>
+  <p class="fst-italic">Enhance your learning by taking our engaging quizzes designed to test your knowledge and improve your skills.</p>
+  <br>
+  <button class="btn btn-primary">Start now</button>
+</div>

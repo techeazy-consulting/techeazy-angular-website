@@ -1,0 +1,217 @@
+/* General Styles */
+.banner {
+    background-image: url('../../../assets/images/course-bg2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.row {
+    margin: 0 auto;
+}
+
+form {
+    width: fit-content;
+    box-shadow: 0 4px 8px #3b3b3b;
+    backdrop-filter: blur(5px);
+    color: rgb(201, 202, 203);
+}
+
+input, select {
+    background-color: transparent;
+}
+
+form h3 {
+    text-shadow: 0 0 2px #afa4a4;
+    color: black;
+}
+
+.course-banner {
+    background: url('../../../assets/images/course-banner.png');
+    background-size: cover;
+    background-position: initial;
+    background-repeat: no-repeat;
+}
+
+.card.rounded-circle {
+    background: linear-gradient(to top, rgb(0, 157, 255), aliceblue, white);
+}
+
+.card.rounded-circle h6 {
+    font-weight: bold;
+}
+
+.accordion {
+    background-color: #afa4a4;
+}
+
+.bg-aqua {
+    background-color: rgb(218, 234, 255);
+    border-radius: 8px;
+}
+
+.info-cards {
+    background: url('../../../assets/images/course-box.png');
+    background-size: cover;
+    background-position: initial;
+    background-repeat: no-repeat;
+}
+
+.quiz-container {
+    background: url('../../../assets/images/quiz-banner.png');
+    background-size: cover;
+    background-position: initial;
+    background-repeat: no-repeat;
+    color: aliceblue;
+    margin-bottom: 10px;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 767px) {
+    .banner {
+        background-position: center top;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .row {
+        display: block;
+        text-align: center;
+    }
+
+    form {
+        padding: 20px;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .col-6 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .col-6.d-flex {
+        display: block;
+        justify-content: center;
+    }
+
+    .course-banner h3 {
+        font-size: 20px;
+    }
+
+    .course-banner p {
+        font-size: 14px;
+    }
+
+    .card.rounded-circle {
+        padding: 20px;
+    }
+
+    .quiz-container h1 {
+        font-size: 24px;
+    }
+
+    .quiz-container p {
+        font-size: 14px;
+    }
+
+    .info-cards .card-body {
+        padding: 15px;
+    }
+
+    .info-cards h4 {
+        font-size: 16px;
+    }
+}
+
+/* Tablet Responsiveness */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .col-6 {
+        width: 48%;
+    }
+
+    form {
+        padding: 30px;
+        margin-top: 50px;
+    }
+
+    .course-banner h3 {
+        font-size: 24px;
+    }
+
+    .course-banner p {
+        font-size: 16px;
+    }
+
+    .card.rounded-circle {
+        padding: 25px;
+    }
+
+    .quiz-container h1 {
+        font-size: 28px;
+    }
+
+    .quiz-container p {
+        font-size: 16px;
+    }
+
+    .info-cards .card-body {
+        padding: 20px;
+    }
+
+    .info-cards h4 {
+        font-size: 18px;
+    }
+}
+
+/* Desktop Responsiveness */
+@media screen and (min-width: 1025px) {
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .col-6 {
+        width: 48%;
+    }
+
+    form {
+        padding: 40px;
+        margin-top: 50px;
+    }
+
+    .course-banner h3 {
+        font-size: 32px;
+    }
+
+    .course-banner p {
+        font-size: 18px;
+    }
+
+    .card.rounded-circle {
+        padding: 30px;
+    }
+
+    .quiz-container h1 {
+        font-size: 36px;
+    }
+
+    .quiz-container p {
+        font-size: 18px;
+    }
+
+    .info-cards .card-body {
+        padding: 25px;
+    }
+
+    .info-cards h4 {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,179 @@
+<div class="bootcamp-banner">
+    <img src="../../../assets/images/bootcamp-bg.png" alt="" />
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <form
+            id="book-free-class"
+            action="/submit-form"
+            method="post"
+            class="p-5 rounded"
+          >
+            <h3 class="text-center">Register Now to Get Started!</h3>
+            <hr />
+            <!-- Name Field -->
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-control"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+  
+            <!-- Email Field -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+  
+            <!-- Phone Number Field -->
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form-control"
+                placeholder="Enter your phone number"
+                required
+              />
+            </div>
+  
+            <!-- Course Selection -->
+            <div class="mb-3">
+              <label for="course" class="form-label">Select Course</label>
+              <select id="course" name="course" class="form-select" required>
+                <option value="" disabled selected>Select a course</option>
+                <option value="java">Java Full Course</option>
+                <option value="python">Python Programming</option>
+                <option value="webdev">Web Development</option>
+                <option value="datasci">Data Science</option>
+              </select>
+            </div>
+  
+            <!-- Submit Button -->
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary fw-bold w-100">
+                Book Now
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-6 justify-content-center">
+          <h2 class="text-center">
+            "Be the first to register first for the free bootcamp"
+          </h2>
+          <p class="mt-5 fst-italic text-secondary text-center">
+            Join our bootcamp to gain hands-on skills in coding, design, and more!
+            Our program is designed for beginners and professionals looking to
+            upskill.
+          </p>
+          <div class="col-md-12 column pt-3">
+            <div class="card gr-3">
+              <div class="txt">
+                <h1>Why Join Our Bootcamp?</h1>
+                <hr />
+                <p>Hands-on training</p>
+                <p>Industry-Expert Trainers</p>
+                <p>Certification of Completion</p>
+                <p>Flexible Schedules</p>
+                <p>Comprehensive Curriculum</p>
+                <p>Networking Opportunities</p>
+              </div>
+              <div class="ico-card">
+                <i class="fa fa-empire"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <app-bootcamps></app-bootcamps>
+  
+  <div class="previous-bootcamp mt-5">
+    <h2 class="text-center mb-3">Previous bootcamps</h2>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-40">
+            <img
+              src="../../../assets/images/spring.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-body-secondary">150+ Students</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-40">
+            <img
+              src="../../../assets/images/spring.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-body-secondary">200+ Students</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-40">
+            <img
+              src="../../../assets/images/spring.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-body-secondary">240+ Students</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="m-5">
+    <h2 class="text-center">Explore our free courses</h2>
+    <hr class="mb-4" />
+    <app-best-courses></app-best-courses>
+  </div>
+  
