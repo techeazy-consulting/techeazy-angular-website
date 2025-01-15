@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +13,7 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { MoodComponent } from './mood/mood.component';
+import { VideoPopupComponent } from './components/video-popup/video-popup.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,13 @@ import { MoodComponent } from './mood/mood.component';
     FooterComponent,
     HomePageComponent,
     NavbarComponent,
-    MoodComponent
+    VideoPopupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    YouTubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

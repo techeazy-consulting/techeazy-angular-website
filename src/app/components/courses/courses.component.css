@@ -1,9 +1,16 @@
 /* General Styles */
+
 .banner {
-    background-image: url('../../../assets/images/course-bg2.png');
+    background-image: url('../../../assets/images/bgc.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: min-content;
+    padding: 3rem;
+}
+
+.banner .col-6{
+    padding: 0 rem;
 }
 
 .row {
@@ -28,7 +35,8 @@ form h3 {
 }
 
 .course-banner {
-    background: url('../../../assets/images/course-banner.png');
+    /* background: url('../../../assets/images/course-banner.png'); */
+    background-color: #d1e3ff;
     background-size: cover;
     background-position: initial;
     background-repeat: no-repeat;
@@ -46,6 +54,16 @@ form h3 {
     background-color: #afa4a4;
 }
 
+.accordion-header, .accordion-button:hover{
+    background-color: #77adff;
+    border: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #77adff;
+    border: none;
+    outline: none;
+}
 .bg-aqua {
     background-color: rgb(218, 234, 255);
     border-radius: 8px;
@@ -67,6 +85,40 @@ form h3 {
     margin-bottom: 10px;
 }
 
+/* New added */
+.course-card{
+    display: flex;
+    justify-self: end;
+    margin-top: -17%;
+}
+
+.course-card .btn{
+    border: 2px solid #0d6efd;;
+}
+
+.course-card ul li{
+    list-style: none;
+    line-height: 35px;
+}
+
+.course-card ul li i{
+    padding-right: 10px;
+}
+
+.course-details{
+    margin-top: -30%;
+}
+
+.course-details span button{
+    background-color: transparent;
+    border: none;
+    color: #0d6efd;
+}
+.chapter-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 /* Mobile Responsiveness */
 @media screen and (max-width: 767px) {
     .banner {
@@ -131,6 +183,24 @@ form h3 {
     .info-cards h4 {
         font-size: 16px;
     }
+
+    .banner .col-6{
+        width: 100%;
+        text-align: justify;
+        padding: 0;
+        margin: 0;
+    }
+
+    .course-card {
+        width: 80%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .course-details{
+        width: 100%;
+        margin: 5% auto;
+    }
 }
 
 /* Tablet Responsiveness */
@@ -175,6 +245,19 @@ form h3 {
 
     .info-cards h4 {
         font-size: 18px;
+    }
+
+    .banner p{
+        text-align: justify;
+    }
+
+    .course-card{
+        margin-top: -50%;
+    }
+
+    .course-details{
+        width: 100%;
+        margin-top: 6%;
     }
 }
 

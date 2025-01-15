@@ -2,17 +2,17 @@ header {
     width: 100%;
 }
 
-.sticky{
+/* .sticky{
     width: 100%;
     box-shadow: 0 0 2px #ffffff;
     background: transparent;
     backdrop-filter: blur(35px);
-}
+} */
 
 .navbar {
     padding: 0.5rem 1rem;
-    position: fixed;
-    z-index: 1;
+    /* position: fixed; */
+    /* z-index: 1; */
 }
 
 .navbar-brand img {

@@ -15,6 +15,7 @@ export class CoursesComponent {
   subjects: any[] = [];
   subjectId: string = '';
   chapters: any[] = [];
+  classes: any[] = [];
 
   constructor(private route: ActivatedRoute, private authService: AuthService) {}
 
@@ -25,6 +26,8 @@ export class CoursesComponent {
         this.loadClassDetails();
       }
     });
+
+    this.loadClasses();
   }
 
 
@@ -75,4 +78,14 @@ export class CoursesComponent {
     this.loadChaptersByClassAndSubject(this.classId, this.subjectId);
   }
 
+  loadClasses(){
+    this.authService.getClasses().subscribe(
+      (data) => {
+        this.classes = data;
+      },
+      (error) => {
+        console.error('Error fetching classes', error);
+      }
+    )
+  }
 }

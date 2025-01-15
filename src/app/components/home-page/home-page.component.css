@@ -1,6 +1,6 @@
 .carousel {
     box-shadow: 0 0 5px #888888;
-    padding-top: 4%;
+    /* padding-top: 4%; */
 }
 
 .carousel-item img {
@@ -197,9 +197,9 @@ section .row {
     .sticky{
         width: 100%;
     }
-    .carousel {
+    /* .carousel {
         padding-top: 15%;
-    }
+    } */
     .carousel-caption{
         height: 80px;
         margin: 0;

@@ -1,0 +1,14 @@
+<div class="popup-overlay" *ngIf="isVisible">
+    <div class="popup-content">
+      <h2>Course Preview</h2>
+      <div class="video-container">
+        <iframe 
+          [src]="videoUrl" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <button class="close-btn" (click)="closePopup()">Close</button>
+    </div>
+</div>

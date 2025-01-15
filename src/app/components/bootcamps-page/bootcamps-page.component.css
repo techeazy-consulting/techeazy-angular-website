@@ -4,7 +4,7 @@
 }
   
 .bootcamp-banner{
-    padding-top: 4rem;
+    /* padding-top: 4rem; */
 }
   .bootcamp-banner .row{
     margin-right: 0;
@@ -173,7 +173,7 @@
 /* For medium screens (577px to 768px) */
 @media (max-width: 768px) {
   .bootcamp-banner {
-    padding-top: 4%; 
+    /* padding-top: 4%;  */
   }
 
   form {
@@ -228,7 +228,7 @@
 /* For small screens (up to 576px) */
 @media (max-width: 576px) {
   .bootcamp-banner {
-    padding-top: 15%; 
+    /* padding-top: 15%;  */
   }
 
   .bootcamp-banner .row{
