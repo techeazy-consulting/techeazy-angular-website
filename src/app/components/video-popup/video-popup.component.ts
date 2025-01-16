@@ -10,7 +10,8 @@ export class VideoPopupComponent {
   // videoId: string[] = [
   //   'A4-yVIXvJQE','FUkrbMlyUVc','b5SUxrMDOuE','3Cn_0rbBkfU','yxTQUS1kOGA','12ubKhrmJOo','emKldnLCSg4','bk9TqCI7iK4','pTwnFwm49w0'
   // ]; 
-  videoId: string = 'A4-yVIXvJQE';
+  videoId: string = '';
+  // videoId: string = 'A4-yVIXvJQE';
   isVisible: boolean = false;
   videoUrl!: SafeResourceUrl;
 
@@ -24,10 +25,13 @@ export class VideoPopupComponent {
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
       `https://www.youtube.com/embed/${this.videoId}`
     );
+    console.log("video fetched", this.videoId);
   }
 
-  openPopup() {
+  openPopup(videoId:string) {
     this.isVisible = true;
+    this.videoId = videoId;
+    this.setVideoUrl();
   }
 
   closePopup() {

@@ -55,7 +55,13 @@
 .column{
   margin-top:3rem;
   padding-left:3rem;
-  &:hover{
+  margin-left:1rem;
+      /* h1, p, hr{
+        color:rgba(255,255,255,1);
+        opacity:1;
+        line-height: 11px;
+      } */
+  /* &:hover{
     padding-left:0;
     .card .txt{
       margin-left:1rem;
@@ -65,7 +71,7 @@
         line-height: 11px;
       }
     }
-  }
+  } */
 }
 
 .bootcamp-banner .card{
@@ -79,7 +85,7 @@
   font-family: 'Oswald', sans-serif;
   box-shadow: 0 0 21px rgba(0,0,0,.27);
   .txt{
-    margin-left:-3rem;
+    /* margin-left:-3rem; */
     z-index: 1;
     h1{
       font-size:1.5rem;
@@ -92,7 +98,7 @@
       line-height: 10px;
       letter-spacing: 0rem;
       margin-top:20px;
-      opacity:0;
+      opacity:1;
       color:rgb(224, 223, 223);
     }
   }
@@ -141,12 +147,12 @@
   .column{
     margin-top:1rem;
     padding-left:1rem;
-    &:hover{
+    /* &:hover{
       padding-left:0;
       .card .txt{
         margin-left:0;
       }
-    }
+    } */
   }
   .bootcamp-banner .card .txt {
     margin-left: 0rem;
@@ -165,7 +171,7 @@
 
   .bootcamp-banner .card .txt p {
     font-size: 12px;
-    opacity: 0;
+    /* opacity: 0; */
     margin: 10px;
   }
 }
@@ -196,12 +202,12 @@
   .column{
     margin-top:1rem;
     padding-left:1rem;
-    &:hover{
+    /* &:hover{
       padding-left:0;
       .card .txt{
         margin-left:0;
       }
-    }
+    } */
   }
   .bootcamp-banner .card .txt {
     margin-left: 0rem;
@@ -220,7 +226,7 @@
 
   .bootcamp-banner .card .txt p {
     font-size: 12px;
-    opacity: 0;
+    /* opacity: 0; */
     margin: 10px;
   }
 }
@@ -270,12 +276,12 @@
   .column{
     margin-top:1rem;
     padding-left:1rem;
-    &:hover{
+    /* &:hover{
       padding-left:0;
       .card .txt{
         margin-left:0;
       }
-    }
+    } */
   }
   .bootcamp-banner .card .txt {
     margin-left: 0rem;

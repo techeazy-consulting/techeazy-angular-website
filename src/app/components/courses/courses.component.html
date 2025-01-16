@@ -50,40 +50,97 @@
   <p>{{ classDescription }}</p>
 </div> -->
 
-<div class="banner">
-  <div class="col-6">
-    <h1>{{ className }}</h1>
-    <p>{{ classDescription }}</p>
-    <div class="details">
+<div class="popup-overlay" *ngIf="isPopupVisible">
+  <div class="popup-content">
+    <span (click)="closePopup()"><i class="fa-solid fa-xmark"></i></span>
+    <form id="book-free-class" action="/submit-form" method="post" class="rounded">
+      <h3 class="text-center">Book a Free Live Class</h3>
+      <hr>
+      <div class="mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+      </div>
+      
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+      </div>
+      
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
+      </div>
+      
+      <div class="mb-3">
+        <label for="course" class="form-label">Select Course</label>
+        <select id="course" name="course" class="form-select" required>
+          <option value="" disabled selected>Select a course</option>
+          <option value="java">Java Full Course</option>
+          <option value="python">Python Programming</option>
+          <option value="webdev">Web Development</option>
+          <option value="datasci">Data Science</option>
+        </select>
+      </div>
+      
+      <div class="text-center">
+        <button type="submit" class="btn btn-light text-primary fw-bold w-100">Book Now</button>
+      </div>
+    </form> 
+  </div>             
+</div>
+
+<div *ngIf="showSliderMenu" class="slider-menu--slider-menu-container">
+  <div class="lead--lead">
+    <div class="lead--title">
+      <h5>{{ className }}</h5>
+    </div>
+    <div class="lead--info">
       <span>4.8 ★★★★★ (5,678 ratings)</span>
       <span>• 20,000 students enrolled</span>
-      <span>• Last updated: Jan 2025</span>
     </div>
+  </div>
+
+  <div class="btn">
+    <button class="btn btn-light fw-bold" (click)="previewPopup.openPopup(videoId)">Try now</button>
   </div>
 </div>
 
-<div class="container">
-  <div class="card course-card" style="width: 22rem;">
+<header>
+  <div class="banner col-8">
+    <div class="col-8">
+      <h1>{{ className }}</h1>
+      <p>{{ classDescription }}</p>
+      <div class="details">
+        <span>4.8 ★★★★★ (5,678 ratings)</span>
+        <span>• 20,000 students enrolled</span>
+        <span>• Last updated: Jan 2025</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card course-card">
     <img src="../../../assets/images/oopCard.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h6>Buy at 50% off</h6>
       <h4>₹5,590.00</h4>
   
-      <button type="submit" class="btn btn-light text-primary fw-bold w-100 mb-4">Book Now</button>
+      <button type="submit" class="btn btn-light fw-bold w-100 mb-4">Book Now</button>
       <h6 class="card-subtitle mb-2">This course includes: </h6>
       <ul>
-        <li class="card-text text-body-secondary"><i class="fa-solid fa-tv"></i>230+ Video Lessons</li>
-        <li class="card-text text-body-secondary"><i class="fa-solid fa-users"></i>250+ Students Enrolled</li>
-        <li class="card-text text-body-secondary"><i class="fa-solid fa-file-circle-question"></i>35+ Quizzes</li>
-        <li class="card-text text-body-secondary"><i class="fa-regular fa-file"></i>40+ Downloadable resources</li>
+        <li class="card-text text-body-secondary"><i class="fa-solid fa-tv"></i>{{classVideos}}+ Video Lessons</li>
+        <li class="card-text text-body-secondary"><i class="fa-solid fa-users"></i>{{classStudents}}+ Students Enrolled</li>
+        <li class="card-text text-body-secondary"><i class="fa-solid fa-file-circle-question"></i>{{classQuizzes}}+ Quizzes</li>
+        <li class="card-text text-body-secondary"><i class="fa-regular fa-file"></i>{{classPdfs}}+ Downloadable resources</li>
         <li class="card-text text-body-secondary"><i class="fa-brands fa-youtube"></i>Live Classes</li>
         <li class="card-text text-body-secondary"><i class="fa-solid fa-repeat"></i>Continuous Learning</li>
         <li class="card-text text-body-secondary"><i class="fa-solid fa-infinity"></i>Lifetime Access</li>
       </ul>
-      <a href="#" class="btn btn-primary w-100 fw-bold">Book Now</a>
+      <button class="btn btn-primary w-100 fw-bold" (click)="openPopup()">Book Now</button>
     </div>
   </div>
-  
+</header>
+
+<div class="container">
   <div class="bg-aqua p-4 col-8 course-details">
     <h2 class="text-center mb-5">Course Highlights</h2>
     <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -101,7 +158,7 @@
                 <div *ngFor="let chapter of chapters" class="chapter-details pb-3">
                   <h6 class="text-body-secondary"><i class="fa-solid fa-video px-2"></i>{{ chapter.chapterName }}</h6>
                   <div class="metadata">
-                    <span><button (click)="previewPopup.openPopup()">Preview</button>                    </span>
+                    <span><button (click)="openVideoPopup(chapter.videoId)">Preview</button></span>
                     <!-- <span><a href="" (click)="previewPopup.openPopup()">preview</a></span> -->
                     <span class="px-2">|</span>
                     <span>4.20 min</span>
@@ -115,7 +172,8 @@
     </div>
   </div>
   
-  <app-video-popup #previewPopup></app-video-popup>
+  <app-video-popup></app-video-popup>
+  <!-- <app-video-popup #previewPopup></app-video-popup> -->
 
   <div class="container py-4 mt-3">
       <h2 class="text-center mb-5">"Tailored Learning Experience Just for You"</h2>
