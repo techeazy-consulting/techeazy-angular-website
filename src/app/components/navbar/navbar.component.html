@@ -27,22 +27,25 @@
                 <!-- <li class="nav-item me-3">
                     <a class="nav-link" routerLink="/bootcamps">Bootcamps</a>
                 </li> -->
-                <li class="nav-item me-3">
+                <!-- <li class="nav-item me-3">
                     <a class="nav-link" routerLink="/blogs">Blogs</a>
-                </li>
-                <li class="nav-item dropdown me-3">
+                </li> -->
+                <!-- <li class="nav-item dropdown me-3">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Student Corner</a>
                     <ul class="dropdown-menu">
                         <li>
                             <a  class="dropdown-item" href="https://student.techeazyconsulting.com/">Login</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 <li class="nav-item me-3">
-                  <button class="btn btn-light fw-bold" routerLink="/blogs">Try for free</button>
+                  <button class="btn btn-light fw-bold" (click)="openVideoPopup('A4-yVIXvJQE')">Try for free</button>
               </li>
             </ul>
           </div>
         </div>
     </nav>
 </header>
+
+<app-video-popup></app-video-popup>
+

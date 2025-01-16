@@ -53,37 +53,33 @@
 <div class="popup-overlay" *ngIf="isPopupVisible">
   <div class="popup-content">
     <span (click)="closePopup()"><i class="fa-solid fa-xmark"></i></span>
-    <form id="book-free-class" action="/submit-form" method="post" class="rounded">
+    <form id="book-free-class" (ngSubmit)="onSubmit(expressInterestForm)" #expressInterestForm="ngForm" method="post" class="rounded">
       <h3 class="text-center">Book a Free Live Class</h3>
       <hr>
       <div class="mb-3">
         <label for="name" class="form-label">Full Name</label>
-        <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" [(ngModel)]="expressInterestData.studentName" required>
       </div>
-      
       <div class="mb-3">
         <label for="email" class="form-label">Email Address</label>
-        <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" [(ngModel)]="expressInterestData.email" required>
       </div>
       
       <div class="mb-3">
         <label for="phone" class="form-label">Phone Number</label>
-        <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
+        <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" [(ngModel)]="expressInterestData.mobile" required>
       </div>
       
       <div class="mb-3">
         <label for="course" class="form-label">Select Course</label>
-        <select id="course" name="course" class="form-select" required>
+        <select id="course" name="course" class="form-select" [(ngModel)]="expressInterestData.classId" required>
           <option value="" disabled selected>Select a course</option>
-          <option value="java">Java Full Course</option>
-          <option value="python">Python Programming</option>
-          <option value="webdev">Web Development</option>
-          <option value="datasci">Data Science</option>
+          <option value="{{classId}}">{{className}}</option>
         </select>
       </div>
       
       <div class="text-center">
-        <button type="submit" class="btn btn-light text-primary fw-bold w-100">Book Now</button>
+        <button type="submit" class="btn btn-light fw-bold w-100">Express Interest</button>
       </div>
     </form> 
   </div>             
@@ -94,14 +90,14 @@
     <div class="lead--title">
       <h5>{{ className }}</h5>
     </div>
-    <div class="lead--info">
+    <!-- <div class="lead--info">
       <span>4.8 ★★★★★ (5,678 ratings)</span>
       <span>• 20,000 students enrolled</span>
-    </div>
+    </div> -->
   </div>
 
   <div class="btn">
-    <button class="btn btn-light fw-bold" (click)="previewPopup.openPopup(videoId)">Try now</button>
+    <button class="btn btn-light fw-bold" (click)="previewPopup.openPopup('A4-yVIXvJQE')">Try now</button>
   </div>
 </div>
 
@@ -110,19 +106,19 @@
     <div class="col-8">
       <h1>{{ className }}</h1>
       <p>{{ classDescription }}</p>
-      <div class="details">
+      <!-- <div class="details">
         <span>4.8 ★★★★★ (5,678 ratings)</span>
         <span>• 20,000 students enrolled</span>
         <span>• Last updated: Jan 2025</span>
-      </div>
+      </div> -->
     </div>
   </div>
 
   <div class="card course-card">
     <img src="../../../assets/images/oopCard.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h6>Buy at 50% off</h6>
-      <h4>₹5,590.00</h4>
+      <h6>Buy at {{discount}}% off</h6>
+      <h4>₹{{price}}.00</h4>
   
       <button type="submit" class="btn btn-light fw-bold w-100 mb-4">Book Now</button>
       <h6 class="card-subtitle mb-2">This course includes: </h6>
@@ -135,7 +131,7 @@
         <li class="card-text text-body-secondary"><i class="fa-solid fa-repeat"></i>Continuous Learning</li>
         <li class="card-text text-body-secondary"><i class="fa-solid fa-infinity"></i>Lifetime Access</li>
       </ul>
-      <button class="btn btn-primary w-100 fw-bold" (click)="openPopup()">Book Now</button>
+      <button class="btn btn-primary w-100 fw-bold" (click)="openPopup()">Express Interest</button>
     </div>
   </div>
 </header>

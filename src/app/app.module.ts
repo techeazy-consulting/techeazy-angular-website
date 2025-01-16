@@ -14,6 +14,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { VideoPopupComponent } from './components/video-popup/video-popup.component';
+import { FormsModule } from '@angular/forms';
+import { ExpressInterestComponent } from './components/express-interest/express-interest.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,15 @@ import { VideoPopupComponent } from './components/video-popup/video-popup.compon
     FooterComponent,
     HomePageComponent,
     NavbarComponent,
-    VideoPopupComponent
+    VideoPopupComponent,
+    ExpressInterestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

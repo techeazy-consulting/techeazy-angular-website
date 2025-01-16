@@ -2,6 +2,7 @@ import { Component, HostListener, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 import { VideoPopupComponent } from '../video-popup/video-popup.component';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-courses',
@@ -17,6 +18,8 @@ export class CoursesComponent {
   classStudents: string = '';
   classQuizzes: string = '';
   classPdfs: string = '';
+  price: string = '';
+  discount: string = '';
   subjects: any[] = [];
   subjectId: string = '';
   chapters: any[] = [];
@@ -54,6 +57,8 @@ export class CoursesComponent {
         this.classStudents = data.noOfStudents;
         this.classQuizzes = data.noOfQuizzes;
         this.classPdfs = data.noOfPdfs;
+        this.price = data.price;
+        this.discount = data.discount;
 
         this.loadSubjectsByClass();
       },
@@ -104,6 +109,7 @@ export class CoursesComponent {
     )
   }
 
+  // Logic for the slider menu
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
     this.checkScrollPosition();
@@ -111,7 +117,6 @@ export class CoursesComponent {
 
   private checkScrollPosition(): void {
     this.showSliderMenu = window.scrollY > 0;
-    // this.showSliderMenu = !this.showSliderMenu
   }
 
   openPopup() {
@@ -122,11 +127,40 @@ export class CoursesComponent {
     this.isPopupVisible = false;
   }
 
+  // Adding annotation to communicate with the Child component
   @ViewChild(VideoPopupComponent) previewPopup!: VideoPopupComponent;
-
-  // Rest of your code...
 
   openVideoPopup(videoId: string) {
     this.previewPopup.openPopup(videoId);
   }
+
+
+  // Adding form data to the API
+  expressInterestData = {
+    studentName: '',
+    email: '',
+    mobile: '',
+    classId: ''
+  };
+
+  onSubmit(form: NgForm) {
+    const { studentName, email, mobile, classId } = this.expressInterestData;
+
+    if (form.valid) {
+      this.authService.addExpressInterest(this.expressInterestData).subscribe(
+        (res) => {
+          console.log(res);
+          alert("Form Submitted Sucessfully ! ");
+          form.reset();
+        },
+        (error) => {
+          console.error('Error submitting form', error);
+          alert('Failed to submit form. Please try again.');
+        }
+      );
+    } else {
+      alert('Please fill out all required fields.');
+    }
+  }
+
 }

@@ -1,14 +1,14 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  // private apiUrl = 'https://api.techeazyconsulting.com/dms/api'
-  private apiUrl = 'http://localhost:8080/dms/api';
+  private apiUrl = 'https://api.techeazyconsulting.com/dms/api'
+  // private apiUrl = 'http://localhost:8080/dms/api';
 
   constructor(private http: HttpClient) {}
 
@@ -26,5 +26,16 @@ export class AuthService {
 
   getChaptersByClassAndSubject(classId: string, subjectId: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/chapters/by-class&Subject/${classId}/${subjectId}`);
+  }
+  
+  addExpressInterest(expressInterestData:any) {
+    return this.http.post<any>(`${this.apiUrl}/expressInterest`, expressInterestData)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    return throwError(error.message || 'Server Error');
   }
 }

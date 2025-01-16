@@ -5,7 +5,8 @@ section {
     border-radius: 8px;
     box-shadow: 0 0 4px #b2b2b2;
     margin: 20px auto;
-    max-width: 1200px;
+    max-width: 1360px;
+    /* max-width: 1200px; */
 }
 
 /* Image Styling */
