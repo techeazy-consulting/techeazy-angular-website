@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
-import { CoursesComponent } from '../courses/courses.component';
-import { VideoPopupComponent } from '../video-popup/video-popup.component';
+import { ExpressInterestComponent } from '../express-interest/express-interest.component';
 
 @Component({
   selector: 'app-navbar',
@@ -34,17 +33,11 @@ export class NavbarComponent implements OnInit{
     this.router.navigate(['/class-detail', classItem.id])
   }
 
-  // @ViewChild(CoursesComponent) formPopup!: CoursesComponent
-
-  // openFormPopup(){
-  //   this.formPopup.openPopup();
-  // }
-
   // Adding annotation to communicate with the Child component
-  @ViewChild(VideoPopupComponent) previewPopup!: VideoPopupComponent;
+  @ViewChild(ExpressInterestComponent) formPopup!: ExpressInterestComponent;
   
-  openVideoPopup(videoId: string) {
-    this.previewPopup.openPopup(videoId);
+  openFormPopup() {
+    this.formPopup.openPopup();
   }
   
 }

@@ -117,7 +117,11 @@ form h3 {
 .course-card .btn-light{
     border: 2px solid #0d6efd;
     color: #0d6efd;
-    transition: all 0.5s ease;
+    /* transition: all 0.5s ease; */
+}
+
+.course-card .btn-primary{
+    border: 2px solid #0d6efd;
 }
 
 .course-card ul li{
@@ -162,6 +166,11 @@ form h3 {
     transition: all 0.3s ease;
 }
 
+.slider-menu--slider-menu-container button{
+    outline: none;
+    border: none;
+}
+
 .lead--lead {
     display: block;
     margin-right: 1.6rem;
@@ -183,7 +192,7 @@ form h3 {
     line-height: 1.4rem;
 }
 
-.popup-overlay {
+/* .popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -202,7 +211,7 @@ form h3 {
     border-radius: 8px;
     text-align: center;
     z-index: 1000;
-    /* width: 90%; */
+    width: 90%;
     max-width: 600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -211,12 +220,12 @@ form h3 {
     display: block;
     padding-bottom: 8px;
     justify-self: end;
-}
+} */
 
 .course-card .btn-light:hover{
     background-color: #0d6efd;
     color: #fff;
-    border: none;
+    border: 2px solid #fff;
 }
 
 .course-card .btn-primary:hover{
@@ -238,6 +247,15 @@ form h3 {
     background-color: #fff;
     color: #0d6efd;
     border: 2px solid #0d6efd;
+}
+
+.courses ul li{
+    line-height: 15px;
+    cursor: pointer;
+}
+
+.courses ul li:hover{
+    background-color: #0d6efd;
 }
 
 /* Mobile Responsiveness */

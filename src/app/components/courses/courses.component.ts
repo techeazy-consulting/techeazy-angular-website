@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 import { VideoPopupComponent } from '../video-popup/video-popup.component';
 import { NgForm } from '@angular/forms';
+import { ExpressInterestComponent } from '../express-interest/express-interest.component';
 
 @Component({
   selector: 'app-courses',
@@ -119,13 +120,13 @@ export class CoursesComponent {
     this.showSliderMenu = window.scrollY > 0;
   }
 
-  openPopup() {
-    this.isPopupVisible = true;
-  }
+  // openPopup() {
+  //   this.isPopupVisible = true;
+  // }
 
-  closePopup() {
-    this.isPopupVisible = false;
-  }
+  // closePopup() {
+  //   this.isPopupVisible = false;
+  // }
 
   // Adding annotation to communicate with the Child component
   @ViewChild(VideoPopupComponent) previewPopup!: VideoPopupComponent;
@@ -134,33 +135,38 @@ export class CoursesComponent {
     this.previewPopup.openPopup(videoId);
   }
 
+  @ViewChild(ExpressInterestComponent) formPopup!: ExpressInterestComponent;
+
+  openFormPopup() {
+    this.formPopup.openPopup();
+  }
 
   // Adding form data to the API
-  expressInterestData = {
-    studentName: '',
-    email: '',
-    mobile: '',
-    classId: ''
-  };
+  // expressInterestData = {
+  //   studentName: '',
+  //   email: '',
+  //   mobile: '',
+  //   classId: ''
+  // };
 
-  onSubmit(form: NgForm) {
-    const { studentName, email, mobile, classId } = this.expressInterestData;
+  // onSubmit(form: NgForm) {
+  //   const { studentName, email, mobile, classId } = this.expressInterestData;
 
-    if (form.valid) {
-      this.authService.addExpressInterest(this.expressInterestData).subscribe(
-        (res) => {
-          console.log(res);
-          alert("Form Submitted Sucessfully ! ");
-          form.reset();
-        },
-        (error) => {
-          console.error('Error submitting form', error);
-          alert('Failed to submit form. Please try again.');
-        }
-      );
-    } else {
-      alert('Please fill out all required fields.');
-    }
-  }
+  //   if (form.valid) {
+  //     this.authService.addExpressInterest(this.expressInterestData).subscribe(
+  //       (res) => {
+  //         console.log(res);
+  //         alert("Form Submitted Sucessfully ! ");
+  //         form.reset();
+  //       },
+  //       (error) => {
+  //         console.error('Error submitting form', error);
+  //         alert('Failed to submit form. Please try again.');
+  //       }
+  //     );
+  //   } else {
+  //     alert('Please fill out all required fields.');
+  //   }
+  // }
 
 }

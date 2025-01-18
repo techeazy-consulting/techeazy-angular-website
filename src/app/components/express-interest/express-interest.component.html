@@ -1,0 +1,145 @@
+<!-- <div class="popup-overlay" *ngIf="isPopupVisible">
+    <div class="popup-content">
+      <span (click)="closePopup()"><i class="fa-solid fa-xmark"></i></span>
+      <form id="book-free-class" (ngSubmit)="onSubmit(expressInterestForm)" #expressInterestForm="ngForm" method="post" class="rounded">
+        <h3 class="text-center">Book a Free Live Class</h3>
+        <hr>
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" [(ngModel)]="expressInterestData.studentName" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" [(ngModel)]="expressInterestData.email" required>
+        </div>
+        
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" [(ngModel)]="expressInterestData.mobile" required>
+        </div>
+        
+        <div class="mb-3">
+          <label for="course" class="form-label">Select Course</label>
+          <select id="course" name="course" class="form-select" [(ngModel)]="expressInterestData.classId" required>
+            <option value="" disabled selected>Select a course</option>
+            <option value="{{classId}}">{{className}}</option>
+          </select>
+        </div>
+        
+        <div class="text-center">
+          <button type="submit" class="btn btn-light fw-bold w-100">Express Interest</button>
+        </div>
+      </form> 
+    </div>             
+</div> -->
+
+<div class="popup-overlay" *ngIf="isPopupVisible">
+  <div class="popup-content">
+    <span (click)="closePopup()"><i class="fa-solid fa-xmark"></i></span>
+    <form
+      id="book-free-class"
+      (ngSubmit)="onSubmit(expressInterestForm)"
+      #expressInterestForm="ngForm"
+      method="post"
+      class="rounded"
+    >
+      <h3 class="text-center">Book a Free Live Class</h3>
+      <hr>
+      <!-- Full Name -->
+      <div class="mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="form-control"
+          placeholder="Enter your full name"
+          [(ngModel)]="expressInterestData.studentName"
+          #name="ngModel"
+          required
+        />
+        <!-- Inline Error -->
+        <div *ngIf="name.touched && name.invalid" class="text-danger">
+          <small *ngIf="name.errors?.['required']">Full Name is required.</small>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control"
+          placeholder="Enter your email"
+          [(ngModel)]="expressInterestData.email"
+          #email="ngModel"
+          required
+          email
+        />
+        <!-- Inline Error -->
+        <div *ngIf="email.touched && email.invalid" class="text-danger">
+          <small *ngIf="email.errors?.['required']">Email is required.</small>
+          <small *ngIf="email.errors?.['email']">Invalid email format.</small>
+        </div>
+      </div>
+
+      <!-- Phone Number -->
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          class="form-control"
+          placeholder="Enter your phone number"
+          [(ngModel)]="expressInterestData.mobile"
+          #phone="ngModel"
+          required
+          pattern="^[0-9]{10}$"
+        />
+        <!-- Inline Error -->
+        <div *ngIf="phone.touched && phone.invalid" class="text-danger">
+          <small *ngIf="phone.errors?.['required']">Phone Number is required.</small>
+          <small *ngIf="phone.errors?.['pattern']"
+            >Phone Number must be 10 digits.</small
+          >
+        </div>
+      </div>
+
+      <!-- Course -->
+      <div class="mb-3">
+        <label for="course" class="form-label">Select Course</label>
+        <select
+          id="course"
+          name="course"
+          class="form-select"
+          [(ngModel)]="expressInterestData.classId"
+          #course="ngModel"
+          required
+        >
+          <option value="" disabled selected>Select a course</option>
+          <option *ngFor="let classItem of classes" [value]="classItem.id">
+            {{ classItem.className }}
+          </option>
+        </select>
+        <!-- Inline Error -->
+        <div *ngIf="course.touched && course.invalid" class="text-danger">
+          <small *ngIf="course.errors?.['required']">Please select a course.</small>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button
+          type="submit"
+          class="btn btn-light fw-bold w-100"
+          [disabled]="!expressInterestForm.valid"
+        >
+          Express Interest
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -7,8 +7,8 @@ import { catchError, Observable, throwError } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'https://api.techeazyconsulting.com/dms/api'
-  // private apiUrl = 'http://localhost:8080/dms/api';
+  // private apiUrl = 'https://api.techeazyconsulting.com/dms/api'
+  private apiUrl = 'http://localhost:8080/dms/api';
 
   constructor(private http: HttpClient) {}
 
