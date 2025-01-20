@@ -6,8 +6,9 @@ import { BlogsComponent } from './components/blogs/blogs.component';
 import { CoursesComponent } from './components/courses/courses.component';
 
 const routes: Routes = [
-  { path: '', redirectTo:'/home', pathMatch:'full' },
-  { path:'home', component: HomePageComponent },
+  // { path: '', redirectTo:'/home', pathMatch:'full' },
+  // { path:'home', component: HomePageComponent },
+  { path:'', component: HomePageComponent },
   { path:'blogs', component: BlogsComponent },
   { path:'bootcamps', component: BootcampsPageComponent },
   { path: 'class-detail/:id', component: CoursesComponent },
