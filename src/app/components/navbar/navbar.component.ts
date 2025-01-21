@@ -21,13 +21,43 @@ export class NavbarComponent implements OnInit{
   fetchClasses(): void {
     this.auth.getClasses().subscribe(
       (data) => {
-        this.classList = data;
+        // Filter the data to include only classes with the specified tenantEntityId and tenantId
+        this.classList = data.filter(
+          (item: any) =>
+            item.tenantEntityId === 'dms' && item.tenantId === 'tech_eazy'
+        );
       },
       (error) => {
         console.error('Error fetching classes:', error);
       }
     );
   }
+  
+  // fetchClasses(): void {
+  //   this.auth.getClasses().subscribe(
+  //     (data) => {
+  //       debugger;
+  //       this.classList = data.filter(
+  //         (item: any) => {
+  //           item.tenantEntityId === 'dms' && item.tenantId === 'tech_eazy'
+  //         }
+  //       );
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching classes:', error);
+  //     }
+  //   );
+  // }
+  // fetchClasses(): void {
+  //   this.auth.getClasses().subscribe(
+  //     (data) => {
+  //       this.classList = data;
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching classes:', error);
+  //     }
+  //   );
+  // }
 
   goToCourses(classItem: any): void{
     this.router.navigate(['/class-detail', classItem.id])

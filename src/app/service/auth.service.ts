@@ -7,17 +7,17 @@ import { catchError, Observable, throwError } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'https://api.techeazyconsulting.com/dms/api'
-  // private apiUrl = 'http://localhost:8080/dms/api';
+  // private apiUrl = 'https://api.techeazyconsulting.com/dms/api'
+  private apiUrl = 'http://localhost:8080/dms/api';
 
   constructor(private http: HttpClient) {}
 
   getClasses(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/classes`);
+    return this.http.get<any>(`${this.apiUrl}/classes/techeazy`);
   }
 
   getClassDetails(id: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/classes/${id}`);
+    return this.http.get<any>(`${this.apiUrl}/classes/techeazy/${id}`);
   }
 
   getSubjectsByClass(classId: string): Observable<any> {
