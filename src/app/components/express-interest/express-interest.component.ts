@@ -67,8 +67,6 @@ export class ExpressInterestComponent implements OnInit{
           // alert('Failed to submit form. Please try again.');
         }
       );
-    } else {
-      // alert('Please fill out all required fields.');
     }
   }
   

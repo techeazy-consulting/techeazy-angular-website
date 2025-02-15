@@ -1,38 +1,3 @@
-<!-- <div class="popup-overlay" *ngIf="isPopupVisible">
-    <div class="popup-content">
-      <span (click)="closePopup()"><i class="fa-solid fa-xmark"></i></span>
-      <form id="book-free-class" (ngSubmit)="onSubmit(expressInterestForm)" #expressInterestForm="ngForm" method="post" class="rounded">
-        <h3 class="text-center">Book a Free Live Class</h3>
-        <hr>
-        <div class="mb-3">
-          <label for="name" class="form-label">Full Name</label>
-          <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" [(ngModel)]="expressInterestData.studentName" required>
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email Address</label>
-          <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" [(ngModel)]="expressInterestData.email" required>
-        </div>
-        
-        <div class="mb-3">
-          <label for="phone" class="form-label">Phone Number</label>
-          <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" [(ngModel)]="expressInterestData.mobile" required>
-        </div>
-        
-        <div class="mb-3">
-          <label for="course" class="form-label">Select Course</label>
-          <select id="course" name="course" class="form-select" [(ngModel)]="expressInterestData.classId" required>
-            <option value="" disabled selected>Select a course</option>
-            <option value="{{classId}}">{{className}}</option>
-          </select>
-        </div>
-        
-        <div class="text-center">
-          <button type="submit" class="btn btn-light fw-bold w-100">Express Interest</button>
-        </div>
-      </form> 
-    </div>             
-</div> -->
-
 <div class="popup-overlay" *ngIf="isPopupVisible">
   <div class="popup-content">
     <span (click)="closePopup()"><i class="fa-solid fa-xmark"></i></span>
@@ -120,7 +85,7 @@
           required
         >
           <option value="" disabled selected>Select a course</option>
-          <option *ngFor="let classItem of classes" [value]="classItem.id">
+          <option *ngFor="let classItem of classes" [value]="classItem.classId">
             {{ classItem.className }}
           </option>
         </select>

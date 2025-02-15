@@ -1,35 +1,39 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
+import { env } from '../../environment/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  // private apiUrl = 'https://api.techeazyconsulting.com/dms/api'
-  private apiUrl = 'http://localhost:8080/dms/api';
+  private BASE_URL: string | undefined;
 
-  constructor(private http: HttpClient) {}
+  // private BASE_URL = 'http://localhost:8080/dms/api';
+
+  constructor(private http: HttpClient) {
+    this.BASE_URL = env.domain;
+  }
 
   getClasses(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/classes/techeazy`);
+    return this.http.get<any>(`${this.BASE_URL}/classes/techeazy`);
   }
 
   getClassDetails(id: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/classes/techeazy/${id}`);
+    return this.http.get<any>(`${this.BASE_URL}/classes/techeazy/${id}`);
   }
 
   getSubjectsByClass(classId: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/subjects/by-class/${classId}`);
+    return this.http.get<any>(`${this.BASE_URL}/subjects/by-class/${classId}`);
   }
 
   getChaptersByClassAndSubject(classId: string, subjectId: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/chapters/by-class&Subject/${classId}/${subjectId}`);
+    return this.http.get<any>(`${this.BASE_URL}/chapters/by-class&Subject/${classId}/${subjectId}`);
   }
   
   addExpressInterest(expressInterestData:any) {
-    return this.http.post<any>(`${this.apiUrl}/expressInterest`, expressInterestData)
+    return this.http.post<any>(`${this.BASE_URL}/expressInterest`, expressInterestData)
     .pipe(
       catchError(this.handleError)
     );

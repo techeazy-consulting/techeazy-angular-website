@@ -2,7 +2,6 @@ import { Component, HostListener, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 import { VideoPopupComponent } from '../video-popup/video-popup.component';
-import { NgForm } from '@angular/forms';
 import { ExpressInterestComponent } from '../express-interest/express-interest.component';
 
 @Component({
@@ -101,8 +100,15 @@ export class CoursesComponent {
 
   loadClasses(){
     this.authService.getClasses().subscribe(
+      // (data) => {
+      //   this.classes = data;
+      // },
       (data) => {
-        this.classes = data;
+        // Filter the data to include only classes with the specified tenantEntityId and tenantId
+        this.classes = data.filter(
+          (item: any) =>
+            item.tenantEntityId === 'dms' && item.tenantId === 'tech_eazy'
+        );
       },
       (error) => {
         console.error('Error fetching classes', error);
@@ -120,14 +126,6 @@ export class CoursesComponent {
     this.showSliderMenu = window.scrollY > 0;
   }
 
-  // openPopup() {
-  //   this.isPopupVisible = true;
-  // }
-
-  // closePopup() {
-  //   this.isPopupVisible = false;
-  // }
-
   // Adding annotation to communicate with the Child component
   @ViewChild(VideoPopupComponent) previewPopup!: VideoPopupComponent;
 
@@ -140,33 +138,5 @@ export class CoursesComponent {
   openFormPopup() {
     this.formPopup.openPopup();
   }
-
-  // Adding form data to the API
-  // expressInterestData = {
-  //   studentName: '',
-  //   email: '',
-  //   mobile: '',
-  //   classId: ''
-  // };
-
-  // onSubmit(form: NgForm) {
-  //   const { studentName, email, mobile, classId } = this.expressInterestData;
-
-  //   if (form.valid) {
-  //     this.authService.addExpressInterest(this.expressInterestData).subscribe(
-  //       (res) => {
-  //         console.log(res);
-  //         alert("Form Submitted Sucessfully ! ");
-  //         form.reset();
-  //       },
-  //       (error) => {
-  //         console.error('Error submitting form', error);
-  //         alert('Failed to submit form. Please try again.');
-  //       }
-  //     );
-  //   } else {
-  //     alert('Please fill out all required fields.');
-  //   }
-  // }
 
 }
