@@ -169,6 +169,10 @@ form h3 {
     margin-bottom: 0.4rem;
 }
 
+.lead--title h5 {
+    margin-top: 12px;
+}
+
 .lead--info--k4fK9 {
     display: flex;
     line-height: 1.4rem;
@@ -311,6 +315,11 @@ form h3 {
     .course-details{
         width: 100%;
         /* margin: 5% auto; */
+    }
+
+    .lead--title h5 {
+        font-size: 15px;
+        margin-top: 12px;
     }
 
 }
