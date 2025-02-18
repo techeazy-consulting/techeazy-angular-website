@@ -17,10 +17,12 @@ export class AuthService {
   }
 
   getClasses(): Observable<any> {
+    // return this.http.get<any>(`${this.BASE_URL}/classes`);
     return this.http.get<any>(`${this.BASE_URL}/classes/techeazy`);
   }
 
   getClassDetails(id: string): Observable<any> {
+    // return this.http.get<any>(`${this.BASE_URL}/classes/${id}`);
     return this.http.get<any>(`${this.BASE_URL}/classes/techeazy/${id}`);
   }
 

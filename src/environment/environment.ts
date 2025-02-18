@@ -1,3 +1,3 @@
 export const env = {
-    domain: 'http://localhost:8080/'
+    domain: 'https://prod.techeazyconsulting.com'
 }
