@@ -66,7 +66,12 @@
             <div class="accordion-body">
               <div class="chapters">
                 <div *ngFor="let chapter of chapters" class="chapter-details pb-3">
-                  <h6 class="text-body-secondary"><i class="fa-solid fa-video px-2"></i>{{ chapter.chapterName }}</h6>
+                  <h6 class="text-body-secondary">
+                    <i class="fa-solid px-2" [ngClass]="chapter?.videoId?.trim() ? 'fa-video' : 'fa-location-arrow'"></i>
+                    {{ chapter.chapterName }}
+                  </h6>
+                  
+                  <!-- <i class="fa-solid fa-location-arrow fa-rotate-by fa-2xs" style="--fa-rotate-angle: 40deg;"></i> -->
                   <div class="metadata" *ngIf="chapter?.videoId?.trim()">
                     <span><button (click)="openVideoPopup(chapter.videoId)">Preview</button></span>
                     <!-- <span><a href="" (click)="previewPopup.openPopup()">preview</a></span> -->
