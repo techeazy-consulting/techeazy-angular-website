@@ -100,16 +100,16 @@ export class CoursesComponent {
 
   loadClasses(){
     this.authService.getClasses().subscribe(
-      // (data) => {
-      //   this.classes = data;
-      // },
       (data) => {
-        // Filter the data to include only classes with the specified tenantEntityId and tenantId
-        this.classes = data.filter(
-          (item: any) =>
-            item.tenantEntityId === 'dms' && item.tenantId === 'tech_eazy'
-        );
+        this.classes = data;
       },
+      // (data) => {
+      //   // Filter the data to include only classes with the specified tenantEntityId and tenantId
+      //   this.classes = data.filter(
+      //     (item: any) =>
+      //       item.tenantEntityId === 'dms' && item.tenantId === 'tech_eazy'
+      //   );
+      // },
       (error) => {
         console.error('Error fetching classes', error);
       }

@@ -13,9 +13,12 @@
                     <a class="nav-link" routerLink="">Home</a>
                 </li>
                 <li class="nav-item dropdown me-3">
-                    <a class="nav-link dropdown-toggle" routerLink="/courses" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Courses
                     </a>
+                    <!-- <a class="nav-link dropdown-toggle" routerLink="/courses" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Courses
+                    </a> -->
                     <ul class="dropdown-menu">
                       <li *ngFor="let classItem of classList">
                         <a class="dropdown-item" [routerLink]="['/class-detail', classItem.id]">
