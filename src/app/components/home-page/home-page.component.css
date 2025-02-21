@@ -17,6 +17,10 @@
     text-align: center;
 }
 
+.carousel-caption h6 {
+    cursor: pointer;
+}
+
 .row {
     gap: 40px;
     color: #fff;

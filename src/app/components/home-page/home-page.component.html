@@ -26,7 +26,7 @@
     <div class="carousel-caption d-md-block bg-dark bg-opacity-50 text-center">
         <h4 class="bg-light text-dark bg-opacity-50">Interview Driven Internships</h4>
         <hr>
-        <h6>Join Free Demo Classes</h6>
+        <h6 (click)="formPopup.openPopup()">Join Free Demo Classes</h6>
         <p>Upskill yourself with TechEazy and get Interview ready.</p>
     </div>
 </div>
@@ -165,9 +165,11 @@
   </div>
 </div>
 
-<app-best-courses></app-best-courses>
+<!-- <app-best-courses></app-best-courses> -->
 
 <div class="explore-box">
     <img src="../../../assets/images/home-banner.png" alt="">
     <!-- <button class="btn btn-primary">Explore Now</button> -->
 </div>
+
+<app-express-interest></app-express-interest>
