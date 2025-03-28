@@ -1,0 +1,199 @@
+  <div class="container my-5">
+    <!-- Pricing Section -->
+    <div class="row align-items-center text-center">
+      <div class="col-md-4 text-start">
+        <h2 class="text-primary">Marketing Platform</h2>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-primary shadow-sm">
+          <div class="card-header">
+            <h5 class="mb-0">Free</h5>
+          </div>
+          <div class="card-body">
+            <h6 class="text-primary">$0 / month</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-primary shadow-sm">
+          <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Starter</h5>
+          </div>
+          <div class="card-body">
+            <h6 class="text-primary">$25 / month</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="content-type-box border rounded shadow-sm p-3 mt-4">
+        <h5 class="fw-bold text-start mb-0">Campaigns</h5>
+      </div>
+  
+      <br>
+
+
+    
+      <div class="container">
+        <div class="row mt-3 features-container">
+        <!-- <div class="row mt-3"> -->
+          <!-- Features List Card -->
+          <div class="col-md-4">
+            <div class="card border rounded shadow-sm p-3">
+              <h5 class="card-header fw-bold text-center text-primary">Feature</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"
+                    [ngClass]="{'ideal-for-content': feature.name === 'Ideal For' || feature.name === 'Objective'}"
+                    *ngFor="let feature of features">
+                <strong>{{ feature.name }}</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+      
+          <!-- Unpaid Internship Card -->
+          <div class="col-md-4">
+            <div class="card border rounded shadow-sm p-3">
+              <h5 class="card-header fw-bold text-center text-primary">Unpaid Internship</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item" 
+                    [ngClass]="{'ideal-for-content': feature.name === 'Ideal For' || feature.name === 'Objective'}"
+                    *ngFor="let feature of features">
+                    <span *ngIf="isBoolean(feature.unpaid)">
+                        <span *ngIf="feature.unpaid" class="text-success fw-bold">✔</span>
+                        <span *ngIf="!feature.unpaid" class="text-danger fw-bold">✖</span>
+                      </span>
+          
+                      <!-- Show text if the value is not boolean -->
+                      <span *ngIf="!isBoolean(feature.unpaid)">
+                        {{ feature.unpaid }}
+                      </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+      
+          <!-- Interview Preparations & Internship Card -->
+          <div class="col-md-4">
+            <div class="card border rounded shadow-sm p-3">
+              <h5 class="card-header fw-bold text-center text-primary">Interview Prep & Internship</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item feature-item" 
+                    [ngClass]="{'ideal-for-content': feature.name === 'Ideal For' || feature.name === 'Objective'}"
+                    *ngFor="let feature of features">
+                    <span *ngIf="isBoolean(feature.interview)">
+                        <span *ngIf="feature.interview" class="text-success fw-bold">✔</span>
+                        <span *ngIf="!feature.interview" class="text-danger fw-bold">✖</span>
+                      </span>
+                      <span *ngIf="!isBoolean(feature.interview)">
+                        {{ feature.interview }}
+                      </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+  
+
+  <!-- <div class="container my-5">
+    <div class="feature-box border rounded shadow-sm p-3">
+      <h4 class="fw-bold text-start mb-0">Features</h4>
+    </div>
+  
+    <div class="table-responsive mt-3">
+      <table class="table text-center align-middle border">
+        <thead class="table-primary">
+          <tr>
+            <th class="text-start">Feature</th>
+            <th>Unpaid Internship</th>
+            <th>Interview Preparations & Internship</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-start fw-bold">Objective</td>
+            <td>Get your hands dirty on Live project and test your preparations</td>
+            <td>Comprehensive interview preparation with real-world projects</td>
+          </tr>
+          <tr>
+            <td class="text-start fw-bold">Ideal For</td>
+            <td>Freshers hunting for JOB<br>Java & Spring knowledge but lacks hands-on experience<br>Quick real-world internship to boost resume</td>
+            <td>College Students<br>Freshers hunting for JOB<br>Beginners or career switchers with no Java/Spring knowledge<br>Utilize gap after college to gain experience</td>
+          </tr>
+          <tr>
+            <td class="text-start fw-bold">Prerequisite</td>
+            <td>MUST have knowledge of Spring/Java</td>
+            <td>None, We will provide training from scratch</td>
+          </tr>
+          <tr>
+            <td class="text-start fw-bold">Selection</td>
+            <td>Based on project submission and 1 interview call</td>
+            <td>None</td>
+          </tr>
+          <tr>
+            <td class="text-start fw-bold">Duration</td>
+            <td>1 month</td>
+            <td>2-6 months</td>
+          </tr>
+          <tr>
+            <td class="text-start fw-bold">Charges</td>
+            <td>Free</td>
+            <td>1st Month is Free</td>
+          </tr>
+          <tr>
+            <td class="text-start fw-bold">Payment Schedule</td>
+            <td>None</td>
+            <td>Starts from beginning of 2nd Month</td>
+          </tr>
+          <tr>
+            <td class="text-start fw-bold">Live Projects</td>
+            <td>✅</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td class="text-start fw-bold">Scrum call</td>
+            <td>✅ 2 Per week</td>
+            <td>✅ 3 days Per week</td>
+          </tr>
+          <tr>
+            <td class="text-start fw-bold">Interview Tips</td>
+            <td>✅</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td class="text-start fw-bold">Weekly Connect</td>
+            <td>2 days - Scrum Calls</td>
+            <td>5 days - 2 Scrum Calls + 3 Training Sessions</td>
+          </tr>
+          <tr>
+            <td class="text-start fw-bold">Training</td>
+            <td>❌</td>
+            <td>✅ 3 days</td>
+          </tr>
+          <tr>
+            <td class="text-start fw-bold">DS and Algo</td>
+            <td>❌</td>
+            <td>✅ Weekly session</td>
+          </tr>
+          <tr>
+            <td class="text-start fw-bold">Mock Interview</td>
+            <td>❌</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td class="text-start fw-bold">Group Discussions</td>
+            <td>❌</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td class="text-start fw-bold">System Design</td>
+            <td>❌</td>
+            <td>✅</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> -->
+  

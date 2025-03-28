@@ -1,0 +1,117 @@
+.bootcamp-banner img {
+    width: 100%;
+    height: 15rem;
+  }
+  
+  .bootcamp-banner .row {
+    margin-right: 0;
+    margin-top: -13rem;
+  }
+  
+  .row .h2 {
+    opacity: 0;
+    margin-top: -5rem;
+  }
+  
+  .row p {
+    margin-top: 1rem;
+  }
+  
+  .text-secondary {
+      color: rgb(87 97 98) !important;
+  }
+
+  .pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+  }
+
+  .pricing-card {
+    width: 400px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 2px solid;
+  }
+
+  .signup-btn:hover::after {
+    content: ' →';
+    transition: all 0.3s ease-in-out;
+  }
+
+  .card-body ul li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 30px;
+  }
+
+  @media (max-width: 1200px) {
+    .bootcamp-banner .row {
+      margin-top: -12rem;
+    }
+  }
+  
+  /* For medium screens (577px to 768px) */
+  @media (max-width: 768px) {
+    .container {
+      width: 100%;
+      max-width: 100%;
+      margin-top: -13rem;
+    }
+  
+    .row h2 {
+      font-size: 22px;
+    }
+
+    .row p {
+        margin-top: -1.5rem;
+    }
+  
+    .bootcamp-banner .row {
+      margin-top: -8rem;
+      gap: 40px;
+    }
+
+    .pricing-card {
+      width: 400px;
+    }
+
+    .card-body ul li {
+      line-height: 20px;
+    }
+  
+    .pricing-container {
+      margin-top: 1rem;
+    }
+  }
+  
+  /* For small screens (up to 576px) */
+  @media (max-width: 576px) {
+    .bootcamp-banner .row {
+      margin-top: -3rem;
+    }
+    .banner-boot {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .row p {
+      margin-top: -2rem;
+    }
+    .pricing-container {
+      margin-top: -2rem;
+    }
+  }
+  
+  /* For very small screens (up to 350px) */
+  @media (max-width: 350px) {
+    .bootcamp-banner .row {
+      margin-top: -3rem;
+    }
+  }
+  

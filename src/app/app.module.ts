@@ -16,6 +16,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { VideoPopupComponent } from './components/video-popup/video-popup.component';
 import { FormsModule } from '@angular/forms';
 import { ExpressInterestComponent } from './components/express-interest/express-interest.component';
+import { RegisterComponent } from './components/register/register.component';
+import { InternshipTabComponent } from './components/internship-tab/internship-tab.component';
+import { DetailedFeaturesComponent } from './components/detailed-features/detailed-features.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { ExpressInterestComponent } from './components/express-interest/express-
     HomePageComponent,
     NavbarComponent,
     VideoPopupComponent,
-    ExpressInterestComponent
+    ExpressInterestComponent,
+    RegisterComponent,
+    InternshipTabComponent,
+    DetailedFeaturesComponent
   ],
   imports: [
     BrowserModule,

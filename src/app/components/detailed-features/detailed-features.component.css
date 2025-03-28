@@ -1,0 +1,45 @@
+.scrollable-table {
+    max-height: 400px;
+    overflow-y: auto;
+    display: block;
+  }
+  
+  .small-card {
+    width: 100%;
+    margin-top: -10px; /* Slight overlap for visual connection */
+  }
+
+  .content-type-box {
+    background-color: #ffffff;
+    border: 1px solid #ddd; /* Fine border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+    width: 100%;
+  }
+
+  .feature-box {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-header {
+    background-color: #cfe2ff;
+  }
+  
+  .ideal-for-content {
+    min-height: 110px; 
+    max-height: 120px; 
+    overflow-y: auto; 
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 5px;
+    padding-left: 15px;
+  }
+
+  @media (max-width: 576px) {
+    .container .row {
+        gap: 20px;
+    }
+  }
+  
