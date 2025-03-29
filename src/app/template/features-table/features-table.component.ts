@@ -1,34 +1,33 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-detailed-features',
-  templateUrl: './detailed-features.component.html',
-  styleUrl: './detailed-features.component.css'
+  selector: 'app-features-table',
+  templateUrl: './features-table.component.html',
+  styleUrl: './features-table.component.css',
 })
-export class DetailedFeaturesComponent {
+export class FeaturesTableComponent {
   pricingPlans = [
     {
       name: 'Free',
       price: '$0 / month',
-      applicable: [true, false, false, false]
+      applicable: [true, false, false, false],
     },
     {
       name: 'Starter',
       price: '$25 / month',
-      applicable: [true, true, false, false]
+      applicable: [true, true, false, false],
     },
     {
       name: 'Business',
       price: '$65 / month',
-      applicable: [true, true, true, false]
+      applicable: [true, true, true, false],
     },
     {
       name: 'Enterprise',
       price: 'Custom Pricing',
-      applicable: [true, true, true, true]
-    }
+      applicable: [true, true, true, true],
+    },
   ];
-
 
   features = [
     {
@@ -119,9 +118,7 @@ export class DetailedFeaturesComponent {
     },
   ];
 
-
   isBoolean(value: any): boolean {
     return typeof value === 'boolean';
-  }  
-  
+  }
 }

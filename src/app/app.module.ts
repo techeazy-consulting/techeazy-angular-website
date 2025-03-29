@@ -19,6 +19,8 @@ import { ExpressInterestComponent } from './components/express-interest/express-
 import { RegisterComponent } from './components/register/register.component';
 import { InternshipTabComponent } from './components/internship-tab/internship-tab.component';
 import { DetailedFeaturesComponent } from './components/detailed-features/detailed-features.component';
+import { ComparisonTableComponent } from './template/comparison-table/comparison-table.component';
+import { FeaturesTableComponent } from './template/features-table/features-table.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { DetailedFeaturesComponent } from './components/detailed-features/detail
     ExpressInterestComponent,
     RegisterComponent,
     InternshipTabComponent,
-    DetailedFeaturesComponent
+    DetailedFeaturesComponent,
+    ComparisonTableComponent,
+    FeaturesTableComponent
   ],
   imports: [
     BrowserModule,

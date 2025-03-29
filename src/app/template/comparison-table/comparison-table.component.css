@@ -50,12 +50,6 @@
     line-height: 30px;
   }
 
-  .card-footer .btn {
-    color: rgb(13 110 253);
-    text-decoration: underline;
-    font-weight: bold;
-  }
-
   @media (max-width: 1200px) {
     .bootcamp-banner .row {
       margin-top: -12rem;
