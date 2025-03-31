@@ -253,6 +253,10 @@ form h3 {
   font-weight: bold;
 }
 
+.banner .btn-light:hover {
+  background-color: #eee;
+}
+
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
   header {
