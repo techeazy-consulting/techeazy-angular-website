@@ -30,6 +30,12 @@ export class CoursesComponent {
           if (data) {
             this.classDetails = data.find((cls: any) => cls.id === this.id);
             console.log("Class Details:", this.classDetails);
+
+            // Remove underscores and format the courseStatus
+            if (this.classDetails && this.classDetails.courseStatus) {
+              this.classDetails.courseStatus = this.classDetails.courseStatus.replace(/_/g, ' ')
+                .replace(/\b\w/g, (char: string) => char.toUpperCase());
+            }
           }
         });
       }
@@ -42,6 +48,7 @@ export class CoursesComponent {
     )
 
     this.checkScrollPosition();
+    
   }
 
   convertLocalDateToReadableFormat(dateStr: string): string {
