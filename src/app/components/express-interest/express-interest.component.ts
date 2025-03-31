@@ -53,7 +53,6 @@ export class ExpressInterestComponent implements OnInit{
         },
         (error) => {
           console.error('Error submitting form', error);
-          // alert('Failed to submit form. Please try again.');
         }
       );
     }

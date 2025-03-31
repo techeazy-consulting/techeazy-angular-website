@@ -44,6 +44,13 @@ export class CoursesComponent {
     this.checkScrollPosition();
   }
 
+  convertLocalDateToReadableFormat(dateStr: string): string {
+    if (!dateStr) return '';
+    const [year, month, day] = dateStr.split('-').map(Number);
+    const date = new Date(year, month - 1, day);
+    return new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(date);
+  }
+  
   onSubjectClick(subject: any) {
     console.log('Selected Subject:', subject);
     this.chapters = subject.chapterList; 

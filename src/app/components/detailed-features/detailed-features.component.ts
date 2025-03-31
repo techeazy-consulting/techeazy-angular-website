@@ -6,29 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './detailed-features.component.css'
 })
 export class DetailedFeaturesComponent {
-  pricingPlans = [
-    {
-      name: 'Free',
-      price: '$0 / month',
-      applicable: [true, false, false, false]
-    },
-    {
-      name: 'Starter',
-      price: '$25 / month',
-      applicable: [true, true, false, false]
-    },
-    {
-      name: 'Business',
-      price: '$65 / month',
-      applicable: [true, true, true, false]
-    },
-    {
-      name: 'Enterprise',
-      price: 'Custom Pricing',
-      applicable: [true, true, true, true]
-    }
-  ];
-
 
   features = [
     {
@@ -54,7 +31,7 @@ export class DetailedFeaturesComponent {
       paid: 'Basic knowledge of any programming language ',
     },
     { name: 'Duration', unpaid: '1 month', paid: '2 months' },
-    { name: 'Charges', unpaid: 'Free', paid: '1st Month is Free, 2400/- for second month' },
+    { name: 'Charges', unpaid: 'Free', paid: '1st Month is Free, 4000/- for second month' },
     { name: 'Payment Schedule', unpaid: 'None', paid: 'Starts from 2nd Month' },
     { name: 'Live Projects', unpaid: true, paid: true },
     {

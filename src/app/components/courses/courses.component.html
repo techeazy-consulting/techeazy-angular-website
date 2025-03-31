@@ -3,10 +3,11 @@
     <div class="lead--title">
       <h5>{{ classDetails.className }}</h5>
     </div>
-    <!-- <div class="lead--info">
-      <span>4.8 ★★★★★ (5,678 ratings)</span>
-      <span>• 20,000 students enrolled</span>
-    </div> -->
+    <div class="lead--info">
+      <!-- <span>4.9 ★★★★★ (5,678 ratings)</span> -->
+      <span>4.9 ★★★★★ </span>
+      <span>• {{classDetails.noOfStudents}} students enrolled</span>
+    </div>
   </div>
 
   <div class="btn">
@@ -20,9 +21,12 @@
       <h1>{{ classDetails.className }}</h1>
       <p>{{ classDetails.classDescription }}</p>
       <div class="details">
-        <span>4.8 ★★★★★ (5,678 ratings)</span>
-        <span>• 20,000 students enrolled</span>
-        <span>• Last updated: Jan 2025</span>
+        <span>4.9 ★★★★★</span>
+        <span>• {{classDetails.noOfStudents}} students enrolled</span>
+      </div>
+      <div class="btns d-flex justify-content-between mt-4">
+        <a class="btn btn-light" href="https://forms.gle/oeuddXyFF4trxXo27" target="_blank"><span class="blinking-text2">Register -it’s completely FREE</span></a>
+        <a class="btn btn-light" href="https://forms.gle/oZ5YoZSqmSL7DiWG6" target="_blank"><span class="btn-link">Not fit for you -see our other offering</span></a>
       </div>
     </div>
   </div>
@@ -31,8 +35,11 @@
     <img src="../../../assets/images/common.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h6>Buy at {{classDetails.discount}}% off</h6>
-      <h4>₹{{classDetails.price}}.00</h4>
-  
+      <!-- <h4>₹{{classDetails.price}}.00</h4> -->
+      <h4 [ngClass]="classDetails.price === 0 ? 'blinking-text3' : ''">
+        {{ classDetails.price === 0 ? 'Free' : '₹' + classDetails.price + '.00' }}
+      </h4>
+      
       <button type="submit" class="btn btn-light fw-bold w-100 mb-4">{{classDetails.courseStatus}}</button>
       <h6 class="card-subtitle mb-2">This course includes: </h6>
       <ul>
@@ -40,11 +47,12 @@
         <li class="card-text text-body-secondary"><i class="fa-solid fa-users"></i>{{classDetails.noOfStudents}}+ Students Enrolled <span class="blinking-text2">(Hurry UP)</span></li>
         <li class="card-text text-body-secondary"><i class="fa-solid fa-file-circle-question"></i>{{classDetails.noOfQuizzes}}+ Quizzes</li>
         <li class="card-text text-body-secondary"><i class="fa-brands fa-youtube"></i>Live Classes <span>( Weekend/WeekDays )</span></li>
-        <li class="card-text text-body-secondary"><i class="fa-solid fa-repeat"></i>Duration</li>
-        <li class="card-text text-body-secondary"><i class="fa-solid fa-clock"></i>Timing</li>
+        <li class="card-text text-body-secondary"><i class="fa-solid fa-repeat"></i><b>Duration:-</b> {{convertLocalDateToReadableFormat(classDetails.startDate)}} - {{ convertLocalDateToReadableFormat(classDetails.endDate) }}</li>
+        <li class="card-text text-body-secondary"><i class="fa-solid fa-clock"></i><b>Timing:-</b> 7pm - 8pm (Tue & Fri)</li>
         <li class="card-text text-body-secondary"><i class="fa-solid fa-certificate"></i>Certificate of Completion</li>
       </ul>
-      <button class="btn btn-primary w-100 fw-bold" (click)="formPopup.openPopup()">Express Interest</button>
+      <!-- <button class="btn btn-primary w-100 fw-bold" (click)="formPopup.openPopup()">Register Now</button> -->
+      <a class="btn btn-primary w-100 fw-bold" href="https://forms.gle/oeuddXyFF4trxXo27" target="_blank">Register Now</a>
     </div>
   </div>
 </header>
