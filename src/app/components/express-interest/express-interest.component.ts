@@ -9,8 +9,6 @@ import { NgForm } from '@angular/forms';
 })
 export class ExpressInterestComponent implements OnInit{
   id: string ='';
-  classId: string = '';
-  className: string = '';
   classes: any[] = [];
 
   isPopupVisible: boolean = false;
@@ -28,20 +26,11 @@ export class ExpressInterestComponent implements OnInit{
   constructor(private authService: AuthService){}
 
   ngOnInit(): void {
-    this.loadClasses();
-  }
-
-  // Fetching all classes from the api
-  loadClasses() {
-    this.authService.getClasses().subscribe(
+    this.authService.data$.subscribe(
       (data) => {
-        console.log("Classes fetched", data);
         this.classes = data;
-      },
-      (error) => {
-        console.error('Error fetching class details', error);
       }
-    );
+    )
   }
 
   // Adding form data to the API

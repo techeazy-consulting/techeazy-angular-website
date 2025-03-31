@@ -20,7 +20,7 @@
                       Courses
                     </a> -->
                     <ul class="dropdown-menu">
-                      <li *ngFor="let classItem of classList">
+                      <li *ngFor="let classItem of classes">
                         <a class="dropdown-item" [routerLink]="['/class-detail', classItem.id]">
                           {{ classItem.className }}
                         </a>

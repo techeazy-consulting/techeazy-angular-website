@@ -1,7 +1,7 @@
 <div *ngIf="showSliderMenu" class="slider-menu--slider-menu-container">
   <div class="lead--lead">
     <div class="lead--title">
-      <h5>{{ className }}</h5>
+      <h5>{{ classDetails.className }}</h5>
     </div>
     <!-- <div class="lead--info">
       <span>4.8 ★★★★★ (5,678 ratings)</span>
@@ -16,33 +16,33 @@
 
 <header>
   <div class="banner col-8">
-    <div class="col-8">
-      <h1>{{ className }}</h1>
-      <p>{{ classDescription }}</p>
-      <!-- <div class="details">
+    <div class="col-8" *ngIf="classDetails">
+      <h1>{{ classDetails.className }}</h1>
+      <p>{{ classDetails.classDescription }}</p>
+      <div class="details">
         <span>4.8 ★★★★★ (5,678 ratings)</span>
         <span>• 20,000 students enrolled</span>
         <span>• Last updated: Jan 2025</span>
-      </div> -->
+      </div>
     </div>
   </div>
 
   <div class="card course-card">
     <img src="../../../assets/images/common.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h6>Buy at {{discount}}% off</h6>
-      <h4>₹{{price}}.00</h4>
+      <h6>Buy at {{classDetails.discount}}% off</h6>
+      <h4>₹{{classDetails.price}}.00</h4>
   
-      <button type="submit" class="btn btn-light fw-bold w-100 mb-4" (click)="openVideoPopup('A4-yVIXvJQE')">Try now</button>
+      <button type="submit" class="btn btn-light fw-bold w-100 mb-4">{{classDetails.courseStatus}}</button>
       <h6 class="card-subtitle mb-2">This course includes: </h6>
       <ul>
-        <li class="card-text text-body-secondary"><i class="fa-solid fa-tv"></i>{{classVideos}}+ Video Lessons</li>
-        <li class="card-text text-body-secondary"><i class="fa-solid fa-users"></i>{{classStudents}}+ Students Enrolled</li>
-        <li class="card-text text-body-secondary"><i class="fa-solid fa-file-circle-question"></i>{{classQuizzes}}+ Quizzes</li>
-        <li class="card-text text-body-secondary"><i class="fa-regular fa-file"></i>{{classPdfs}}+ Downloadable resources</li>
-        <li class="card-text text-body-secondary"><i class="fa-brands fa-youtube"></i>Live Classes</li>
-        <li class="card-text text-body-secondary"><i class="fa-solid fa-repeat"></i>Continuous Learning</li>
-        <li class="card-text text-body-secondary"><i class="fa-solid fa-infinity"></i>Lifetime Access</li>
+        <li class="card-text text-body-secondary"><i class="fa-solid fa-tv"></i><span class="blinking-text">Instructor Led Sessions</span></li>
+        <li class="card-text text-body-secondary"><i class="fa-solid fa-users"></i>{{classDetails.noOfStudents}}+ Students Enrolled <span class="blinking-text2">(Hurry UP)</span></li>
+        <li class="card-text text-body-secondary"><i class="fa-solid fa-file-circle-question"></i>{{classDetails.noOfQuizzes}}+ Quizzes</li>
+        <li class="card-text text-body-secondary"><i class="fa-brands fa-youtube"></i>Live Classes <span>( Weekend/WeekDays )</span></li>
+        <li class="card-text text-body-secondary"><i class="fa-solid fa-repeat"></i>Duration</li>
+        <li class="card-text text-body-secondary"><i class="fa-solid fa-clock"></i>Timing</li>
+        <li class="card-text text-body-secondary"><i class="fa-solid fa-certificate"></i>Certificate of Completion</li>
       </ul>
       <button class="btn btn-primary w-100 fw-bold" (click)="formPopup.openPopup()">Express Interest</button>
     </div>
@@ -55,30 +55,26 @@
   <div class="bg-aqua p-4 col-8 course-details">
     <h2 class="text-center mb-5">Course Highlights</h2>
     <div class="accordion accordion-flush" id="accordionFlushExample">
-        <div class="accordion-item" *ngFor="let subject of subjects; let i = index">
+        <div class="accordion-item" *ngFor="let subject of classDetails.subjectList; let i = index">
           <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"  [attr.data-bs-target]="'#flush-collapse' + i" aria-expanded="false" [attr.aria-controls]="'flush-collapse' + i" (click)="onSubjectClick(subject.subjectId)">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"  [attr.data-bs-target]="'#flush-collapse' + i" aria-expanded="false" [attr.aria-controls]="'flush-collapse' + i" (click)="onSubjectClick(subject)">
               {{subject.subjectName}}
             </button>
           </h2>
           <div [id]="'flush-collapse'+i" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <!-- <div class="accordion-body">{{subject.subjectDescription}} <br> -->
             <div class="accordion-body">
               <div class="chapters">
-                <div *ngFor="let chapter of chapters" class="chapter-details pb-3">
+                <div *ngFor="let chapter of subject.chapterList" class="chapter-details pb-3">
                   <h6 class="text-body-secondary">
                     <i class="fa-solid px-2" [ngClass]="chapter?.videoId?.trim() ? 'fa-video' : 'fa-location-arrow'"></i>
                     {{ chapter.chapterName }}
                   </h6>
                   
-                  <!-- <i class="fa-solid fa-location-arrow fa-rotate-by fa-2xs" style="--fa-rotate-angle: 40deg;"></i> -->
                   <div class="metadata" *ngIf="chapter?.videoId?.trim()">
                     <span><button (click)="openVideoPopup(chapter.videoId)">Preview</button></span>
-                    <!-- <span><a href="" (click)="previewPopup.openPopup()">preview</a></span> -->
                     <span class="px-2">|</span>
                     <!-- <span>4.20 min</span> -->
                   </div>
-                  <!-- <p>{{ chapter.chapterDescription }}</p> -->
                 </div>                
               </div>
             </div>

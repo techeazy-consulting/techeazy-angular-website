@@ -21,6 +21,7 @@ import { InternshipTabComponent } from './components/internship-tab/internship-t
 import { DetailedFeaturesComponent } from './components/detailed-features/detailed-features.component';
 import { ComparisonTableComponent } from './template/comparison-table/comparison-table.component';
 import { FeaturesTableComponent } from './template/features-table/features-table.component';
+import { CourseDetailsTemplateComponent } from './template/course-details-template/course-details-template.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { FeaturesTableComponent } from './template/features-table/features-table
     InternshipTabComponent,
     DetailedFeaturesComponent,
     ComparisonTableComponent,
-    FeaturesTableComponent
+    FeaturesTableComponent,
+    CourseDetailsTemplateComponent
   ],
   imports: [
     BrowserModule,

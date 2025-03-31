@@ -7,10 +7,9 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { RegisterComponent } from './components/register/register.component';
 import { InternshipTabComponent } from './components/internship-tab/internship-tab.component';
 import { DetailedFeaturesComponent } from './components/detailed-features/detailed-features.component';
+import { CourseDetailsTemplateComponent } from './template/course-details-template/course-details-template.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo:'/home', pathMatch:'full' },
-  // { path:'home', component: HomePageComponent },
   { path: '', component: HomePageComponent },
   { path: 'blogs', component: BlogsComponent },
   { path: 'bootcamps', component: BootcampsPageComponent },

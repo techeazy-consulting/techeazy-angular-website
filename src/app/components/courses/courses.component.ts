@@ -10,21 +10,10 @@ import { ExpressInterestComponent } from '../express-interest/express-interest.c
   styleUrl: './courses.component.css'
 })
 export class CoursesComponent {
-  id: string ='';
-  classId: string = '';
-  className: string = '';
-  classDescription: string = '';
-  classVideos: string = '';
-  classStudents: string = '';
-  classQuizzes: string = '';
-  classPdfs: string = '';
-  price: string = '';
-  discount: string = '';
-  subjects: any[] = [];
-  subjectId: string = '';
-  chapters: any[] = [];
-  classes: any[] = [];
-  videoId: string = '';
+  id: number | null = null;
+  classDetails: any;
+  chapters: any;
+  classes : any;
 
   showSliderMenu: boolean = true;
 
@@ -33,87 +22,31 @@ export class CoursesComponent {
   constructor(private route: ActivatedRoute, private authService: AuthService) {}
 
   ngOnInit(): void {
+
     this.route.paramMap.subscribe(params => {
-      this.id = params.get('id') || '';
+      this.id = Number(params.get('id') || 0);
       if (this.id) {
-        this.loadClassDetails();
+        this.authService.data$.subscribe((data) => {
+          if (data) {
+            this.classDetails = data.find((cls: any) => cls.id === this.id);
+            console.log("Class Details:", this.classDetails);
+          }
+        });
       }
     });
 
-    this.loadClasses();
+    this.authService.data$.subscribe(
+      (data) => {
+        this.classes = data;
+      }
+    )
+
     this.checkScrollPosition();
   }
 
-
-  loadClassDetails() {
-    // Fetch class details by ID
-    this.authService.getClassDetails(this.id).subscribe(
-      (data) => {
-        // Assuming the API returns class details including name, description
-        this.classId = data.classId;
-        this.className = data.className;
-        this.classDescription = data.classDescription;
-        this.classVideos = data.noOfVideos;
-        this.classStudents = data.noOfStudents;
-        this.classQuizzes = data.noOfQuizzes;
-        this.classPdfs = data.noOfPdfs;
-        this.price = data.price;
-        this.discount = data.discount;
-
-        this.loadSubjectsByClass();
-      },
-      (error) => {
-        console.error('Error fetching class details', error);
-      }
-    );
-  }
-
-  loadSubjectsByClass() {
-    this.authService.getSubjectsByClass(this.classId).subscribe (
-      (data) => {
-        this.subjects = data;
-      },
-      (error) => {
-        console.error('Error Fetching subjects', error);
-      }
-    )
-  }
-
-  loadChaptersByClassAndSubject(classId: string, subjectId: string) {
-    console.log(`Fetching chapters for classId: ${classId}, subjectId: ${subjectId}`);
-    this.authService.getChaptersByClassAndSubject(classId, subjectId).subscribe(
-      (data) => {
-        console.log('Chapters fetched:', data);
-        this.chapters = data;
-      },
-      (error) => {
-        console.error('Error fetching chapters', error);
-      }
-    );
-  }
-  
-  onSubjectClick(sid: string) {
-    console.log('Selected Subject ID:', sid); // Log the selected subjectId
-    this.subjectId = sid;
-    this.loadChaptersByClassAndSubject(this.classId, this.subjectId);
-  }
-
-  loadClasses(){
-    this.authService.getClasses().subscribe(
-      (data) => {
-        this.classes = data;
-      },
-      // (data) => {
-      //   // Filter the data to include only classes with the specified tenantEntityId and tenantId
-      //   this.classes = data.filter(
-      //     (item: any) =>
-      //       item.tenantEntityId === 'dms' && item.tenantId === 'tech_eazy'
-      //   );
-      // },
-      (error) => {
-        console.error('Error fetching classes', error);
-      }
-    )
+  onSubjectClick(subject: any) {
+    console.log('Selected Subject:', subject);
+    this.chapters = subject.chapterList; 
   }
 
   // Logic for the slider menu

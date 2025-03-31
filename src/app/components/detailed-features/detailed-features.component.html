@@ -10,7 +10,7 @@
             <h5 class="mb-0">Free</h5>
           </div>
           <div class="card-body">
-            <h6 class="text-primary">$0 / month</h6>
+            <h6 class="text-primary">₹0 / month</h6>
             <button class="btn btn-primary signup-btn">Sign Up</button>
           </div>
         </div>
@@ -21,7 +21,7 @@
             <h5 class="mb-0">Starter</h5>
           </div>
           <div class="card-body">
-            <h6 class="text-primary">$25 / month</h6>
+            <h6 class="text-primary">₹4K / month</h6>
             <button class="btn btn-primary signup-btn">Sign Up</button>
           </div>
         </div>
@@ -41,7 +41,7 @@
               <h5 class="card-header fw-bold text-center text-primary">Feature</h5>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item"
-                    [ngClass]="{'ideal-for-content': feature.name === 'Ideal For' || feature.name === 'Objective'}"
+                    [ngClass]="{'ideal-for-content': feature.name === 'Ideal For'}"
                     *ngFor="let feature of features">
                 <strong>{{ feature.name }}</strong>
                 </li>
@@ -55,7 +55,7 @@
               <h5 class="card-header fw-bold text-center text-primary">Unpaid AWS Internship</h5>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item" 
-                    [ngClass]="{'ideal-for-content': feature.name === 'Ideal For' || feature.name === 'Objective'}"
+                    [ngClass]="{'ideal-for-content': feature.name === 'Ideal For'}"
                     *ngFor="let feature of features">
                     <span *ngIf="isBoolean(feature.unpaid)">
                         <span *ngIf="feature.unpaid" class="text-success fw-bold"><i class="fa-solid fa-check fa-2xl"></i></span>
@@ -79,11 +79,11 @@
               <h5 class="card-header fw-bold text-center text-primary">Interview Prep & Internship</h5>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item feature-item" 
-                    [ngClass]="{'ideal-for-content': feature.name === 'Ideal For' || feature.name === 'Objective'}"
+                    [ngClass]="{'ideal-for-content': feature.name === 'Ideal For'}"
                     *ngFor="let feature of features">
                     <span *ngIf="isBoolean(feature.paid)">
-                      <span *ngIf="feature.unpaid" class="text-success fw-bold"><i class="fa-solid fa-check fa-2xl"></i></span>
-                      <span *ngIf="!feature.unpaid" class="text-danger fw-bold"><i class="fa-solid fa-xmark fa-2xl"></i></span>
+                      <span *ngIf="feature.paid" class="text-success fw-bold"><i class="fa-solid fa-check fa-2xl"></i></span>
+                      <span *ngIf="!feature.paid" class="text-danger fw-bold"><i class="fa-solid fa-xmark fa-2xl"></i></span>
                     </span>
                       <span *ngIf="!isBoolean(feature.paid)">
                         {{ feature.paid }}
@@ -111,8 +111,6 @@
         <tbody>
           <tr *ngFor="let feature of features">
             <td class="text-start fw-bold">{{feature.name}}</td>
-            <!-- <td>{{feature.unpaid}}</td>
-            <td>{{feature.paid}}</td> -->
             <td>
               <span *ngIf="isBoolean(feature.unpaid)">
                 <span *ngIf="feature.unpaid" class="text-success fw-bold"><i class="fa-solid fa-check fa-2xl"></i></span>

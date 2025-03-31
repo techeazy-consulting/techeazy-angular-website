@@ -10,30 +10,22 @@ import { ExpressInterestComponent } from '../express-interest/express-interest.c
 })
 export class NavbarComponent implements OnInit{
   classList: any[] = [];
+  classes: any[] = [];
 
   constructor(private auth: AuthService, private router: Router) {}
   // constructor(private router: Router, private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.fetchClasses();
-  }
+    // this.fetchClasses();
+    this.auth.getAllClassDetails();
 
-  fetchClasses(): void {
-    this.auth.getClasses().subscribe(
+    this.auth.data$.subscribe(
       (data) => {
-        this.classList = data;
-      },
-      // (data) => {
-      //   // Filter the data to include only classes with the specified tenantEntityId and tenantId
-      //   this.classList = data.filter(
-      //     (item: any) =>
-      //       item.tenantEntityId === 'dms' && item.tenantId === 'tech_eazy'
-      //   );
-      // },
-      (error) => {
-        console.error('Error fetching classes:', error);
+        this.classes = data;
+        console.log("Classes from data Service", this.classes);
+        
       }
-    );
+    )
   }
 
   goToCourses(classItem: any): void{
