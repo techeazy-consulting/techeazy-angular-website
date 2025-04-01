@@ -1,5 +1,5 @@
 <div class="previous-bootcamp m-5">
-  <h2 class="text-center mb-5">Previous bootcamps</h2>
+  <h2 class="text-center mb-5">Previous Internship Programs</h2>
   <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col m-auto" *ngFor="let class of classes">
@@ -11,9 +11,11 @@
             />
             <div class="card-body">
               <h5 class="card-title">{{ class.className }}</h5>
-              <p class="card-text">
-                {{class.classDescription}}
-              </p>
+              <ul>
+                <li class="card-text text-body-secondary"><i class="fa-solid fa-tv"></i><span class="blinking-text">Instructor Led Sessions</span></li>
+                <li class="card-text text-body-secondary"><i class="fa-solid fa-repeat"></i>{{convertLocalDateToReadableFormat(class.startDate)}} - {{ convertLocalDateToReadableFormat(class.endDate) }}</li>
+                <li class="card-text text-body-secondary"><i class="fa-solid fa-certificate"></i>Certificate of Completion</li>
+              </ul>
             </div>
             <div class="card-footer">
               <small class="text-body-secondary">{{class.noOfStudents}}+ Students</small>

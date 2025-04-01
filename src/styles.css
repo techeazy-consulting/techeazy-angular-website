@@ -1,11 +1,11 @@
 /* Global imports for fonts */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Global styles for typography */
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "Noto Serif", serif;
+  font-family: "Roboto", serif;
   font-weight: 400;
   font-style: normal;
   font-optical-sizing: auto;
@@ -13,7 +13,7 @@ html, body {
 
 /* Global text styles */
 h1, h2, h3, h4, h5, h6, p, a {
-  font-family: "Noto Serif", serif;
+  font-family: "Roboto", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;

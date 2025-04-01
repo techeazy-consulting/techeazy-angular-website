@@ -1,0 +1,15 @@
+ul li {
+  list-style: none;
+  line-height: 35px;
+}
+
+ul li i {
+  padding-right: 10px;
+}
+
+.blinking-text {
+  background: linear-gradient(90deg, blue, orange, green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
