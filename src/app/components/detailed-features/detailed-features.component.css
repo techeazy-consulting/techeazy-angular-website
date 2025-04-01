@@ -28,8 +28,6 @@
   
   .ideal-for-content {
     min-height: 110px; 
-    /* max-height: 200px; 
-    overflow-y: auto;  */
     display: flex;
     align-items: center;
     justify-content: start;
@@ -48,11 +46,7 @@
   .signup-btn {
     color: #fff;
     transition: all 0.5s ease;
-  }
-  
-  .signup-btn:hover::after {
-    content: ' →';
-    /* transition: all 0.3s ease-in-out; */
+    text-decoration: none;
   }
 
   @media (max-width: 768px) {

@@ -40,11 +40,7 @@
 
   .signup-btn {
     color: #fff;
-  }
-  .signup-btn:hover::after {
-    content: ' →';
-    color: #eee;
-    transition: all 0.3s ease-in-out;
+    text-decoration: none;
   }
 
   .card-body ul li {
