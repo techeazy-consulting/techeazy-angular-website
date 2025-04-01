@@ -11,7 +11,7 @@
   </div>
 
   <div class="btn">
-    <button class="btn btn-light fw-bold" (click)="openFormPopup()">Express Interest</button>
+    <!-- <button class="btn btn-light fw-bold" (click)="openFormPopup()">Express Interest</button> -->
   </div>
 </div>
 
@@ -42,7 +42,8 @@
         </h4>
       </div>
       
-      <button type="submit" class="btn btn-light fw-bold w-100 mb-4" [disabled]="classDetails.courseStatus !== 'ABOUT TO START'">{{classDetails.courseStatus}}</button>
+      <button type="submit" class="btn btn-light fw-bold w-100 mb-4 no-hover">{{classDetails.courseStatus}}</button>
+      
       <h6 class="card-subtitle mb-2">This course includes: </h6>
       <ul>
         <li class="card-text text-body-secondary"><i class="fa-solid fa-tv"></i><span class="blinking-text">Instructor Led Sessions</span></li>
@@ -162,7 +163,8 @@
                       <!-- <p class="card-text">Explore our wide range of courses designed to meet industry demands.</p> -->
                       <p class="card-text">Explore our wide range of courses comprehensively designed to meet industry demands.</p>
                       <ul class="list-group list-group-flush" *ngFor="let class of classes">
-                        <li class="list-group-item" [routerLink]="['/class-detail', class.id]">{{ class.className }}</li>
+                        <!-- <li class="list-group-item" [routerLink]="['/class-detail', class.id]">{{ class.className }}</li> -->
+                        <li class="list-group-item" (click)="goToCourses(class)">{{ class.className }}</li>
                       </ul>
                       <!-- <a href="#" class="btn btn-primary mt-2">View All Courses</a> -->
                   </div>

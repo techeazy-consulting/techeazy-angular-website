@@ -28,9 +28,14 @@ export class NavbarComponent implements OnInit{
     )
   }
 
-  goToCourses(classItem: any): void{
-    this.router.navigate(['/class-detail', classItem.id])
+  goToCourses(classItem: any): void {
+    const formattedClassName = classItem.className.replace(/ /g, '-');
+    this.router.navigate(['/class-detail', formattedClassName]);
   }
+
+  // goToCourses(classItem: any): void{
+  //   this.router.navigate(['/class-detail', classItem.className])
+  // }
 
   // Adding annotation to communicate with the Child component
   @ViewChild(ExpressInterestComponent) formPopup!: ExpressInterestComponent;

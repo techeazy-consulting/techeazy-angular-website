@@ -37,12 +37,12 @@ export class DetailedFeaturesComponent {
     {
       name: 'IAM',
       unpaid: true,
-      paid: 'Yes - 3 days',
+      paid: true,
     },
     {
       name: 'DynamoDB',
       unpaid: true,
-      paid: 'Yes - Weekly Session',
+      paid: true,
     },
     {
       name: 'EC2',

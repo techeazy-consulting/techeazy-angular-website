@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -9,7 +10,7 @@ import { AuthService } from '../../service/auth.service';
 export class FooterComponent implements OnInit{
   classes: any[] = [];
 
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService, private router: Router){}
 
   ngOnInit(): void {
     this.authService.data$.subscribe(
@@ -17,5 +18,10 @@ export class FooterComponent implements OnInit{
         this.classes = data;
       }
     )
+  }
+
+  goToCourses(classItem: any): void {
+    const formattedClassName = classItem.className.replace(/ /g, '-');
+    this.router.navigate(['/class-detail', formattedClassName]);
   }
 }

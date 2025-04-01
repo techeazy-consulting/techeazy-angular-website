@@ -8,15 +8,17 @@ import { RegisterComponent } from './components/register/register.component';
 import { InternshipTabComponent } from './components/internship-tab/internship-tab.component';
 import { DetailedFeaturesComponent } from './components/detailed-features/detailed-features.component';
 import { CourseDetailsTemplateComponent } from './template/course-details-template/course-details-template.component';
+import { PastSessionsComponent } from './components/past-sessions/past-sessions.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'blogs', component: BlogsComponent },
   { path: 'bootcamps', component: BootcampsPageComponent },
-  { path: 'class-detail/:id', component: CoursesComponent },
+  { path: 'class-detail/:className', component: CoursesComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'online_aws_internship', component: InternshipTabComponent },
   { path: 'all-features', component: DetailedFeaturesComponent },
+  { path: 'past-sessions', component: PastSessionsComponent },
 ];
 
 @NgModule({

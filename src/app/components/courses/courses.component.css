@@ -179,6 +179,11 @@ form h3 {
   box-shadow: 0 0 5px #333;
 }
 
+.no-hover {
+  pointer-events: none;
+  cursor: default; 
+}
+
 .course-card .btn-light:hover {
   background-color: #0d6efd;
   color: #fff;

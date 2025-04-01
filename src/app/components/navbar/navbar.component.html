@@ -20,11 +20,16 @@
                       Courses
                     </a> -->
                     <ul class="dropdown-menu">
-                      <li *ngFor="let classItem of classes">
+                      <!-- <li *ngFor="let classItem of classes">
                         <a class="dropdown-item" [routerLink]="['/class-detail', classItem.id]">
                           {{ classItem.className }}
                         </a>
-                      </li>
+                      </li> -->
+                      <li *ngFor="let classItem of classes">
+                        <a class="dropdown-item" (click)="goToCourses(classItem)">
+                          {{ classItem.className }}
+                        </a>
+                      </li>                      
                     </ul>
                   </li>
                 <li class="nav-item me-3">
@@ -33,6 +38,9 @@
                 <!-- <li class="nav-item me-3">
                     <a class="nav-link" routerLink="/bootcamps">Bootcamps</a>
                 </li> -->
+                <li class="nav-item me-3">
+                    <a class="nav-link" routerLink="/past-sessions">Past Sessions</a>
+                </li>
                 <!-- <li class="nav-item me-3">
                     <a class="nav-link" routerLink="/blogs">Blogs</a>
                 </li> -->

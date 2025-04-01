@@ -1,5 +1,5 @@
 import { Component, HostListener, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 import { VideoPopupComponent } from '../video-popup/video-popup.component';
 import { ExpressInterestComponent } from '../express-interest/express-interest.component';
@@ -11,6 +11,7 @@ import { ExpressInterestComponent } from '../express-interest/express-interest.c
 })
 export class CoursesComponent {
   id: number | null = null;
+  className: string = '';
   classDetails: any;
   chapters: any;
   classes : any;
@@ -19,16 +20,20 @@ export class CoursesComponent {
 
   isPopupVisible: boolean = false;
 
-  constructor(private route: ActivatedRoute, private authService: AuthService) {}
+  constructor(private route: ActivatedRoute, private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
 
     this.route.paramMap.subscribe(params => {
-      this.id = Number(params.get('id') || 0);
-      if (this.id) {
+      this.className = params.get('className') || '';
+
+      this.className = decodeURIComponent(this.className);
+      this.className = this.className.replace(/-/g, ' ');
+
+      if (this.className) {
         this.authService.data$.subscribe((data) => {
           if (data) {
-            this.classDetails = data.find((cls: any) => cls.id === this.id);
+            this.classDetails = data.find((cls: any) => cls.className === this.className);
             console.log("Class Details:", this.classDetails);
 
             // Remove underscores and format the courseStatus
@@ -49,6 +54,11 @@ export class CoursesComponent {
 
     this.checkScrollPosition();
     
+  }
+
+  goToCourses(classItem: any): void {
+    const formattedClassName = classItem.className.replace(/ /g, '-');
+    this.router.navigate(['/class-detail', formattedClassName]);
   }
 
   convertLocalDateToReadableFormat(dateStr: string): string {

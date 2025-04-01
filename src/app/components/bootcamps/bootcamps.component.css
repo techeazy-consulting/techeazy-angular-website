@@ -79,8 +79,11 @@ section img:hover {
 }
 
 .col {
-    flex: 1 1 calc(25% - 20px);
+    /* flex: 1 1 calc(25% - 20px);
     max-width: calc(25% - 20px);
+    above css is applied for 4 cards and below is for 3 */
+    flex: 1 1 calc(35% - 40px);
+    max-width: calc(35% - 40px);
     display: flex;
 }
 

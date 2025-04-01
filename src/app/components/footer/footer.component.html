@@ -17,13 +17,14 @@
                 <li><a href="">Home</a></li>
                 <!-- <li><a href="">Blog</a></li> -->
                 <li><a routerLink="/online_aws_internship">Internship</a></li>
-                <li><a routerLink="/class-detail/7">Bootcamps</a></li>
+                <li><a routerLink="/class-detail/AWS-Internship">Bootcamps</a></li>
             </ul>
         </div>
         <div class="cols mt-3">
             <h6>Skill Up Fast</h6>
             <div *ngFor="let class of classes">
-                <li><a  [routerLink]="['/class-detail', class.id]">{{class.className}}</a></li>
+                <!-- <li><a  [routerLink]="['/class-detail', class.className]">{{class.className}}</a></li> -->
+                <li><a (click)="goToCourses(class)">{{class.className}}</a></li>
                 <!-- <li><a href="">Java</a></li>
                 <li><a href="">Python</a></li>
                 <li><a href="">Rest API</a></li>
