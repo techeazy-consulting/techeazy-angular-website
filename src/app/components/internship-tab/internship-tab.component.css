@@ -38,8 +38,12 @@
     border: 2px solid;
   }
 
+  .signup-btn {
+    color: #fff;
+  }
   .signup-btn:hover::after {
     content: ' →';
+    color: #eee;
     transition: all 0.3s ease-in-out;
   }
 

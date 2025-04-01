@@ -22,6 +22,7 @@ import { DetailedFeaturesComponent } from './components/detailed-features/detail
 import { ComparisonTableComponent } from './template/comparison-table/comparison-table.component';
 import { FeaturesTableComponent } from './template/features-table/features-table.component';
 import { CourseDetailsTemplateComponent } from './template/course-details-template/course-details-template.component';
+import { PastSessionsComponent } from './components/past-sessions/past-sessions.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { CourseDetailsTemplateComponent } from './template/course-details-templa
     DetailedFeaturesComponent,
     ComparisonTableComponent,
     FeaturesTableComponent,
-    CourseDetailsTemplateComponent
+    CourseDetailsTemplateComponent,
+    PastSessionsComponent
   ],
   imports: [
     BrowserModule,

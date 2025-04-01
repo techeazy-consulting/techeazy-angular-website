@@ -44,7 +44,17 @@ ul li{
     transition: all 0.5s ease;
 }
 
+div li{
+    list-style: none;
+    transition: all 0.5s ease;
+}
+
 ul li:hover{
+    transform: translateX(10px);
+    color: #e1e1e1;
+}
+
+div li:hover{
     transform: translateX(10px);
     color: #e1e1e1;
 }
@@ -54,9 +64,22 @@ ul li a{
     color: gray;
     font-size: 14px;
     transition: all 0.5s ease;
+    margin-bottom: -4px;
+}
+
+div li a{
+    text-decoration: none;
+    color: gray;
+    font-size: 12px;
+    transition: all 0.5s ease;
+    margin-bottom: -4px;
 }
 
 ul li a:hover{
+    color: #e1e1e1;
+}
+
+div li a:hover{
     color: #e1e1e1;
 }
 
