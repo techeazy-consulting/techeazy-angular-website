@@ -1,0 +1,28 @@
+<!-- <div class="blog-card p-6" *ngIf="data">
+  <h2 class="text-xl font-semibold mb-2">{{ data.title }}</h2>
+  <p class="text-gray-700 mb-4">{{ data.brief }}</p>
+  <a
+    [href]="'https://blog.techeazyconsulting.com/' + data.slug"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="text-blue-500 hover:underline"
+  >
+    Read More →
+  </a>
+</div> -->
+
+<div class="card shadow-sm h-100" *ngIf="data">
+  <div class="card-body d-flex flex-column">
+    <h2 class="card-title h5">{{ data.title }}</h2>
+    <hr>
+    <p class="card-text text-muted flex-grow-1">{{ data.brief }}</p>
+    <a 
+      [href]="'https://blog.techeazyconsulting.com/' + data.slug"
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="btn btn-primary mt-auto"
+    >
+      Read More →
+    </a>
+  </div>
+</div>

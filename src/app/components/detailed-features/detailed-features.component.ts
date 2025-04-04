@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { env } from '../../../environment/environment';
 
 @Component({
   selector: 'app-detailed-features',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class DetailedFeaturesComponent {
 
+  env_url = env;
+  
   features = [
     {
       name: 'Objective',

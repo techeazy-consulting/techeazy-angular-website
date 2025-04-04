@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { env } from '../../../environment/environment';
 
 @Component({
   selector: 'app-internship-tab',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './internship-tab.component.css'
 })
 export class InternshipTabComponent {
-
+  env_url = env
 }

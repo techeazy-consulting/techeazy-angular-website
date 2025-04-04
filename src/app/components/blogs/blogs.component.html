@@ -1,14 +1,37 @@
 <div class="blog-container">
-    <h1>My Blogs</h1>
-    <!-- <div *ngIf="blogs.length; else noBlogs">
-      <div *ngFor="let blog of blogs" class="blog-card">
-        <h2>{{ blog.title }}</h2>
-        <p>{{ blog.brief }}</p>
-        <a [href]="blog.url" target="_blank">Read More</a>
+    <h1>TechEazy Blogs</h1>
+    <hr>
+    <div class="container mx-auto p-6 mt-4">
+      <div class="row mb-4">
+        <div class="col-md-9"> <input
+            type="text"
+            [(ngModel)]="searchTerm"
+            placeholder="Enter keyword..."
+            class="form-control"
+          />
+        </div>
+        <div class="col-md-3"> 
+          <button
+            (click)="showPostBlog = !showPostBlog"
+            class="btn btn-primary w-100"
+          >
+            <i class="bi bi-plus"></i>
+            {{ showPostBlog ? 'Hide Post Blog' : 'Post Blog' }}
+          </button>
+        </div>
       </div>
-    </div> -->
-    <ng-template #noBlogs>
-      <p>No blogs available at the moment.</p>
-    </ng-template>
+      <app-blog-post *ngIf="showPostBlog"></app-blog-post>
+      <app-blog-list [blogs]="filteredBlogs"></app-blog-list>
+      <div *ngIf="hasNextPage" class="flex justify-center mt-6">
+        <button
+          (click)="fetchBlogs(cursor)"
+          [disabled]="!cursor || loading"
+          class="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50"
+        >
+          {{ loading ? 'Loading...' : 'Load More' }}
+        </button>
+      </div>
+      <p *ngIf="error" class="text-center text-red-500 mt-4">{{ error }}</p>
+    </div>
 </div>
   

@@ -23,6 +23,9 @@ import { ComparisonTableComponent } from './template/comparison-table/comparison
 import { FeaturesTableComponent } from './template/features-table/features-table.component';
 import { CourseDetailsTemplateComponent } from './template/course-details-template/course-details-template.component';
 import { PastSessionsComponent } from './components/past-sessions/past-sessions.component';
+import { BlogPostComponent } from './components/blog-post/blog-post.component';
+import { BlogCardComponent } from './components/blog-card/blog-card.component';
+import { BlogListComponent } from './components/blog-list/blog-list.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { PastSessionsComponent } from './components/past-sessions/past-sessions.
     ComparisonTableComponent,
     FeaturesTableComponent,
     CourseDetailsTemplateComponent,
-    PastSessionsComponent
+    PastSessionsComponent,
+    BlogPostComponent,
+    BlogCardComponent,
+    BlogListComponent
   ],
   imports: [
     BrowserModule,

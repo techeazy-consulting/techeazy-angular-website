@@ -1,142 +1,181 @@
-  <div class="container my-5">
-    <!-- Pricing Section -->
-    <div class="row align-items-center text-center">
-      <div class="col-md-4 text-start">
-        <!-- <h2 class="text-primary">Marketing Platform</h2> -->
-      </div>
-      <div class="col-md-4">
-        <div class="card border-primary shadow-sm">
-          <div class="card-header">
-            <h5 class="mb-0">Free</h5>
-          </div>
-          <div class="card-body">
-            <h6 class="text-primary">₹0 / month</h6>
-            <div class="d-flex justify-content-evenly">
-              <button class="btn btn-primary" routerLink="/class-detail/AWS-Internship">More details <span class="text-white fw-bold"> →</span></button>
-              <a class="btn btn-primary signup-btn" href="https://forms.gle/oeuddXyFF4trxXo27" target="_blank">Register now <span class="text-white fw-bold"> →</span></a>
-            </div>
-          </div>
+<div class="container my-5">
+  <!-- Pricing Section -->
+  <div class="row align-items-center text-center">
+    <div class="col-md-4 text-start">
+      <!-- <h2 class="text-primary">Marketing Platform</h2> -->
+    </div>
+    <div class="col-md-4">
+      <div class="card border-primary shadow-sm">
+        <div class="card-header">
+          <h5 class="mb-0">Free</h5>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card border-primary shadow-sm">
-          <div class="card-header bg-primary text-white">
-            <h5 class="mb-0">Advanced</h5>
-          </div>
-          <div class="card-body">
-            <h6 class="text-primary">1st month FREE, then ₹4K/month</h6>
-            <div class="d-flex justify-content-evenly">
-              <button class="btn btn-primary" routerLink="/class-detail/AWS-Interview-and-Internship">More details <span class="text-white fw-bold"> →</span></button>
-              <a class="btn btn-primary signup-btn" href="https://forms.gle/oZ5YoZSqmSL7DiWG6" target="_blank">Register now <span class="text-white fw-bold"> →</span></a>
-            </div>
+        <div class="card-body">
+          <h6 class="text-primary">₹0 / month</h6>
+          <div class="d-flex justify-content-evenly">
+            <button
+              class="btn btn-primary"
+              routerLink="/class-detail/AWS-Internship"
+            >
+              More details <span class="text-white fw-bold"> →</span>
+            </button>
+            <a
+              class="btn btn-primary signup-btn"
+              [href]="env_url.free_Registration_Link"
+              target="_blank"
+              >Register now <span class="text-white fw-bold"> →</span></a
+            >
           </div>
         </div>
       </div>
     </div>
-  
-    <!-- <div class="content-type-box border rounded shadow-sm p-3 mt-4">
-        <h5 class="fw-bold text-start mb-0">Campaigns</h5>
-      </div> -->
-
-      <hr>
-    
-      <div class="container">
-        <div class="row mt-3 features-container">
-          <div class="col-md-4">
-            <div class="card border rounded shadow-sm p-3">
-              <h5 class="card-header fw-bold text-center text-primary">Feature</h5>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item"
-                    [ngClass]="{'ideal-for-content': feature.name === 'Ideal For'}"
-                    *ngFor="let feature of features">
-                <strong>{{ feature.name }}</strong>
-                </li>
-              </ul>
-            </div>
-          </div>
-      
-          <!-- Unpaid Internship Card -->
-          <div class="col-md-4">
-            <div class="card border rounded shadow-sm p-3">
-              <h5 class="card-header fw-bold text-center text-primary">Unpaid AWS Internship</h5>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item" 
-                    [ngClass]="{'ideal-for-content': feature.name === 'Ideal For'}"
-                    *ngFor="let feature of features">
-                    <span *ngIf="isBoolean(feature.unpaid)">
-                        <span *ngIf="feature.unpaid" class="text-success fw-bold"><i class="fa-solid fa-check fa-2xl"></i></span>
-                        <span *ngIf="!feature.unpaid" class="text-danger fw-bold"><i class="fa-solid fa-xmark fa-2xl"></i></span>
-                        <!-- <span *ngIf="feature.unpaid" class="text-success fw-bold">✔</span>
-                        <span *ngIf="!feature.unpaid" class="text-danger fw-bold">✖</span> -->
-                      </span>
-          
-                      <!-- Show text if the value is not boolean -->
-                      <span *ngIf="!isBoolean(feature.unpaid)">
-                        {{ feature.unpaid }}
-                      </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-      
-          <!-- Interview Preparations & Internship Card -->
-          <div class="col-md-4">
-            <div class="card border rounded shadow-sm p-3">
-              <h5 class="card-header fw-bold text-center text-primary">Interview Prep & Internship</h5>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item feature-item" 
-                    [ngClass]="{'ideal-for-content': feature.name === 'Ideal For'}"
-                    *ngFor="let feature of features">
-                    <span *ngIf="isBoolean(feature.paid)">
-                      <span *ngIf="feature.paid" class="text-success fw-bold"><i class="fa-solid fa-check fa-2xl"></i></span>
-                      <span *ngIf="!feature.paid" class="text-danger fw-bold"><i class="fa-solid fa-xmark fa-2xl"></i></span>
-                    </span>
-                      <span *ngIf="!isBoolean(feature.paid)">
-                        {{ feature.paid }}
-                      </span>
-                </li>
-              </ul>
-            </div>
+    <div class="col-md-4">
+      <div class="card border-primary shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h5 class="mb-0">Advanced</h5>
+        </div>
+        <div class="card-body">
+          <h6 class="text-primary">1st month FREE, then ₹4K/month</h6>
+          <div class="d-flex justify-content-evenly">
+            <button
+              class="btn btn-primary"
+              routerLink="/class-detail/AWS-Interview-and-Internship"
+            >
+              More details <span class="text-white fw-bold"> →</span>
+            </button>
+            <a
+              class="btn btn-primary signup-btn"
+              [href]="env_url.paid_Registration_Link"
+              target="_blank"
+              >Register now <span class="text-white fw-bold"> →</span></a
+            >
           </div>
         </div>
       </div>
-</div>
-  
+    </div>
+  </div>
+  <hr />
 
-  <div class="my-5 table-container">
-  
-    <div class="table-responsive mt-3">
-      <table class="table text-center align-middle border">
-        <thead class="table-primary">
-          <tr>
-            <th style="border-right: 1px solid #d4d3d3;">Features</th>
-            <th style="border-right: 1px solid #d4d3d3;">Unpaid AWS Internship</th>
-            <th>Interview Prep & Internship</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let feature of features">
-            <td class="text-start fw-bold">{{feature.name}}</td>
-            <td>
+  <div class="container">
+    <div class="row mt-3 features-container">
+      <div class="col-md-4">
+        <div class="card border rounded shadow-sm p-3">
+          <h5 class="card-header fw-bold text-center text-primary">Feature</h5>
+          <ul class="list-group list-group-flush">
+            <li
+              class="list-group-item"
+              [ngClass]="{ 'ideal-for-content': feature.name === 'Ideal For' }"
+              *ngFor="let feature of features"
+            >
+              <strong>{{ feature.name }}</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Unpaid Internship Card -->
+      <div class="col-md-4">
+        <div class="card border rounded shadow-sm p-3">
+          <h5 class="card-header fw-bold text-center text-primary">
+            Unpaid AWS Internship
+          </h5>
+          <ul class="list-group list-group-flush">
+            <li
+              class="list-group-item"
+              [ngClass]="{ 'ideal-for-content': feature.name === 'Ideal For' }"
+              *ngFor="let feature of features"
+            >
               <span *ngIf="isBoolean(feature.unpaid)">
-                <span *ngIf="feature.unpaid" class="text-success fw-bold"><i class="fa-solid fa-check fa-2xl"></i></span>
-                <span *ngIf="!feature.unpaid" class="text-danger fw-bold"><i class="fa-solid fa-xmark fa-2xl"></i></span>
+                <span *ngIf="feature.unpaid" class="text-success fw-bold"
+                  ><i class="fa-solid fa-check fa-2xl"></i
+                ></span>
+                <span *ngIf="!feature.unpaid" class="text-danger fw-bold"
+                  ><i class="fa-solid fa-xmark fa-2xl"></i
+                ></span>
+                <!-- <span *ngIf="feature.unpaid" class="text-success fw-bold">✔</span>
+                        <span *ngIf="!feature.unpaid" class="text-danger fw-bold">✖</span> -->
               </span>
+
+              <!-- Show text if the value is not boolean -->
               <span *ngIf="!isBoolean(feature.unpaid)">
                 {{ feature.unpaid }}
               </span>
-            </td>
-            <td>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Interview Preparations & Internship Card -->
+      <div class="col-md-4">
+        <div class="card border rounded shadow-sm p-3">
+          <h5 class="card-header fw-bold text-center text-primary">
+            Interview Prep & Internship
+          </h5>
+          <ul class="list-group list-group-flush">
+            <li
+              class="list-group-item feature-item"
+              [ngClass]="{ 'ideal-for-content': feature.name === 'Ideal For' }"
+              *ngFor="let feature of features"
+            >
               <span *ngIf="isBoolean(feature.paid)">
-                <span *ngIf="feature.paid" class="text-success fw-bold"><i class="fa-solid fa-check fa-2xl"></i></span>
-                <span *ngIf="!feature.paid" class="text-danger fw-bold"><i class="fa-solid fa-xmark fa-2xl"></i></span>
+                <span *ngIf="feature.paid" class="text-success fw-bold"
+                  ><i class="fa-solid fa-check fa-2xl"></i
+                ></span>
+                <span *ngIf="!feature.paid" class="text-danger fw-bold"
+                  ><i class="fa-solid fa-xmark fa-2xl"></i
+                ></span>
               </span>
               <span *ngIf="!isBoolean(feature.paid)">
                 {{ feature.paid }}
               </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
+</div>
+
+<div class="my-5 table-container">
+  <div class="table-responsive mt-3">
+    <table class="table text-center align-middle border">
+      <thead class="table-primary">
+        <tr>
+          <th style="border-right: 1px solid #d4d3d3">Features</th>
+          <th style="border-right: 1px solid #d4d3d3">Unpaid AWS Internship</th>
+          <th>Interview Prep & Internship</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let feature of features">
+          <td class="text-start fw-bold">{{ feature.name }}</td>
+          <td>
+            <span *ngIf="isBoolean(feature.unpaid)">
+              <span *ngIf="feature.unpaid" class="text-success fw-bold"
+                ><i class="fa-solid fa-check fa-2xl"></i
+              ></span>
+              <span *ngIf="!feature.unpaid" class="text-danger fw-bold"
+                ><i class="fa-solid fa-xmark fa-2xl"></i
+              ></span>
+            </span>
+            <span *ngIf="!isBoolean(feature.unpaid)">
+              {{ feature.unpaid }}
+            </span>
+          </td>
+          <td>
+            <span *ngIf="isBoolean(feature.paid)">
+              <span *ngIf="feature.paid" class="text-success fw-bold"
+                ><i class="fa-solid fa-check fa-2xl"></i
+              ></span>
+              <span *ngIf="!feature.paid" class="text-danger fw-bold"
+                ><i class="fa-solid fa-xmark fa-2xl"></i
+              ></span>
+            </span>
+            <span *ngIf="!isBoolean(feature.paid)">
+              {{ feature.paid }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

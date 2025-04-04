@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 import { VideoPopupComponent } from '../video-popup/video-popup.component';
 import { ExpressInterestComponent } from '../express-interest/express-interest.component';
+import { env } from '../../../environment/environment';
 
 @Component({
   selector: 'app-courses',
@@ -15,6 +16,8 @@ export class CoursesComponent {
   classDetails: any;
   chapters: any;
   classes : any;
+
+  env_url = env;
 
   showSliderMenu: boolean = true;
 

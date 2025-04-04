@@ -9,6 +9,9 @@ import { InternshipTabComponent } from './components/internship-tab/internship-t
 import { DetailedFeaturesComponent } from './components/detailed-features/detailed-features.component';
 import { CourseDetailsTemplateComponent } from './template/course-details-template/course-details-template.component';
 import { PastSessionsComponent } from './components/past-sessions/past-sessions.component';
+import { BlogPostComponent } from './components/blog-post/blog-post.component';
+import { BlogListComponent } from './components/blog-list/blog-list.component';
+import { BlogCardComponent } from './components/blog-card/blog-card.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },

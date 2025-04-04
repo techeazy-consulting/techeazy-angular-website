@@ -1,0 +1,7 @@
+.card-body {
+  background-image: url('/assets/images/blog-bg.png');
+  border-radius: 4px ;
+}
+
+@media (max-width: 575.98px) {
+}
