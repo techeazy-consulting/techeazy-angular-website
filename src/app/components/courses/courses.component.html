@@ -55,7 +55,7 @@
         <li class="card-text text-body-secondary"><i class="fa-solid fa-certificate"></i>Certificate of Completion</li>
       </ul>
       <!-- <button class="btn btn-primary w-100 fw-bold" (click)="formPopup.openPopup()" *ngIf="classDetails.courseStatus == 'COMPLETED'">Express Interest</button> -->
-      <a class="btn btn-primary w-100 fw-bold" [href]="env_url.free_Registration_Link" target="_blank" *ngIf="classDetails.courseStatus == 'ABOUT TO START'">Register Now</a>
+      <a class="btn btn-primary w-100 fw-bold" [href]="env_url.free_Registration_Link" target="_blank" *ngIf="classDetails.courseStatus == 'ABOUT TO START' || 'ONGOING' ">Register Now</a>
     </div>
   </div>
 </header>
