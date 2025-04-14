@@ -15,6 +15,7 @@ export class DetailedFeaturesComponent {
       name: 'Objective',
       unpaid: 'Deploy and test on AWS',
       paid: 'Understand AWS comprehensively',
+      advanced: 'Upskill urself with AWS'
     },
     {
       name: 'Ideal For',
@@ -27,75 +28,92 @@ export class DetailedFeaturesComponent {
         'Experienced professionals, Learn and apply AWS in JOB',
         'Beginners or career switchers with no prior AWS knowledge',
       ],
+      advanced: [
+        'Experienced professionals, Upskill and apply AWS in JOB',
+        'Experienced or career switchers with no prior AWS knowledge',
+      ],
     },
     {
       name: 'Prerequisite',
       unpaid: 'Basic knowledge of any programming language ',
       paid: 'Basic knowledge of any programming language ',
+      advanced: true
     },
-    { name: 'Duration', unpaid: '1 month', paid: '2 months' },
-    { name: 'Charges', unpaid: 'Free', paid: '1st Month is Free, 4000/- for second month' },
-    { name: 'Payment Schedule', unpaid: 'None', paid: 'Starts from 2nd Month' },
-    { name: 'Live Projects', unpaid: true, paid: true },
+    { name: 'Duration', unpaid: '1 month', paid: '2 months', advanced: true },
+    { name: 'Charges', unpaid: 'Free', paid: '1st Month is Free, 4000/- for second month', advanced: true },
+    { name: 'Payment Schedule', unpaid: 'None', paid: 'Starts from 2nd Month', advanced: true },
+    { name: 'Live Projects', unpaid: true, paid: true, advanced: true },
     {
       name: 'IAM',
       unpaid: true,
       paid: true,
+      advanced: true
     },
     {
       name: 'DynamoDB',
       unpaid: true,
       paid: true,
+      advanced: true
     },
     {
       name: 'EC2',
       unpaid: true,
       paid: true,
+      advanced: true
     },
     {
       name: 'S3',
       unpaid: true,
       paid: true,
+      advanced: true
     },
     {
       name: 'Networking',
       unpaid: false,
       paid: true,
+      advanced: true
     },
     {
       name: 'Scalability',
       unpaid: false,
       paid: true,
+      advanced: true
     },
     {
       name: 'App Security',
       unpaid: false,
       paid: true,
+      advanced: true
     },
     {
       name: 'Load Balancer',
       unpaid: false,
       paid: true,
+      advanced: true
     },
     {
       name: 'API Gateway',
       unpaid: false,
       paid: true,
+      advanced: true
     },
     {
       name: 'Serverless',
       unpaid: false,
       paid: true,
+      advanced: true
     },
     {
       name: 'SQS',
       unpaid: false,
       paid: true,
+      advanced: true
     },
     {
       name: 'Event Driven Architecture',
       unpaid: false,
       paid: true,
+      advanced: true
     },
   ];
 

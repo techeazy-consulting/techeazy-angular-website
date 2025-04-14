@@ -1,72 +1,138 @@
 <div class="bootcamp-banner mb-5">
-    <img src="../../../assets/images/bootcamp-bg.png" alt="" />
-    <div class="container">
-        <div class="row banner-boot">
-        <h2 class="text-center">"🎓 Ready to Kickstart Your IT Career? 🚀"</h2>
-        <p class="fst-italic text-secondary text-center">
-          Are you ready to build real-world AWS Cloud Computing skills? This 1-month intensive internship-style trainingby TechEazy Consulting is designed for students and professionals (0-2 years experience) who want to gain hands-on AWS experience by deploying real applications on the cloud.
-
-This program is structured like a real-world cloud engineering role, where you will attend scrum calls, participate in practical sessions, and deploy a live project on AWS.
-        </p>
-        </div>
-        <br>
-        <div class="pricing-container">
-            <div class="card pricing-card border-primary">
-              <div class="card-header bg-primary text-white text-center">
-                <h1 class="card-title fw-bold">Free</h1>
-                <p></p>
-                <!-- <h6 class="">$0 / month</h6> -->
-                <div class="d-flex justify-content-evenly">
-                  <button class="btn btn-light" routerLink="/class-detail/AWS-Internship">More details <span class="text-primary fw-bold"> →</span></button>
-                  <a class="btn btn-light signup-btn text-dark" [href]="env_url.free_Registration_Link" target="_blank">Register now <span class="text-primary fw-bold"> →</span></a>
-                </div>
-              </div>
-              <div class="card-body text-start">
-                <p class="card-text">Get started with essential features for free.</p>
-                <ul class="list-unstyled">
-                  <li><i class="bi bi-check-all text-success"></i> FREE completion certificate</li>
-                  <li><i class="bi bi-check-all text-success"></i> Boost your resume with AWS</li>
-                  <li><i class="bi bi-check-all text-success"></i> Deploy your Project on AWS</li>
-                  <li><i class="bi bi-check-all text-success"></i> Understand Cloud Computing</li>
-                  <li><i class="bi bi-check-all text-success"></i> Learn AWS IAM, EC2, DynamoDB, S3</li>
-                  <li><i class="bi bi-check-all text-success"></i> Interview Tips</li>
-                  <li><i class="bi bi-check-all text-success"></i> Quizzes and feedback</li>
-                  <li><i class="bi bi-check-all text-success"></i> Hackathon</li>
-                </ul>
-              </div>
-              <div class="card-footer text-center">
-                <button class="btn" routerLink="/all-features">Compare more →</button>
-              </div>
-            </div>
-            
-            <div class="card pricing-card border-primary">
-              <div class="card-header text-center">
-                <h4 class="card-title text-primary">Advanced</h4>
-                <h6 class="text-primary">1st month FREE, then ₹4K / month</h6>
-                <div class="d-flex justify-content-evenly">
-                  <button class="btn btn-primary" routerLink="/class-detail/AWS-Interview-and-Internship">More details <span class="text-light fw-bold"> →</span></button>
-                  <a class="btn btn-primary signup-btn" [href]="env_url.paid_Registration_Link" target="_blank">Register now <span class="text-light fw-bold"> →</span></a>
-                </div>
-              </div>
-              <div class="card-body text-start">
-                <p class="card-text">Unlock More: Everything in FREE</p>
-                <ul class="list-unstyled">
-                  <li><i class="bi bi-check-all text-success"></i> Advanced AWS concepts</li>
-                  <li><i class="bi bi-check-all text-success"></i> Horizontal and vertical Scaling</li>
-                  <li><i class="bi bi-check-all text-success"></i> Load balancers in AWS</li>
-                  <li><i class="bi bi-check-all text-success"></i> Networking in AWS</li>
-                  <li><i class="bi bi-check-all text-success"></i> Security in AWS</li>
-                  <li><i class="bi bi-check-all text-success"></i> API gateway in AWS</li>
-                  <li><i class="bi bi-check-all text-success"></i> Serverless architecture</li>
-                  <li><i class="bi bi-check-all text-success"></i> Messaging system in AWS</li>
-                  <li><i class="bi bi-check-all text-success"></i> Event driven architecture</li>
-                  <li><i class="bi bi-check-all text-success"></i> Infrastructure as code (IaaC)	</li>
-                </ul>
-              </div>
-              <div class="card-footer text-center">
-                <button class="btn" routerLink="/all-features">Compare more →</button>
-              </div>
-            </div>
-          </div>
+  <img src="../../../assets/images/bootcamp-bg.png" alt="" />
+  <div class="container">
+    <div class="row banner-boot">
+      <h2 class="text-center">"🎓 Ready to Kickstart Your IT Career? 🚀"</h2>
+      <p class="fst-italic text-secondary text-center">
+        Are you ready to build real-world AWS Cloud Computing skills? This
+        1-month intensive internship-style trainingby TechEazy Consulting is
+        designed for students and professionals (0-2 years experience) who want
+        to gain hands-on AWS experience by deploying real applications on the
+        cloud. This program is structured like a real-world cloud engineering
+        role, where you will attend scrum calls, participate in practical
+        sessions, and deploy a live project on AWS.
+      </p>
     </div>
+    <br />
+    <div class="pricing-container">
+      <div class="card pricing-card border-primary">
+        <div class="card-header bg-primary text-white text-center">
+          <h1 class="card-title fw-bold">Free</h1>
+          <p></p>
+          <!-- <h6 class="">$0 / month</h6> -->
+          <div class="d-flex justify-content-evenly">
+            <button
+              class="btn btn-light"
+              routerLink="/class-detail/AWS-Internship"
+            >
+              More details <span class="text-primary fw-bold"> →</span>
+            </button>
+            <a
+              class="btn btn-light signup-btn text-dark"
+              [href]="env_url.free_Registration_Link"
+              target="_blank"
+              >Register now <span class="text-primary fw-bold"> →</span></a
+            >
+          </div>
+        </div>
+        <div class="card-body text-start">
+          <p class="card-text">Get started with essential features for free.</p>
+          <ul class="list-unstyled">
+            <li>
+              <i class="bi bi-check-all text-success"></i> FREE completion
+              certificate
+            </li>
+            <li>
+              <i class="bi bi-check-all text-success"></i> Boost your resume
+              with AWS
+            </li>
+            <li>
+              <i class="bi bi-check-all text-success"></i> Deploy your Project
+              on AWS
+            </li>
+            <li>
+              <i class="bi bi-check-all text-success"></i> Understand Cloud
+              Computing
+            </li>
+            <li>
+              <i class="bi bi-check-all text-success"></i> Learn AWS IAM, EC2,
+              DynamoDB, S3
+            </li>
+            <li><i class="bi bi-check-all text-success"></i> Interview Tips</li>
+            <li>
+              <i class="bi bi-check-all text-success"></i> Quizzes and feedback
+            </li>
+            <li><i class="bi bi-check-all text-success"></i> Hackathon</li>
+          </ul>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn" routerLink="/all-features">Compare more →</button>
+        </div>
+      </div>
+
+      <div class="card pricing-card border-primary">
+        <div class="card-header text-center">
+          <h4 class="card-title text-primary">Advanced</h4>
+          <h6 class="text-primary">1st month FREE, then ₹4K / month</h6>
+          <div class="d-flex justify-content-evenly">
+            <button
+              class="btn btn-primary"
+              routerLink="/class-detail/AWS-Interview-and-Internship"
+            >
+              More details <span class="text-light fw-bold"> →</span>
+            </button>
+            <a
+              class="btn btn-primary signup-btn"
+              [href]="env_url.paid_Registration_Link"
+              target="_blank"
+              >Register now <span class="text-light fw-bold"> →</span></a
+            >
+          </div>
+        </div>
+        <div class="card-body text-start">
+          <p class="card-text">Unlock More: Everything in FREE</p>
+          <ul class="list-unstyled">
+            <li>
+              <i class="bi bi-check-all text-success"></i> Advanced AWS concepts
+            </li>
+            <li>
+              <i class="bi bi-check-all text-success"></i> Horizontal and
+              vertical Scaling
+            </li>
+            <li>
+              <i class="bi bi-check-all text-success"></i> Load balancers in AWS
+            </li>
+            <li>
+              <i class="bi bi-check-all text-success"></i> Networking in AWS
+            </li>
+            <li>
+              <i class="bi bi-check-all text-success"></i> Security in AWS
+            </li>
+            <li>
+              <i class="bi bi-check-all text-success"></i> API gateway in AWS
+            </li>
+            <li>
+              <i class="bi bi-check-all text-success"></i> Serverless
+              architecture
+            </li>
+            <li>
+              <i class="bi bi-check-all text-success"></i> Messaging system in
+              AWS
+            </li>
+            <li>
+              <i class="bi bi-check-all text-success"></i> Event driven
+              architecture
+            </li>
+            <li>
+              <i class="bi bi-check-all text-success"></i> Infrastructure as
+              code (IaaC)
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn" routerLink="/all-features">Compare more →</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

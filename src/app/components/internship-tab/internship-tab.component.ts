@@ -8,4 +8,15 @@ import { env } from '../../../environment/environment';
 })
 export class InternshipTabComponent {
   env_url = env
+
+  pricingCard = [
+    {
+      'title' : 'Free',
+      'price' : '0 / Month',
+      'route' : '/class-detail/AWS-Internship',
+      'anchorLink' : 'env_url.free_Registration_Link',
+      'cardText' : 'Get started with essential features for free.',
+      'list' : []
+    }
+  ]
 }
