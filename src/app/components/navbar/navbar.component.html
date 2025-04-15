@@ -16,15 +16,7 @@
                     <a class="nav-link dropdown-toggle" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Courses
                     </a>
-                    <!-- <a class="nav-link dropdown-toggle" routerLink="/courses" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Courses
-                    </a> -->
                     <ul class="dropdown-menu">
-                      <!-- <li *ngFor="let classItem of classes">
-                        <a class="dropdown-item" [routerLink]="['/class-detail', classItem.id]">
-                          {{ classItem.className }}
-                        </a>
-                      </li> -->
                       <li *ngFor="let classItem of classes">
                         <a class="dropdown-item" (click)="goToCourses(classItem)">
                           {{ classItem.className }}
@@ -32,8 +24,21 @@
                       </li>                      
                     </ul>
                   </li>
-                <li class="nav-item me-3">
+                <!-- <li class="nav-item me-3">
                     <a class="nav-link" routerLink="/online_aws_internship">Internship</a>
+                </li> -->
+                <li class="nav-item dropdown me-3">
+                  <a class="nav-link dropdown-toggle" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Internships
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li>
+                        <a class="nav-link" routerLink="/internship/aws">AWS Internship</a>
+                      </li>
+                      <li>
+                        <a class="nav-link" routerLink="/internship/fullstack">FullStack Internship</a>
+                      </li>
+                  </ul>
                 </li>
                 <!-- <li class="nav-item me-3">
                     <a class="nav-link" routerLink="/bootcamps">Bootcamps</a>

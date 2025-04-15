@@ -1,8 +1,7 @@
-<div class="container my-5">
-  <!-- Pricing Section -->
+<!-- <div class="container my-5">
   <div class="row align-items-center text-center">
     <div class="col-md-4 text-start">
-      <!-- <h2 class="text-primary">Marketing Platform</h2> -->
+      <h2 class="text-primary">Marketing Platform</h2>
     </div>
     <div class="col-md-4">
       <div class="card border-primary shadow-sm">
@@ -72,7 +71,7 @@
         </div>
       </div>
 
-      <!-- Unpaid Internship Card -->
+      Unpaid Internship Card
       <div class="col-md-4">
         <div class="card border rounded shadow-sm p-3">
           <h5 class="card-header fw-bold text-center text-primary">
@@ -91,11 +90,11 @@
                 <span *ngIf="!feature.unpaid" class="text-danger fw-bold"
                   ><i class="fa-solid fa-xmark fa-2xl"></i
                 ></span>
-                <!-- <span *ngIf="feature.unpaid" class="text-success fw-bold">✔</span>
-                        <span *ngIf="!feature.unpaid" class="text-danger fw-bold">✖</span> -->
+                <span *ngIf="feature.unpaid" class="text-success fw-bold">✔</span>
+                        <span *ngIf="!feature.unpaid" class="text-danger fw-bold">✖</span>
               </span>
 
-              <!-- Show text if the value is not boolean -->
+              Show text if the value is not boolean
               <span *ngIf="!isBoolean(feature.unpaid)">
                 {{ feature.unpaid }}
               </span>
@@ -104,7 +103,7 @@
         </div>
       </div>
 
-      <!-- Interview Preparations & Internship Card -->
+      Interview Preparations & Internship Card
       <div class="col-md-4">
         <div class="card border rounded shadow-sm p-3">
           <h5 class="card-header fw-bold text-center text-primary">
@@ -175,6 +174,226 @@
             </span>
           </td>
         </tr>
+      </tbody>
+    </table>
+  </div>
+</div> -->
+
+<div class="container my-5">
+  <div class="row align-items-center text-center">
+    <div class="col-md-4 text-start">
+      <!-- <h2 class="text-primary">{{ internshipData.title }}</h2> -->
+    </div>
+
+    <!-- Pricing Cards -->
+    <!-- <ng-container > -->
+    <div class="col-md-4" *ngFor="let card of internshipData.pricingCards">
+      <div class="card border-primary shadow-sm">
+        <div class="card-header" [ngClass]="card.headerClass">
+          <h5 class="mb-0" [ngClass]="card.titleClass">{{ card.title }}</h5>
+        </div>
+        <div class="card-body">
+          <h6 class="text-primary" *ngIf="card.subtitle">
+            {{ card.subtitle }}
+          </h6>
+          <div class="d-flex justify-content-evenly">
+            <button
+              class="btn"
+              [ngClass]="[card.btnClass, card.btnTextColor]"
+              [routerLink]="card.route"
+            >
+              More details <span class="fw-bold">→</span>
+            </button>
+            <a
+              class="btn signup-btn"
+              [ngClass]="[card.btnClass, card.btnTextColor]"
+              [href]="card.registerLink"
+              target="_blank"
+            >
+              Register now <span class="fw-bold">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </ng-container> -->
+  </div>
+
+  <hr />
+
+  <!-- Features Comparison -->
+  <div class="container">
+    <div class="row mt-3 features-container">
+      <div class="col-md-4">
+        <div class="card border rounded shadow-sm p-3">
+          <h5 class="card-header fw-bold text-center text-primary">Feature</h5>
+          <ul class="list-group list-group-flush">
+            <li
+              class="list-group-item"
+              *ngFor="let feature of internshipData.pricingCards[0]?.features"
+              [ngClass]="{
+                'ideal-for-content': feature.name === 'Ideal For',
+                objective: feature.name === 'Objective'
+              }"
+            >
+              <strong *ngIf="feature.name">{{ feature.name }}</strong>
+              <ng-container *ngIf="!feature.name">{{ feature }}</ng-container>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Free -->
+      <div class="col-md-4">
+        <div class="card border rounded shadow-sm p-3">
+          <h5
+            class="card-header fw-bold text-center text-primary"
+            *ngIf="internshipData.pricingCards[0].title2"
+          >
+            {{ internshipData.pricingCards[0].title2 }}
+          </h5>
+          <ul class="list-group list-group-flush">
+            <li
+              class="list-group-item feature-item"
+              *ngFor="let feature of internshipData.pricingCards[0]?.features"
+              [ngClass]="{
+                'ideal-for-content': feature.name === 'Ideal For',
+                objective: feature.name === 'Objective'
+              }"
+            >
+              <span *ngIf="isBoolean(feature.unpaid)">
+                <span *ngIf="feature.unpaid" class="text-success fw-bold"
+                  ><i class="fa-solid fa-check fa-2xl"></i
+                ></span>
+                <span *ngIf="!feature.unpaid" class="text-danger fw-bold"
+                  ><i class="fa-solid fa-xmark fa-2xl"></i
+                ></span>
+              </span>
+              <span *ngIf="!isBoolean(feature.unpaid)">
+                {{ feature.unpaid }}
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Paid -->
+      <div class="col-md-4">
+        <div class="card border rounded shadow-sm p-3">
+          <h5
+            class="card-header fw-bold text-center text-primary"
+            *ngIf="internshipData.pricingCards[0].title2"
+          >
+            {{ internshipData.pricingCards[1].title2 }}
+          </h5>
+          <ul class="list-group list-group-flush">
+            <li
+              class="list-group-item"
+              *ngFor="let feature of internshipData.pricingCards[1]?.features"
+              [ngClass]="{
+                'ideal-for-content': feature.name === 'Ideal For',
+                objective: feature.name === 'Objective'
+              }"
+            >
+              <span *ngIf="isBoolean(feature.paid)">
+                <span *ngIf="feature.paid" class="text-success fw-bold"
+                  ><i class="fa-solid fa-check fa-2xl"></i
+                ></span>
+                <span *ngIf="!feature.paid" class="text-danger fw-bold"
+                  ><i class="fa-solid fa-xmark fa-2xl"></i
+                ></span>
+              </span>
+              <span *ngIf="!isBoolean(feature.paid)">
+                {{ feature.paid }}
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="my-5 table-container">
+  <div class="table-responsive mt-3">
+    <table
+      class="table text-center align-middle border"
+    >
+      <thead class="table-primary">
+        <tr>
+          <th style="border-right: 1px solid #d4d3d3">Features</th>
+          <th style="border-right: 1px solid #d4d3d3">{{ internshipData.pricingCards[0].title2 }}</th>
+          <th>{{ internshipData.pricingCards[1].title2 }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let feature of internshipData?.pricingCards[0]?.features">
+          <td class="text-start fw-bold">{{ feature.name }}</td>
+
+          <td>
+            <span *ngIf="isBoolean(feature.unpaid)">
+              <span *ngIf="feature.unpaid" class="text-success fw-bold">
+                <i class="fa-solid fa-check fa-2xl"></i>
+              </span>
+              <span *ngIf="!feature.unpaid" class="text-danger fw-bold">
+                <i class="fa-solid fa-xmark fa-2xl"></i>
+              </span>
+            </span>
+            <span *ngIf="!isBoolean(feature.unpaid)">
+              {{ feature.unpaid }}
+            </span>
+          </td>
+
+          <!-- Paid column -->
+          <td>
+            <span *ngIf="isBoolean(feature.paid)">
+              <span *ngIf="feature.paid" class="text-success fw-bold">
+                <i class="fa-solid fa-check fa-2xl"></i>
+              </span>
+              <span *ngIf="!feature.paid" class="text-danger fw-bold">
+                <i class="fa-solid fa-xmark fa-2xl"></i>
+              </span>
+            </span>
+            <span *ngIf="!isBoolean(feature.paid)">
+              {{ feature.paid || feature.paid.label }}
+              <ul *ngIf="feature.paid.details">
+                <li *ngFor="let detail of feature.paid.details">
+                  {{ detail }}
+                </li>
+              </ul>
+            </span>
+          </td>
+        </tr>
+
+        <!-- <tr *ngFor="let feature of internshipData.pricingCards[1]?.features">
+          <td class="text-start fw-bold">{{ feature.name }}</td>
+          <td>
+            <span *ngIf="isBoolean(feature.unpaid)">
+              <span *ngIf="feature.unpaid" class="text-success fw-bold"
+                ><i class="fa-solid fa-check fa-2xl"></i
+              ></span>
+              <span *ngIf="!feature.unpaid" class="text-danger fw-bold"
+                ><i class="fa-solid fa-xmark fa-2xl"></i
+              ></span>
+            </span>
+            <span *ngIf="!isBoolean(feature.unpaid)">
+              {{ feature.unpaid }}
+            </span>
+          </td>
+          <td>
+            <span *ngIf="isBoolean(feature.paid)">
+              <span *ngIf="feature.paid" class="text-success fw-bold"
+                ><i class="fa-solid fa-check fa-2xl"></i
+              ></span>
+              <span *ngIf="!feature.paid" class="text-danger fw-bold"
+                ><i class="fa-solid fa-xmark fa-2xl"></i
+              ></span>
+            </span>
+            <span *ngIf="!isBoolean(feature.paid)">
+              {{ feature.paid }}
+            </span>
+          </td>
+        </tr> -->
       </tbody>
     </table>
   </div>

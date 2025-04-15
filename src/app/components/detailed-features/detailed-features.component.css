@@ -26,6 +26,10 @@
     background-color: #cfe2ff;
   }
   
+  .objective {
+    min-height: 70px;
+  }
+
   .ideal-for-content {
     min-height: 110px; 
     display: flex;

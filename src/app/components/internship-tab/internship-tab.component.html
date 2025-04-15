@@ -1,4 +1,4 @@
-<div class="bootcamp-banner mb-5">
+<!-- <div class="bootcamp-banner mb-5">
     <img src="../../../assets/images/bootcamp-bg.png" alt="" />
     <div class="container">
         <div class="row banner-boot">
@@ -15,7 +15,7 @@ This program is structured like a real-world cloud engineering role, where you w
               <div class="card-header bg-primary text-white text-center">
                 <h1 class="card-title fw-bold">Free</h1>
                 <p></p>
-                <!-- <h6 class="">$0 / month</h6> -->
+                <h6 class="">$0 / month</h6>
                 <div class="d-flex justify-content-evenly">
                   <button class="btn btn-light" routerLink="/class-detail/AWS-Internship">More details <span class="text-primary fw-bold"> →</span></button>
                   <a class="btn btn-light signup-btn text-dark" [href]="env_url.free_Registration_Link" target="_blank">Register now <span class="text-primary fw-bold"> →</span></a>
@@ -69,4 +69,61 @@ This program is structured like a real-world cloud engineering role, where you w
             </div>
           </div>
     </div>
+</div> -->
+
+
+
+
+<div class="bootcamp-banner mb-5">
+  <img src="../../../assets/images/bootcamp-bg.png" alt="" />
+  <div class="container">
+    <div class="row banner-boot">
+      <h2 class="text-center">{{ internshipData.bannerTitle }}</h2>
+      <p class="fst-italic text-secondary text-center">
+        {{ internshipData.description }}
+      </p>
+    </div>
+    <br />
+    <div class="pricing-container">
+      <div
+        class="card pricing-card border-primary"
+        *ngFor="let card of internshipData.pricingCards"
+      >
+        <div class="card-header text-center" [ngClass]="card.headerClass">
+          <h4 class="card-title fw-bold" [ngClass]="card.btnClass" [ngClass]="card.titleClass">
+            {{ card.title }}
+          </h4>
+          <h6 *ngIf="card.subtitle" class="text-primary">
+            {{ card.subtitle }}
+          </h6>
+          <div class="d-flex justify-content-evenly">
+            <button class="btn" [ngClass]="card.btnClass" [routerLink]="card.route">
+              More details <span [ngClass]="card.btnTextColor + ' fw-bold'"> →</span>
+            </button>
+            <button class="btn" [ngClass]="card.btnClass" [routerLink]="card.featureRoute">
+              Compare More <span [ngClass]="card.btnTextColor + ' fw-bold'"> →</span>
+            </button>
+            <!-- <a
+              class="btn signup-btn"
+              [ngClass]="card.btnClass"
+              [href]="card.registerLink"
+              target="_blank"
+            >
+              <span [ngClass]="card.btnTextColor"> Register now </span><span [ngClass]="card.btnTextColor + ' fw-bold'"> →</span>
+            </a> -->
+          </div>
+        </div>
+        <div class="card-body text-start">
+          <ul class="list-unstyled">
+            <li *ngFor="let item of card.features">
+              <i class="bi bi-check-all text-success"></i> {{ item }}
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn" [routerLink]="card.featureRoute">Compare more →</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

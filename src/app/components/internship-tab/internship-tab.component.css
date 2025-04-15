@@ -38,9 +38,18 @@
     border: 2px solid;
   }
 
+  .card-header {
+    border-radius: 10px;
+  }
+
   .signup-btn {
     color: #fff;
     text-decoration: none;
+  }
+
+  .super-title {
+    font-size: 2.9rem;
+    font-weight: bold;
   }
 
   .card-body ul li {
