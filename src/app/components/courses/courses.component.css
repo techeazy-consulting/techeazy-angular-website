@@ -114,9 +114,30 @@ form h3 {
   padding-right: 10px;
 }
 
+
+.course-content {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-top: 4%;
+}
+
+.course-highlights {
+  border: 1px solid #0d6efd;
+  width: 25% ;
+}
+
+.course-highlights .card-header {
+  min-height: 60px;
+  text-align: center;
+  align-content: space-evenly;
+  color: #0d6efd;
+}
+
 .course-details {
-  margin-top: 5%;
-  min-height: 25rem;
+  /* margin-top: 5%; */
+  max-width: 500px;
+  /* min-height: 25rem; */
   height: 100%;
 }
 
@@ -359,6 +380,19 @@ form h3 {
     box-shadow: 0 0 4px #000000;
   }
 
+  .course-content {
+    flex-direction: column;
+  }
+
+  .course-content .card {
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .course-highlights {
+    width: 100% ;
+  }
+
   .course-details {
     width: 100%;
     min-height: auto;
@@ -439,6 +473,18 @@ form h3 {
     padding: 0;
     margin: 5%;
     box-shadow: 0 0 4px #000000;
+  }
+
+  .course-content {
+    flex-direction: column;
+  }
+
+  .course-content .card {
+    width: 100%;
+  }
+
+  .course-highlights {
+    width: 100% ;
   }
 
   .course-details {

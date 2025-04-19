@@ -197,7 +197,7 @@
             {{ card.subtitle }}
           </h6>
           <div class="d-flex justify-content-evenly">
-            <button
+            <!-- <button
               class="btn"
               [ngClass]="[card.btnClass, card.btnTextColor]"
               [routerLink]="card.route"
@@ -211,7 +211,14 @@
               target="_blank"
             >
               Register now <span class="fw-bold">→</span>
-            </a>
+            </a> -->
+            <button
+              class="btn"
+              [ngClass]="[card.btnClass, card.btnTextColor]"
+              [routerLink]="card.route"
+            >
+              More details & Register <span class="fw-bold">→</span>
+            </button>
           </div>
         </div>
       </div>
