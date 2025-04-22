@@ -359,7 +359,7 @@ export class DetailedFeaturesComponent {
             unpaid: 'Must have knowledge of Spring/Java',
             paid: 'None, We will provide training from scratch',
           },
-          { name: 'Selection', unpaid: 'Based on project submission and 1 interview call', paid: 'None' },
+          { name: 'Selection', unpaid: 'Based on project submission and interview', paid: 'None' },
           {
             name: 'Duration',
             unpaid: '1 month',
