@@ -216,11 +216,13 @@ export class DetailedFeaturesComponent {
         title: 'Advanced',
         title2: 'Interview Prep & Internship',
         headerClass: 'bg-primary text-white',
+        // headerClass: 'card-header text-white',
         route: '/class-detail/AWS-Interview-and-Internship',
         registerLink: 'your_aws_paid_link_here',
         btnClass: 'btn-primary',
         btnTextColor: 'text-light',
-        titleClass: 'fs-4',
+        // titleClass: 'fs-4',
+        titleClass: 'fs-1',
         subtitle: '1st month FREE, then ₹4K / month',
         features: [
           {

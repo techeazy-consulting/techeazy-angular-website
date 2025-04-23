@@ -10,9 +10,9 @@
     </div>
   </div>
 
-  <div class="btn">
+  <div>
     <!-- <button class="btn btn-light fw-bold" (click)="openFormPopup()">Express Interest</button> -->
-    <!-- <a class="btn btn-light fw-bold text-decoration-none text-dark" [href]="env_url.expressInterest_Link" target="_blank">Express Interest</a> -->
+    <a class="btn btn-light fw-bold text-decoration-none text-dark" [href]="env_url.expressInterest_Link " target="_blank">Express Interest</a>
   </div>
 </div>
 
@@ -24,6 +24,9 @@
       <div class="details">
         <span>4.9 ★★★★★</span>
         <span>• {{classDetails.noOfStudents}} students enrolled</span>
+      </div>
+      <div>
+        <a class="btn btn-light text-decoration-none text-white " [href]="env_url.expressInterest_Link">Express Interest</a>
       </div>
       <!-- <div class="btns d-flex justify-content-between mt-4" *ngIf="classDetails.courseStatus == 'ABOUT TO START'  || 'ONGOING' "> -->
       <div class="btns d-flex justify-content-between mt-4" *ngIf="classDetails.courseStatus == 'ABOUT TO START' ">
@@ -37,11 +40,12 @@
     <img src="../../../assets/images/common.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <div *ngIf="classDetails.courseStatus !== 'COMPLETED'">
-        <h6>Buy at {{classDetails.discount}}% off</h6>
+        <!-- <h6>Buy at {{classDetails.discount}}% off</h6> -->
         <!-- <h4>₹{{classDetails.price}}.00</h4> -->
-        <h4 [ngClass]="classDetails.price === 0 ? 'blinking-text3' : ''">
+         <h4 class="blinking-text3">Free</h4>
+        <!-- <h4 [ngClass]="classDetails.price === 0 ? 'blinking-text3' : ''">
           {{ classDetails.price === 0 ? 'Free' : '₹' + classDetails.price + '.00' }}
-        </h4>
+        </h4> -->
       </div>
       
       <button type="submit" class="btn btn-light fw-bold w-100 mb-4 no-hover">{{classDetails.courseStatus}}</button>
