@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 import { ExpressInterestComponent } from '../express-interest/express-interest.component';
+import { env } from '../../../environment/environment';
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +12,8 @@ import { ExpressInterestComponent } from '../express-interest/express-interest.c
 export class NavbarComponent implements OnInit{
   classList: any[] = [];
   classes: any[] = [];
+
+  env_url = env;
 
   constructor(private auth: AuthService, private router: Router) {}
   // constructor(private router: Router, private http: HttpClient) {}

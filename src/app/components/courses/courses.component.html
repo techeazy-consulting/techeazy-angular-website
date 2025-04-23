@@ -12,6 +12,7 @@
 
   <div class="btn">
     <!-- <button class="btn btn-light fw-bold" (click)="openFormPopup()">Express Interest</button> -->
+    <!-- <a class="btn btn-light fw-bold text-decoration-none text-dark" [href]="env_url.expressInterest_Link" target="_blank">Express Interest</a> -->
   </div>
 </div>
 
@@ -64,7 +65,7 @@
 <app-express-interest></app-express-interest>
 
 <div class="container">
-  <div class="course-content">
+  <!-- <div class="course-content">
     <div class="course-highlights card">
         <h4 class="card-header blinking-text">Course Highlights</h4>
         <div class="card-body">
@@ -77,7 +78,7 @@
             <li> List Items </li>
             <li> List Items </li>
           </ul>
-          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
         <div class="card-footer">
           <a href="#" class="btn btn-primary">Go somewhere</a>
@@ -104,7 +105,7 @@
                     <div class="metadata" *ngIf="chapter?.videoId?.trim()">
                       <span><button (click)="openVideoPopup(chapter.videoId)">Preview</button></span>
                       <span class="px-2">|</span>
-                      <!-- <span>4.20 min</span> -->
+                      <span>4.20 min</span>
                     </div>
                   </div>                
                 </div>
@@ -113,8 +114,38 @@
           </div>
       </div>
     </div>
-  </div>
+  </div> -->
   
+  <div class="bg-aqua p-4 col-8 course-details">
+    <h2 class="text-center mb-5">Course Highlights</h2>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item" *ngFor="let subject of classDetails.subjectList; let i = index">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"  [attr.data-bs-target]="'#flush-collapse' + i" aria-expanded="false" [attr.aria-controls]="'flush-collapse' + i" (click)="onSubjectClick(subject)">
+              {{subject.subjectName}}
+            </button>
+          </h2>
+          <div [id]="'flush-collapse'+i" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="chapters">
+                <div *ngFor="let chapter of subject.chapterList" class="chapter-details pb-3">
+                  <h6 class="text-body-secondary">
+                    <i class="fa-solid px-2" [ngClass]="chapter?.videoId?.trim() ? 'fa-video' : 'fa-location-arrow'"></i>
+                    {{ chapter.chapterName }}
+                  </h6>
+                  
+                  <div class="metadata" *ngIf="chapter?.videoId?.trim()">
+                    <span><button (click)="openVideoPopup(chapter.videoId)">Preview</button></span>
+                    <span class="px-2">|</span>
+                    <!-- <span>4.20 min</span> -->
+                  </div>
+                </div>                
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
   <app-video-popup></app-video-popup>
 
   <div class="container py-4 mt-3">

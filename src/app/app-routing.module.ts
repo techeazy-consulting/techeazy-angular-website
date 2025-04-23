@@ -14,17 +14,17 @@ const routes: Routes = [
   { path: 'blogs', component: BlogsComponent },
   { path: 'bootcamps', component: BootcampsPageComponent },
   { path: 'class-detail/:className', component: CoursesComponent },
-  {
-    path: 'internship/:internshipType',
-    component: InternshipTabComponent
-  },
-  {
-    path: 'all-features/:type',
-    component: DetailedFeaturesComponent
-  },
+  // {
+  //   path: 'internship/:internshipType',
+  //   component: InternshipTabComponent
+  // },
+  // {
+  //   path: 'all-features/:type',
+  //   component: DetailedFeaturesComponent
+  // },
   { path: 'register', component: RegisterComponent },
-  // { path: 'online_aws_internship', component: InternshipTabComponent },
-  // { path: 'all-features', component: DetailedFeaturesComponent },
+  { path: 'online_aws_internship', component: InternshipTabComponent },
+  { path: 'all-features', component: DetailedFeaturesComponent },
   { path: 'past-sessions', component: PastSessionsComponent },
 ];
 

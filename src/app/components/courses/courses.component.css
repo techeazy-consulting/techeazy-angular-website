@@ -116,7 +116,7 @@ form h3 {
 }
 
 
-.course-content {
+/* .course-content {
   display: flex;
   flex-direction: row;
   gap: 50px;
@@ -134,12 +134,12 @@ form h3 {
   text-align: center;
   align-content: space-evenly;
   color: #0d6efd;
-}
+} */
 
 .course-details {
-  /* margin-top: 5%; */
-  max-width: 500px;
-  /* min-height: 25rem; */
+  margin-top: 5%;
+  /* max-width: 500px; */
+  min-height: 25rem;
   height: 100%;
 }
 
