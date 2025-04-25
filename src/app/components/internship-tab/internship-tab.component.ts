@@ -46,8 +46,9 @@ This program is structured like a real-world cloud engineering role, where you w
           route: '/class-detail/AWS-Interview-and-Internship',
           registerLink: env.paid_Registration_Link,
           btnClass: 'btn-primary',
+          titleClass: 'super-title',
           btnTextColor: 'text-light',
-          subtitle: '1st month FREE, then ₹4K / month',
+          // subtitle: '1st month FREE, then ₹4K / month',
           features: [
             'Advanced AWS concepts',
             'Horizontal and vertical Scaling',
@@ -91,8 +92,9 @@ This program is structured like a real-world cloud engineering role, where you w
           route: '/class-detail/FullStack-Advanced',
           registerLink: env.paid_Registration_Link,
           btnClass: 'btn-primary',
+          titleClass: 'super-title',
           btnTextColor: 'text-light',
-          subtitle: '1st month FREE, then ₹4K / month',
+          // subtitle: '1st month FREE, then ₹4K / month',
           features: [
             'Data structure and Algo',
             'Comprehensive training -no prior knowledge required',

@@ -26,7 +26,7 @@
         <span>• {{classDetails.noOfStudents}} students enrolled</span>
       </div>
       <div>
-        <a class="btn btn-light text-decoration-none text-primary fw-bold mt-2" [href]="env_url.expressInterest_Link">Express Interest</a>
+        <a class="btn btn-light text-decoration-none text-primary fw-bold mt-2" [href]="env_url.expressInterest_Link" target="_blank">Express Interest </a>
       </div>
       <!-- <div class="btns d-flex justify-content-between mt-4" *ngIf="classDetails.courseStatus == 'ABOUT TO START'  || 'ONGOING' "> -->
       <div class="btns d-flex justify-content-between mt-4" *ngIf="classDetails.courseStatus == 'ABOUT TO START' ">
@@ -61,7 +61,8 @@
         <li class="card-text text-body-secondary"><i class="fa-solid fa-certificate"></i>Certificate of Completion</li>
       </ul>
       <!-- <a class="btn btn-primary w-100 fw-bold" [href]="env_url.free_Registration_Link" target="_blank" *ngIf="classDetails.courseStatus == 'ABOUT TO START' || 'ONGOING' ">Register Now</a> -->
-      <a class="btn btn-primary w-100 fw-bold" [href]="env_url.free_Registration_Link" target="_blank" *ngIf="classDetails.courseStatus == 'ABOUT TO START' ">Register Now</a>
+      <!-- <a class="btn btn-primary w-100 fw-bold" [href]="env_url.free_Registration_Link" target="_blank" *ngIf="classDetails.courseStatus == 'ABOUT TO START' ">Register Now</a> -->
+      <a class="btn btn-primary w-100 fw-bold" [href]="env_url.free_Registration_Link" target="_blank" *ngIf="classDetails.isRegistrationOpen">Register Now</a>
     </div>
   </div>
 </header>
@@ -121,7 +122,7 @@
   </div> -->
   
   <div class="bg-aqua p-4 col-8 course-details">
-    <h2 class="text-center mb-5">Course Highlights</h2>
+    <h2 class="text-center mb-5">Course Content</h2>
     <div class="accordion accordion-flush" id="accordionFlushExample">
         <div class="accordion-item" *ngFor="let subject of classDetails.subjectList; let i = index">
           <h2 class="accordion-header">
