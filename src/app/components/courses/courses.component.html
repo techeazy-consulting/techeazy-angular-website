@@ -10,10 +10,10 @@
     </div>
   </div>
 
-  <div>
-    <!-- <button class="btn btn-light fw-bold" (click)="openFormPopup()">Express Interest</button> -->
+  <!-- <div>
+    <button class="btn btn-light fw-bold" (click)="openFormPopup()">Express Interest</button>
     <a class="btn btn-light fw-bold text-decoration-none text-dark" [href]="env_url.expressInterest_Link " target="_blank">Express Interest</a>
-  </div>
+  </div> -->
 </div>
 
 <header>
@@ -25,13 +25,15 @@
         <span>4.9 ★★★★★</span>
         <span>• {{classDetails.noOfStudents}} students enrolled</span>
       </div>
-      <div>
+      <!-- <div>
         <a class="btn btn-light text-decoration-none text-primary fw-bold mt-2" [href]="env_url.expressInterest_Link" target="_blank">Express Interest </a>
-      </div>
+      </div> -->
       <!-- <div class="btns d-flex justify-content-between mt-4" *ngIf="classDetails.courseStatus == 'ABOUT TO START'  || 'ONGOING' "> -->
-      <div class="btns d-flex justify-content-between mt-4" *ngIf="classDetails.courseStatus == 'ABOUT TO START' ">
-        <a class="btn btn-light" [href]="env_url.free_Registration_Link" target="_blank"><span class="blinking-text2">Register -it’s completely FREE</span></a>
-        <button class="btn btn-light" routerLink="/all-features"><span class="btn-link">Not fit for you? see our other offering</span></button>
+      <!-- <div class="btns d-flex justify-content-between mt-4" *ngIf="classDetails.courseStatus == 'ABOUT TO START' "> -->
+      <div class="btns d-flex justify-content-between mt-4">
+        <a class="btn btn-light"  *ngIf="classDetails.courseStatus == 'ABOUT TO START' " [href]="env_url.free_Registration_Link" target="_blank"><span class="blinking-text2">Register -it’s completely FREE</span></a>
+        <a class="btn btn-light fw-bold text-decoration-none text-dark" [href]="env_url.expressInterest_Link " *ngIf="classDetails.courseStatus != 'ABOUT TO START' " target="_blank">Express Interest</a>
+        <button class="btn btn-light" routerLink="/all-features/"><span class="btn-link">Not fit for you? see our other offering</span></button>
       </div>
     </div>
   </div>

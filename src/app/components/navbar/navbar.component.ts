@@ -16,10 +16,8 @@ export class NavbarComponent implements OnInit{
   env_url = env;
 
   constructor(private auth: AuthService, private router: Router) {}
-  // constructor(private router: Router, private http: HttpClient) {}
 
   ngOnInit(): void {
-    // this.fetchClasses();
     this.auth.getAllClassDetails();
 
     this.auth.data$.subscribe(
@@ -36,11 +34,6 @@ export class NavbarComponent implements OnInit{
     this.router.navigate(['/class-detail', formattedClassName]);
   }
 
-  // goToCourses(classItem: any): void{
-  //   this.router.navigate(['/class-detail', classItem.className])
-  // }
-
-  // Adding annotation to communicate with the Child component
   @ViewChild(ExpressInterestComponent) formPopup!: ExpressInterestComponent;
   
   openFormPopup() {

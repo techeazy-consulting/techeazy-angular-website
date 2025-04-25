@@ -60,10 +60,16 @@ export class CoursesComponent {
   }
 
   goToCourses(classItem: any): void {
-    const formattedClassName = classItem.className.replace(/ /g, '-').toLowerCase();
+    const formattedClassName = classItem.className.replace(/ /g, '-');
     this.router.navigate(['/class-detail', formattedClassName]);
   }
 
+  // goToCourses(classItem: any): void {
+  //   const className = (classItem?.className || '').toString();
+  //   const formattedClassName = className.replace(/ /g, '-').toLowerCase();
+  //   this.router.navigate(['/class-detail', formattedClassName]);
+  // }   
+  
   convertLocalDateToReadableFormat(dateStr: string): string {
     if (!dateStr) return '';
     const [year, month, day] = dateStr.split('-').map(Number);
