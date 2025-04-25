@@ -60,7 +60,7 @@ export class CoursesComponent {
   }
 
   goToCourses(classItem: any): void {
-    const formattedClassName = classItem.className.replace(/ /g, '-');
+    const formattedClassName = classItem.className.replace(/ /g, '-').toLowerCase();
     this.router.navigate(['/class-detail', formattedClassName]);
   }
 

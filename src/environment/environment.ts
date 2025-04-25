@@ -1,6 +1,6 @@
 export const env = {
-    // domain: 'https://stage.techeazyconsulting.com/public/dms/api',
-    domain: 'https://prod.techeazyconsulting.com/public/dms/api',
+    domain: 'https://stage.techeazyconsulting.com/public/dms/api',
+    // domain: 'https://prod.techeazyconsulting.com/public/dms/api',
     hashNode_API: 'https://gql.hashnode.com/',
     hashnode_username: 'TechEazy',
     hashNode_API_KEY: '6917f2a7-c45b-4b32-adf2-f07b3f0d58f7',

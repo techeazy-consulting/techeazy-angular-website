@@ -109,7 +109,7 @@ export class DetailedFeaturesComponent {
         title: 'Free',
         title2: 'Unpaid AWS Internship',
         headerClass: 'card-header text-dark',
-        route: '/class-detail/AWS-Internship',
+        route: '/class-detail/aws-internship',
         registerLink: 'your_aws_free_link_here',
         btnClass: 'btn-primary',
         btnTextColor: 'text-white',
@@ -393,14 +393,6 @@ export class DetailedFeaturesComponent {
             paid: true,
           },
           {
-            name: 'Weekly Connect',
-            unpaid: '2 days - (Scrum Calls)',
-            paid: {
-              label: '5 days',
-              details: ['2 days Scrum calls', '3 Training Sessions']
-            }
-          },
-          {
             name: 'Training',
             unpaid: false,
             paid: true,
@@ -431,12 +423,13 @@ export class DetailedFeaturesComponent {
         title: 'Advanced',
         title2: 'Interview Prep & Internship',
         headerClass: 'bg-primary text-white',
-        route: '/class-detail/Fullstack-Advanced',
+        route: '/class-detail/java-fullstack-with-aws-internship',
         registerLink: 'your_fs_paid_link_here',
         btnClass: 'btn-primary',
         btnTextColor: 'text-light',
-        titleClass: 'fs-4',
-        subtitle: '1st month FREE, then ₹4K / month',
+        // titleClass: 'fs-4',
+        titleClass: 'fs-1',
+        // subtitle: '1st month FREE, then ₹4K / month',
         features: [
           {
             name: 'Objective',
@@ -491,14 +484,6 @@ export class DetailedFeaturesComponent {
             name: 'Interview Tips',
             unpaid: true,
             paid: true,
-          },
-          {
-            name: 'Weekly Connect',
-            unpaid: '2 days - (Scrum Calls)',
-            paid: {
-              label: '5 days',
-              details: ['2 days Scrum calls', '3 Training Sessions']
-            }
           },
           {
             name: 'Training',
