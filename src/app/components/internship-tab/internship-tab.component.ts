@@ -73,7 +73,7 @@ This program is structured like a real-world cloud engineering role, where you w
         {
           title: 'Free',
           headerClass: 'bg-primary text-white',
-          route: '/class-detail/FullStack-Internship',
+          route: '/class-detail/Java-Fullstack-with-AWS-Internship',
           registerLink: env.free_Registration_Link,
           btnClass: 'btn-light',
           titleClass: 'super-title',
@@ -89,7 +89,7 @@ This program is structured like a real-world cloud engineering role, where you w
         {
           title: 'Advanced',
           headerClass: 'bg-light text-primary',
-          route: '/class-detail/FullStack-Advanced',
+          route: '/class-detail/Java-Fullstack-with-AWS-Internship',
           registerLink: env.paid_Registration_Link,
           btnClass: 'btn-primary',
           titleClass: 'super-title',

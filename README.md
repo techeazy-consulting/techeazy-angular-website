@@ -1,27 +1,91 @@
-# TecheazyAngularWebsite
+# **Techeazy Angular Website**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+This project was generated using the [Angular CLI](https://github.com/angular/angular-cli) version **18.2.11**  
+**Node.js version:** 20
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Development Server
 
-## Code scaffolding
+To start the development server:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+ng serve
+```
 
-## Build
+Navigate to [http://localhost:4200/](http://localhost:4200/).  
+The app will automatically reload when you make changes to the source files.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## ⚙️ Code Scaffolding
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Generate a new component:
 
-## Running end-to-end tests
+```bash
+ng generate component component-name
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+You can also use:
 
-## Further help
+```bash
+ng generate directive|pipe|service|class|guard|interface|enum|module
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+## 🛠️ Build
+
+To build the project:
+
+```bash
+ng build --base-href=/
+```
+
+The output will be in the `dist/` directory.
+
+---
+
+## 🚀 Deploy to GitHub Pages
+
+Use the following command to deploy:
+
+```bash
+ngh --dir=dist/techeazy-angular-website/browser
+```
+
+Then, add a `CNAME` file to your `gh-pages` branch with your custom domain URL inside it.
+
+---
+
+## ✅ Running Unit Tests
+
+Run unit tests using [Karma](https://karma-runner.github.io):
+
+```bash
+ng test
+```
+
+---
+
+## 🔍 Running End-to-End Tests
+
+To run e2e tests:
+
+```bash
+ng e2e
+```
+
+> **Note:** You may need to add a package that provides end-to-end testing capabilities.
+
+---
+
+## 📚 Help & Documentation
+
+For more Angular CLI commands and usage:
+
+```bash
+ng help
+```
+
+Or visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) for detailed documentation.
