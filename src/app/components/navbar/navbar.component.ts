@@ -10,8 +10,10 @@ import { env } from '../../../environment/environment';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements OnInit{
-  classList: any[] = [];
+  // classList: any[] = [];
   classes: any[] = [];
+  courseClasses: any[] = [];
+  internshipClasses: any[] = [];
 
   env_url = env;
 
@@ -23,13 +25,19 @@ export class NavbarComponent implements OnInit{
     this.auth.data$.subscribe(
       (data) => {
         this.classes = data;
-        console.log("Classes from data Service", this.classes);
         
+        this.courseClasses = this.classes.filter(item => item.typeOfCourse === 'INSTRUCTOR_LED_COURSE');
+        this.internshipClasses = this.classes.filter(item => item.typeOfCourse === 'INTERNSHIP');
       }
     )
   }
 
   goToCourses(classItem: any): void {
+    const formattedClassName = classItem.className.replace(/ /g, '-');
+    this.router.navigate(['/class-detail', formattedClassName]);
+  }
+
+  goToInternship(classItem: any): void {
     const formattedClassName = classItem.className.replace(/ /g, '-');
     this.router.navigate(['/class-detail', formattedClassName]);
   }
