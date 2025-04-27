@@ -31,7 +31,7 @@
       <!-- <div class="btns d-flex justify-content-between mt-4" *ngIf="classDetails.courseStatus == 'ABOUT TO START'  || 'ONGOING' "> -->
       <!-- <div class="btns d-flex justify-content-between mt-4" *ngIf="classDetails.courseStatus == 'ABOUT TO START' "> -->
       <div class="btns d-flex justify-content-between mt-4" *ngIf="classDetails.courseStatus == 'ABOUT TO START' ">
-        <a class="btn btn-light" [href]="env_url.free_Registration_Link" target="_blank"><span class="blinking-text2">Register -it’s completely FREE</span></a>
+        <a class="btn btn-light" [href]="classDetails.registrationLink" target="_blank"><span class="blinking-text2">Register -it’s completely FREE</span></a>
         <div>
           <button class="btn btn-light" routerLink="/all-features/fullstack"><span class="btn-link">Not fit for you? see our other offering</span></button>
         </div>
@@ -65,7 +65,7 @@
       </ul>
       <!-- <a class="btn btn-primary w-100 fw-bold" [href]="env_url.free_Registration_Link" target="_blank" *ngIf="classDetails.courseStatus == 'ABOUT TO START' || 'ONGOING' ">Register Now</a> -->
       <!-- <a class="btn btn-primary w-100 fw-bold" [href]="env_url.free_Registration_Link" target="_blank" *ngIf="classDetails.courseStatus == 'ABOUT TO START' ">Register Now</a> -->
-      <a class="btn btn-primary w-100 fw-bold" [href]="env_url.free_Registration_Link" target="_blank" *ngIf="classDetails.isRegistrationOpen">Register Now</a>
+      <a class="btn btn-primary w-100 fw-bold" [href]="classDetails.registrationLink" target="_blank" *ngIf="classDetails.isRegistrationOpen">Register Now</a>
     </div>
   </div>
 </header>
