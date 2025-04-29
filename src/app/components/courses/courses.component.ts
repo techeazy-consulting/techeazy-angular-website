@@ -37,7 +37,7 @@ export class CoursesComponent {
         this.authService.data$.subscribe((data) => {
           if (data) {
             this.classDetails = data.find((cls: any) => cls.className === this.className);
-            console.log("Class Details:", this.classDetails);
+            // console.log("Class Details:", this.classDetails);
 
             // Remove underscores and format the courseStatus
             if (this.classDetails && this.classDetails.courseStatus) {

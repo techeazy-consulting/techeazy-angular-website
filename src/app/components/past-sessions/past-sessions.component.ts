@@ -15,7 +15,18 @@ export class PastSessionsComponent implements OnInit {
   ngOnInit(): void {
     this.authService.data$.subscribe((data) => {
       this.classes = data;
+
+      if (Array.isArray(this.classes)) {
+        this.classes.forEach((classItem) => {
+          if (classItem.typeOfCourse) {
+            classItem.typeOfCourse = classItem.typeOfCourse
+              .replace(/_/g, ' ')
+              .replace(/\b\w/g, (char: string) => char.toUpperCase());
+          }
+        });
+      }
     });
+
   }
 
   goToCourses(classItem: any): void {

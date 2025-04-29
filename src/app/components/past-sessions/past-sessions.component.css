@@ -13,3 +13,7 @@ ul li i {
   -webkit-text-fill-color: transparent;
   font-weight: bold;
 }
+
+.card img {
+  box-shadow: 0 1px 0px #bfbfbf;
+}
