@@ -9,12 +9,25 @@ import { Router } from '@angular/router';
 })
 export class PastSessionsComponent implements OnInit {
   classes: any[] = [];
-
+  completedClasses: any[] = [];
+  
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.authService.data$.subscribe((data) => {
       this.classes = data;
+
+      this.completedClasses = this.classes.filter(c => c.courseStatus === 'COMPLETED');
+
+      if (Array.isArray(this.classes)) {
+        this.classes.forEach((classItem) => {
+          if (classItem.typeOfCourse) {
+            classItem.typeOfCourse = classItem.typeOfCourse
+              .replace(/_/g, ' ')
+              .replace(/\b\w/g, (char: string) => char.toUpperCase());
+          }
+        });
+      }
     });
   }
 
