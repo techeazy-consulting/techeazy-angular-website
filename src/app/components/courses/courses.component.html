@@ -33,7 +33,8 @@
       <div class="btns d-flex justify-content-between mt-4" *ngIf="classDetails.courseStatus == 'ABOUT TO START' ">
         <a class="btn btn-light" [href]="classDetails.registrationLink" target="_blank"><span class="blinking-text2">Register -it’s completely FREE</span></a>
         <div>
-          <button class="btn btn-light" routerLink="/all-features/fullstack"><span class="btn-link">Not fit for you? see our other offering</span></button>
+          <!-- <button class="btn btn-light" routerLink="/all-features/fullstack"><span class="btn-link">Not fit for you? see our other offering</span></button> -->
+          <button class="btn btn-light" (click)="goToFeaturePage()"><span class="btn-link">Not fit for you? see our other offering</span></button>
         </div>
       </div>
     </div>

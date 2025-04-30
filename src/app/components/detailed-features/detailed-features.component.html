@@ -212,11 +212,14 @@
             >
               Register now <span class="fw-bold">→</span>
             </a> -->
-            <button
+            <!-- <button
               class="btn"
               [ngClass]="[card.btnClass, card.btnTextColor]"
               [routerLink]="card.route"
             >
+              More details & Register <span class="fw-bold">→</span>
+            </button> -->
+            <button *ngIf="returnUrl" [routerLink]="returnUrl" class="btn" [ngClass]="[card.btnClass, card.btnTextColor]">
               More details & Register <span class="fw-bold">→</span>
             </button>
           </div>

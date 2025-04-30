@@ -18,9 +18,8 @@ export class CoursesComponent {
   classes : any;
 
   env_url = env;
-
+  
   showSliderMenu: boolean = true;
-
   isPopupVisible: boolean = false;
 
   constructor(private route: ActivatedRoute, private authService: AuthService, private router: Router) {}
@@ -64,6 +63,14 @@ export class CoursesComponent {
     this.router.navigate(['/class-detail', formattedClassName]);
   }
 
+  goToFeaturePage() {
+    const currentRoute = this.router.url;
+  
+    this.router.navigate(['/all-features/fullstack'], {
+      state: { returnUrl: currentRoute }
+    });
+  }
+  
   // goToCourses(classItem: any): void {
   //   const className = (classItem?.className || '').toString();
   //   const formattedClassName = className.replace(/ /g, '-').toLowerCase();
