@@ -15,7 +15,8 @@ export class FooterComponent implements OnInit{
   ngOnInit(): void {
     this.authService.data$.subscribe(
       (data) => {
-        this.classes = data;
+        this.classes = data.slice(-4); //last 4 classes
+        // this.classes = data.slice(0, 4); // Only keep the first 4 classes
       }
     )
   }

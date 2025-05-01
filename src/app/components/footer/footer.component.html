@@ -5,10 +5,10 @@
                 <p class="mt-3"><i class="fa-brands fa-whatsapp"></i> +91 99757 98356</p>
                 <p><i class="fa-solid fa-envelope"></i> trainings&#64;techeazyconsulting.com</p>  
             <div class="social">
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.instagram.com/techeazy_consulting/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.linkedin.com/company/techeazyconsulting" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>    
+                <!-- <a href="#"><i class="fa-brands fa-twitter"></i></a> -->
+                <a href="https://www.facebook.com/TechEazyConsulting/" target="_blank"><i class="fa-brands fa-facebook"></i></a>    
             </div>
         </div>
         <div class="cols mt-3">
@@ -23,12 +23,7 @@
         <div class="cols mt-3">
             <h6>Skill Up Fast</h6>
             <div *ngFor="let class of classes">
-                <!-- <li><a  [routerLink]="['/class-detail', class.className]">{{class.className}}</a></li> -->
                 <li><a (click)="goToCourses(class)">{{class.className}}</a></li>
-                <!-- <li><a href="">Java</a></li>
-                <li><a href="">Python</a></li>
-                <li><a href="">Rest API</a></li>
-                <li><a href="">AWS Cloud</a></li> -->
             </div>
         </div>
         <div class="cols mt-3">
