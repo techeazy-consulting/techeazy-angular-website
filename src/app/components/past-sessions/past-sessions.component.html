@@ -13,7 +13,7 @@
             />
             <div class="card-body">
               <h5 class="card-title">{{ class.className }}</h5>
-              <h6 class="bg-dark text-white p-2"><b>* &nbsp;</b> {{ class.typeOfCourse }}</h6>
+              <h6 class="bg-dark text-white p-2"><b>* &nbsp;</b> {{ class.typeOfCourse === 'INSTRUCTOR LED COURSE' ? 'TRAINING' : class.typeOfCourse }}</h6>
               <ul>
                 <li class="card-text text-body-secondary"><i class="fa-solid fa-tv"></i><span class="blinking-text">Instructor Led Sessions</span></li>
                 <li class="card-text text-body-secondary"><i class="fa-solid fa-repeat"></i>{{convertLocalDateToReadableFormat(class.startDate)}} - {{ convertLocalDateToReadableFormat(class.endDate) }}</li>
