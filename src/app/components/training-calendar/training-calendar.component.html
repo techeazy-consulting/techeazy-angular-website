@@ -1,0 +1,93 @@
+<div class="container mt-3">
+    <h2 class="text-center mb-2">Upcoming courses</h2>
+    <div class="bg-secondary mx-auto mb-3" style="height: 2px; width: 20%;"></div>
+  <ul class="nav nav-tabs mb-3" id="courseTabs">
+    <li class="nav-item">
+      <button
+        type="button"
+        class="nav-link"
+        [class.active]="selectedTabIndex === 0"
+        (click)="onTabChange(0)"
+      >
+        All
+      </button>
+    </li>
+    <li class="nav-item">
+      <button
+        type="button"
+        class="nav-link"
+        [class.active]="selectedTabIndex === 1"
+        (click)="onTabChange(1)"
+      >
+        Self-Paced
+      </button>
+    </li>
+    <li class="nav-item">
+      <button
+        type="button"
+        class="nav-link"
+        [class.active]="selectedTabIndex === 2"
+        (click)="onTabChange(2)"
+      >
+        Internship
+      </button>
+    </li>
+    <li class="nav-item">
+      <button
+        type="button"
+        class="nav-link"
+        [class.active]="selectedTabIndex === 3"
+        (click)="onTabChange(3)"
+      >
+        Bootcamp
+      </button>
+    </li>
+    <li class="nav-item">
+      <button
+        type="button"
+        class="nav-link"
+        [class.active]="selectedTabIndex === 4"
+        (click)="onTabChange(4)"
+      >
+        Hackathon
+      </button>
+    </li>
+    <li class="nav-item">
+      <button
+        type="button"
+        class="nav-link"
+        [class.active]="selectedTabIndex === 5"
+        (click)="onTabChange(5)"
+      >
+        Instructor-Led
+      </button>
+    </li>
+  </ul>
+
+  <div *ngIf="filteredCourses.length; else noCourses" class="row">
+    <div class="col-md-3 mb-4" *ngFor="let course of filteredCourses">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <img
+            [src]="getImageForType(course.typeOfCourse)"
+            class="card-img-top"
+            alt="{{ course.typeOfCourse }}"
+          />
+          <h5 class="card-title">{{ course.className }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Type: {{ formatText(course.typeOfCourse) }}
+          </h6>
+          <p class="card-text">Status: {{ formatText(course.courseStatus) }}</p>
+          <p class="card-text">Start Date: {{ course.startDate }}</p>
+          <p class="card-text">End Date: {{ course.endDate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noCourses>
+    <div class="alert alert-warning text-center" role="alert">
+      No upcoming courses available for this category.
+    </div>
+  </ng-template>
+</div>

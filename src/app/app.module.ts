@@ -26,6 +26,7 @@ import { PastSessionsComponent } from './components/past-sessions/past-sessions.
 import { BlogPostComponent } from './components/blog-post/blog-post.component';
 import { BlogCardComponent } from './components/blog-card/blog-card.component';
 import { BlogListComponent } from './components/blog-list/blog-list.component';
+import { TrainingCalendarComponent } from './components/training-calendar/training-calendar.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { BlogListComponent } from './components/blog-list/blog-list.component';
     PastSessionsComponent,
     BlogPostComponent,
     BlogCardComponent,
-    BlogListComponent
+    BlogListComponent,
+    TrainingCalendarComponent
   ],
   imports: [
     BrowserModule,

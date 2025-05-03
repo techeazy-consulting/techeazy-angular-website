@@ -220,14 +220,16 @@ padding: 0 10px;
 
 .sub-heading {
   margin-left: 15rem;
+  color: #d99b15;
+  font-family: "Tagesschrift", system-ui;
 }
 
-.blinking-text-4 {
+/* .blinking-text-4 {
   background: linear-gradient(90deg, rgb(255, 98, 0), rgb(30, 179, 30));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
-}
+} */
 
 .course-details {
   /* margin-top: 5%; */

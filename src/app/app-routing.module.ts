@@ -8,6 +8,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { InternshipTabComponent } from './components/internship-tab/internship-tab.component';
 import { DetailedFeaturesComponent } from './components/detailed-features/detailed-features.component';
 import { PastSessionsComponent } from './components/past-sessions/past-sessions.component';
+import { TrainingCalendarComponent } from './components/training-calendar/training-calendar.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   // { path: 'online_aws_internship', component: InternshipTabComponent },
   // { path: 'all-features', component: DetailedFeaturesComponent },
   { path: 'past-sessions', component: PastSessionsComponent },
+  { path: 'training', component: TrainingCalendarComponent },
 ];
 
 @NgModule({
