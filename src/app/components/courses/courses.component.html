@@ -221,6 +221,7 @@
     <div class="col-8" *ngIf="classDetails">
       <h1>{{ classDetails.className }}</h1>
       <!-- <h4 class="text-body-secondary"> Attend first 15 days FREE in 1st Month </h4> -->
+      <h4 class="text-body-secondary"> {{classDetails.courseHighlight}} </h4>
       <p>{{ classDetails.classDescription }}</p>
       <div class="details">
         <span>4.9 ★★★★★</span>
@@ -267,7 +268,7 @@
 <app-express-interest></app-express-interest>
 
 <div class="container">
-  <h5 class="sub-heading mt-3">💻 <span class="blinking-text-4">Internship isn't Optional - it's Essential</span></h5>
+  <h5 class="sub-heading mt-3" *ngIf="classDetails.coursePunchLine" >💻 <span class="blinking-text-4">{{classDetails.coursePunchLine}}</span></h5>
   <div class="bg-aqua p-4 col-8 course-details">
     <h2 class="text-center mb-5">Course Content</h2>
     <div class="accordion accordion-flush" id="accordionFlushExample">

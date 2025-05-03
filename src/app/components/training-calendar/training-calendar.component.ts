@@ -52,6 +52,11 @@ export class TrainingCalendarComponent implements OnInit {
     });
   }
 
+  goToCourses(classItem: any): void {
+    const formattedClassName = classItem.className.replace(/ /g, '-');
+    this.router.navigate(['/class-detail', formattedClassName]);
+  }
+  
   getImageForType(type: string): string {
     const map: { [key: string]: string } = {
       UNKNOWN: 'assets/images/unknown.jpg',

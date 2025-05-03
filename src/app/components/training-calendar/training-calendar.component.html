@@ -1,6 +1,6 @@
 <div class="container mt-3">
-    <h2 class="text-center mb-2">Upcoming courses</h2>
-    <div class="bg-secondary mx-auto mb-3" style="height: 2px; width: 20%;"></div>
+  <h2 class="text-center mb-2">Upcoming courses</h2>
+  <div class="bg-secondary mx-auto mb-3" style="height: 2px; width: 20%"></div>
   <ul class="nav nav-tabs mb-3" id="courseTabs">
     <li class="nav-item">
       <button
@@ -66,7 +66,7 @@
 
   <div *ngIf="filteredCourses.length; else noCourses" class="row">
     <div class="col-md-3 mb-4" *ngFor="let course of filteredCourses">
-      <div class="card h-100 shadow-sm">
+      <div class="card h-100 shadow-sm" (click)="goToCourses(course)">
         <div class="card-body">
           <img
             [src]="getImageForType(course.typeOfCourse)"
