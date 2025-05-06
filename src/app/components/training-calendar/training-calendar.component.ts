@@ -27,6 +27,7 @@ export class TrainingCalendarComponent implements OnInit {
   }
 
   formatText(text: string): string {
+    if (text === 'INSTRUCTOR_LED_COURSE') return 'Trainings';
     return text.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
   }
   
@@ -43,7 +44,7 @@ export class TrainingCalendarComponent implements OnInit {
     const selectedType = typeFilters[this.selectedTabIndex];
 
     this.filteredCourses = this.classes.filter(course => {
-      const isUpcoming = course.courseStatus !== 'COMPLETED'
+      const isUpcoming = course.courseStatus !== 'COMPLETED' && course.courseStatus !== 'ONGOING'
 
       if (!isUpcoming) return false;
       if (!selectedType) return true;
