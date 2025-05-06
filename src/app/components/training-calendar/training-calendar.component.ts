@@ -33,12 +33,12 @@ export class TrainingCalendarComponent implements OnInit {
   
   filterCourses() {
     const typeFilters = [
-      null, // All
-      'SELF_PACED_ONLINE',
+      'INSTRUCTOR_LED_COURSE',
       'INTERNSHIP',
+      'SELF_PACED_ONLINE',
       'BOOTCAMP',
       'HACKATHON',
-      'INSTRUCTOR_LED_COURSE'
+      null, // All
     ];
 
     const selectedType = typeFilters[this.selectedTabIndex];
