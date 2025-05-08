@@ -21,7 +21,8 @@ export class AuthService {
 
   getAllClassDetails() {
     if (!this.dataSubject.value) { // Fetch only if data is null
-      this.http.get<any>(`${this.BASE_URL}/detailed-techeazy-classes`).subscribe((response) => {
+      // this.http.get<any>(`${this.BASE_URL}/detailed-techeazy-classes`).subscribe((response) => {
+      this.http.get<any>(`${this.BASE_URL}/classes`).subscribe((response) => {
         this.dataSubject.next(response);
         console.log("API Response Stored:", response);
       });

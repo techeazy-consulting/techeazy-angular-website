@@ -1,4 +1,5 @@
 export const env = {
+    // domain: 'http://localhost:8080/dms/api',
     domain: 'https://stage.techeazyconsulting.com/public/dms/api',
     // domain: 'https://prod.techeazyconsulting.com/public/dms/api',
     hashNode_API: 'https://gql.hashnode.com/',
